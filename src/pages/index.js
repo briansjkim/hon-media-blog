@@ -10,7 +10,7 @@ export default () => (
             <meta charSet="utf-8" />
             <title>Hon Media | Blog</title>
         </Helmet>
-        <div css={tw`border-dashed`}>
+        <div>
             <p css={tw`font-semibold text-lg`}>Welcome</p>
         </div>
     </Layout>
