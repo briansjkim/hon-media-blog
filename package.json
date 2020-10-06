@@ -22,10 +22,12 @@
     "gatsby": "^2.24.68",
     "gatsby-plugin-emotion": "^4.3.13",
     "gatsby-plugin-postcss": "^3.0.1",
+    "gatsby-plugin-react-helmet": "^3.3.13",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "save-dev": "0.0.1-security",
     "tailwind.macro": "^1.0.0-alpha.10",
     "tailwindcss": "^1.8.10"

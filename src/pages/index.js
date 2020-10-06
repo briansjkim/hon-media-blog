@@ -1,9 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import tw from 'tailwind.macro';
 
 import Layout from '../components/Layout/Layout';
 
 export default () => (
     <Layout>
-        <h1>Home</h1>
+        <Helmet>
+            <meta charSet="utf-8" />
+            <title>Hon Media | Blog</title>
+        </Helmet>
     </Layout>
 );
