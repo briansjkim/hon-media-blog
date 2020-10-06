@@ -1,11 +1,12 @@
 import React from "react";
+// import { Link } from 'gatsby';
 
 // will hold a search feature, home feature (hon media home site), login/sign up?
 
 const Header = () => (
-    <div>
-        <p>This is the Header</p>
-    </div>
-)
+    <header>
+        <p>This is Header</p>
+    </header>
+);
 
 export default Header;
