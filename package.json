@@ -1,0 +1,24 @@
+{
+  "name": "hon-media-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/briansjkim/hon-media-blog.git"
+  },
+  "author": "Brian Kim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/briansjkim/hon-media-blog/issues"
+  },
+  "homepage": "https://github.com/briansjkim/hon-media-blog#readme",
+  "dependencies": {
+    "gatsby": "^2.24.68",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
