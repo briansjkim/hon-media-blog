@@ -19,6 +19,8 @@
   "dependencies": {
     "gatsby": "^2.24.68",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "save-dev": "0.0.1-security",
+    "tailwindcss": "^1.8.10"
   }
 }
