@@ -6,7 +6,7 @@ import Footer from './Footer';
 const Layout = ({ children }) => (
     <Fragment>
         <Header />
-        {children}
+        <main className="text-gray-900">{children}</main>
         <Footer />
     </Fragment>
 );
