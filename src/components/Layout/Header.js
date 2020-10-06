@@ -5,7 +5,9 @@ import React from "react";
 
 const Header = () => (
     <header>
-        <p>This is Header</p>
+        <div>
+            <p>This is Header</p>
+        </div>
     </header>
 );
 
