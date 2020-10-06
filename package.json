@@ -31,5 +31,8 @@
     "save-dev": "0.0.1-security",
     "tailwind.macro": "^1.0.0-alpha.10",
     "tailwindcss": "^1.8.10"
+  },
+  "devDependencies": {
+    "stylelint-config-recommended": "^3.0.0"
   }
 }
