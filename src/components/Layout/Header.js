@@ -18,9 +18,15 @@ const Header = () => (
             </div>
             <div css={tw`flex mt-4 sm:mt-0`}>
                 <Link 
+                    to='/'
+                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                >
+                    Home
+                </Link>
+                <Link 
                     to='https://hon-media.com/'
                     target='_blank'
-                    css={tw`no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
                 >
                     About Us
                 </Link>
