@@ -22,7 +22,7 @@ const Header = () => (
                     target='_blank'
                     css={tw`no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
                 >
-                    Home
+                    About Us
                 </Link>
             </div>
         </div>
