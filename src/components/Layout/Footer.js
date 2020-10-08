@@ -1,7 +1,7 @@
 import React from "react";
 import tw from "tailwind.macro";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import Logo from "../../assets/images/HonLogo.png";
 
@@ -25,14 +25,15 @@ const Footer = () => (
             </div>
             <div css={tw`float-left`}>
                 <h2>Social Media</h2>
-                <FontAwesomeIcon icon={faCoffee} />
-                {/* <i class="fab fa-instagram"><a
+                <a 
                     href="https://www.instagram.com/honmediasd/"
-                    className="text-button hover:text-buttonHover"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >
-                </a></i> */}
+                    aria-label="Instagram"
+                    ><FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <FontAwesomeIcon icon={faLinkedin} />
+                <FontAwesomeIcon icon={faFacebook} />
             </div>
         </div>
     </footer>
