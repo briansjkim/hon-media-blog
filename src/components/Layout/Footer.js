@@ -12,49 +12,49 @@ const Footer = () => (
     >
         <div 
             className="container"
-            css={tw`flex w-full text-center`}>
-            <div css={tw`float-left text-left w-4/12`}>
+            css={tw`flex w-9/12 text-center m-auto`}>
+            <div css={tw`float-left flex-1 w-4/12 ml-4`}>
                 <img
-                css={tw`mx-auto my-3`}
+                css={tw`mx-auto mt-6 mr-16`}
                 src={Logo}
                 alt="logo"
                 style={{ height: "25px", width: "45px" }}
                 />
-                <div css={tw`text-sm text-left mt-2`}>&copy; Hon Media 2020</div>
+                <div css={tw`text-sm mt-4`}>&copy; Hon Media 2020</div>
             </div>
 
-            <div css={tw`float-left border-solid w-4/12`}>
+            <div css={tw`float-left flex-1 w-4/12`}>
                 <h2 css={tw`text-2xl font-semibold`}>Contact</h2>
                 <p className="mt-5">HonMediaSD@gmail.com</p>
                 <p className="mt-5">San Diego, CA</p>
             </div>
 
-            <div css={tw`float-left border-solid w-4/12`}>
+            <div css={tw`float-left flex-1 w-4/12`}>
                 <h2>Social Media</h2>
-                <a 
-                    href="https://www.instagram.com/honmediasd/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    css={tw`text-black bg-gray-200 text-2xl`}
-                    ><FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a
-                    href="https://www.linkedin.com/company/65747941/admin/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    css={tw`text-black bg-gray-200 text-2xl`}
-                    ><FontAwesomeIcon icon={faLinkedin} />
-                </a>
-                <a
-                    href="https://www.facebook.com/HonMediaSD/"
-                    className="text-button hover:text-buttonHover"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    css={tw`text-black bg-gray-200 text-2xl`}
-                    ><FontAwesomeIcon icon={faFacebook} />
-                </a>
+                    <a 
+                        href="https://www.instagram.com/honmediasd/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram"
+                        css={tw`text-black bg-gray-200 text-2xl`}
+                        ><FontAwesomeIcon icon={faInstagram} />
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/company/65747941/admin/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        css={tw`text-black bg-gray-200 text-2xl`}
+                        ><FontAwesomeIcon icon={faLinkedin} />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/HonMediaSD/"
+                        className="text-button hover:text-buttonHover"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        css={tw`text-black bg-gray-200 text-2xl`}
+                        ><FontAwesomeIcon icon={faFacebook} />
+                    </a>
             </div>
         </div>
     </footer>
