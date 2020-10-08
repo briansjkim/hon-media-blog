@@ -1,16 +1,17 @@
 import React from "react";
 import tw from "tailwind.macro";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 import Logo from "../../assets/images/HonLogo.png";
 
-// footer will hold social links to hon media (linkedin, ig, fb)
 const Footer = () => (
     <footer
         className="container"
         css={tw`flex mx-auto py-16 px-3 mt-16 mb-8 text-gray-800`}
     >
         <div css={tw`flex align-top`}>
-            <div>
+            <div css={tw`float-left`}>
                 <img
                 css={tw`mx-auto my-3`}
                 src={Logo}
@@ -19,8 +20,19 @@ const Footer = () => (
                 />
                 <div css={tw`text-sm text-center mt-2`}>&copy; Hon Media 2020</div>
             </div>
-            <div>
+            <div css={tw`float-left`}>
                 <h2 css={tw`text-2xl font-semibold`}>Contact</h2>
+            </div>
+            <div css={tw`float-left`}>
+                <h2>Social Media</h2>
+                <FontAwesomeIcon icon={faCoffee} />
+                {/* <i class="fab fa-instagram"><a
+                    href="https://www.instagram.com/honmediasd/"
+                    className="text-button hover:text-buttonHover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                </a></i> */}
             </div>
         </div>
     </footer>
