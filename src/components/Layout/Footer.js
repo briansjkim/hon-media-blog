@@ -30,10 +30,25 @@ const Footer = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
+                    css={tw`text-black bg-gray-200 text-2xl`}
                     ><FontAwesomeIcon icon={faInstagram} />
                 </a>
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faFacebook} />
+                <a
+                    href="https://www.linkedin.com/company/65747941/admin/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    css={tw`text-black bg-gray-200 text-2xl`}
+                    ><FontAwesomeIcon icon={faLinkedin} />
+                </a>
+                <a
+                    href="https://www.facebook.com/HonMediaSD/"
+                    className="text-button hover:text-buttonHover"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    css={tw`text-black bg-gray-200 text-2xl`}
+                    ><FontAwesomeIcon icon={faFacebook} />
+                </a>
             </div>
         </div>
     </footer>
