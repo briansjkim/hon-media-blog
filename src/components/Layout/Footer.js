@@ -10,20 +10,26 @@ const Footer = () => (
         className="container"
         css={tw`flex mx-auto py-16 px-3 mt-16 mb-8 text-gray-800`}
     >
-        <div css={tw`flex align-top`}>
-            <div css={tw`float-left`}>
+        <div 
+            className="container"
+            css={tw`flex w-full text-center`}>
+            <div css={tw`float-left text-left w-4/12`}>
                 <img
                 css={tw`mx-auto my-3`}
                 src={Logo}
                 alt="logo"
                 style={{ height: "25px", width: "45px" }}
                 />
-                <div css={tw`text-sm text-center mt-2`}>&copy; Hon Media 2020</div>
+                <div css={tw`text-sm text-left mt-2`}>&copy; Hon Media 2020</div>
             </div>
-            <div css={tw`float-left`}>
+
+            <div css={tw`float-left border-solid w-4/12`}>
                 <h2 css={tw`text-2xl font-semibold`}>Contact</h2>
+                <p className="mt-5">HonMediaSD@gmail.com</p>
+                <p className="mt-5">San Diego, CA</p>
             </div>
-            <div css={tw`float-left`}>
+
+            <div css={tw`float-left border-solid w-4/12`}>
                 <h2>Social Media</h2>
                 <a 
                     href="https://www.instagram.com/honmediasd/"
