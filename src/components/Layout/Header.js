@@ -21,15 +21,22 @@ const Header = () => (
                     to='/'
                     css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
                 >
-                    Home
+                    HOME
                 </Link>
-                <Link 
-                    to='https://hon-media.com/'
-                    target='_blank'
+                <Link
+                    to='/stories'
                     css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
                 >
-                    About Us
+                    SUCCESS STORIES
                 </Link>
+                <a 
+                    href='https://hon-media.com/'
+                    target='_blank'
+                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    rel="noreferrer noopener"
+                >
+                    ABOUT US
+                </a>
             </div>
         </div>
     </header>
