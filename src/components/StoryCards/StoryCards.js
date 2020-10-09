@@ -1,25 +1,27 @@
 import React from 'react';
 import tw from 'tailwind.macro';
 
-const Stories = () => {
+import Card from './Card';
 
-    // handleClick() {
+const StoryCards = ({ customers }) => (
+    <div css={tw`flex flex-col md:flex-row md:-mx-3 mt-12`}>
+        {customers.map((customer, idx) =>
+            <Card 
+                key={idx}
+                css={tw`w-1/2 mb-8 float-left`}
+            >
+                <h4 css={tw`text-xl`}>{customer.title}</h4>
+                <i><q>{customer.content}</q></i>
+                <div css={tw`text-center mt-8`}>
+                    <img
+                        css={tw`w-40 h-40 mt-10 rounded-full`}
+                        src={customer.customerImage}
+                        alt={customer.customerName}
+                    />
+                </div>
+            </Card>
+        )};
+    </div>
+);
 
-    // }
-
-    return (
-        <div 
-            css={tw`mt-8 p-4 flex flex-col items-center shadow-xl w-2/5 rounded hover:shadow-2xl`}
-        >
-            <h2>Rice Goban (La Jolla) </h2>
-            <i><q>Their quality of work and professionalism is of the best that I have worked with.</q></i>
-            <img
-                src="https://ricegobanusa.com/wp-content/uploads/2019/09/logo_homepage1.png"
-                alt="ricegoban"
-                css={tw`w-40 h-40 mr-4 mt-10 rounded-full`}
-            ></img>
-        </div>
-    );
-};
-
-export default Stories;
+export default StoryCards;
