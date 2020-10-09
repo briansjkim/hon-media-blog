@@ -9,7 +9,7 @@ export default function stories() {
     return (
         <Fragment>
             <Header />
-            <div css={tw`flex flex-col `}>
+            <div css={tw`flex flex-col text-center m-auto`}>
                 <StoryCards customers={customerData} />
             </div>
         </Fragment>
