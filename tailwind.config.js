@@ -9,4 +9,8 @@ module.exports = {
   },
   variants: {},
   plugins: [],
+  corePlugins: [
+    'container',
+    'transitionDuration'
+  ]
 }
