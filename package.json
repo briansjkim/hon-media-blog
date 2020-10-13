@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop"
+    "develop": "gatsby develop",
+    "build": "gatsby build"
   },
   "repository": {
     "type": "git",
