@@ -12,7 +12,20 @@ module.exports = {
               // Accepts all options defined by `babel-plugin-emotion` plugin.
             },
         },
+        {
+            resolve: `gatsby-plugin-manifest`,
+            options: {
+              name: 'hon-media-blog',
+              short_name: 'hon-media',
+              start_url: '/',
+              background_color: '#ffffff',
+              theme_color: '#886FDB',
+              display: 'standalone',
+              icon: 'src/assets/images/HonLogo.png'
+            }
+        },
         `gatsby-plugin-react-helmet`,
-        `gatsby-plugin-fontawesome-css`
+        `gatsby-plugin-fontawesome-css`,
+        
     ]
 }
