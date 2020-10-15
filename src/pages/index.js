@@ -8,7 +8,7 @@ import Blogs from '../components/Blogs/Blogs';
 export default () => (
     <Layout>
         <Helmet>
-            <meta charSet="utf-8" />
+            <meta charSet="utf-8" content="width=device-width, initial-scale=1.0"/>
             <title>Hon Media | Blog</title>
         </Helmet>
         <section 
