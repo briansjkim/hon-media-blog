@@ -35,7 +35,7 @@ const Header = () => (
                     css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
-                    ABOUT US
+                    OUR GOAL
                 </a>
             </div>
         </div>
