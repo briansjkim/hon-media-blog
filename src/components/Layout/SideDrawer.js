@@ -3,7 +3,7 @@ import tw from 'tailwind.macro';
 
 const SideDrawer = () => (
         <div css={tw`float-left border-solid`}>
-            <p>hello</p>
+            <h2>Follow</h2>
         </div>
 );
 
