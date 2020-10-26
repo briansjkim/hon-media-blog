@@ -25,12 +25,19 @@ const Footer = () => (
 
             <div css={tw`float-left flex-1 w-4/12`}>
                 <h2 css={tw`text-xl font-semibold`}>Contact Us</h2>
-                <p className="mt-5">HonMediaSD@gmail.com</p>
+                <a
+                    href="https://hon-media.com/#contact"
+                    target='_blank'
+                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    rel="noreferrer noopener"
+                >
+                    Send us a message
+                </a>
                 <p className="mt-5">San Diego, CA</p>
             </div>
 
             <div css={tw`float-left flex-1 w-4/12`}>
-                <h2>Follow</h2>
+                <h2 css={tw`text-xl font-semibold`}>Follow</h2>
                     <a 
                         href="https://www.instagram.com/honmediasd/"
                         target="_blank"
