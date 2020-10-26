@@ -24,13 +24,13 @@ const Footer = () => (
             </div>
 
             <div css={tw`float-left flex-1 w-4/12`}>
-                <h2 css={tw`text-2xl font-semibold`}>Contact</h2>
+                <h2 css={tw`text-xl font-semibold`}>Contact Us</h2>
                 <p className="mt-5">HonMediaSD@gmail.com</p>
                 <p className="mt-5">San Diego, CA</p>
             </div>
 
             <div css={tw`float-left flex-1 w-4/12`}>
-                <h2>Social Media</h2>
+                <h2>Follow</h2>
                     <a 
                         href="https://www.instagram.com/honmediasd/"
                         target="_blank"
