@@ -8,7 +8,7 @@ class Auth extends Component {
         this.state = {
             user: '',
             pw: '',
-            valid: false
+            valid: true
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,6 +18,15 @@ class Auth extends Component {
     submitHandler(event) {
         event.preventDefault();
         // validity check
+        // user and pw are both admin
+            // if valid, redirect to home page with dev tools
+            // if not, error message
+
+        // clear input boxes after submit
+        // this.setState({
+        //     user: '',
+        //     pw: '',
+        // });
     };
 
     handleChange(e) {
