@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import tw from 'tailwind.macro';
 
-// auth component will be a form
 class Auth extends Component {
     constructor() {
         super();
@@ -14,25 +14,32 @@ class Auth extends Component {
     };
 
     handleChange(e) {
-        console.log(e.target.value)
-    }
+        this.setState({
+            [e.target.id]: e.target.value
+        });
+    };
 
     render() {
         return (
             <Fragment>
-                <form>
+                <form css={tw`mx-auto w-4/5 text-center`}>
                     <input 
                         type="text" 
+                        id="user"
                         value={this.state.user} 
                         placeholder="Username"
                         onChange={this.handleChange}
                     />
                     <input
                         type="text"
+                        id="pw"
                         value={this.state.pw}
                         placeholder="Password"
                         onChange={this.handleChange}
                     />
+                    <button>
+                        SUBMIT
+                    </button>
                 </form>
             </Fragment>
         );
