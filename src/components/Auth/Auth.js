@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 
-const Auth = () => {
+// auth component will be a form
+class Auth extends Component {
     constructor() {
         super();
 
@@ -8,13 +9,34 @@ const Auth = () => {
             user: '',
             pw: ''
         };
+
+        this.handleChange = this.handleChange.bind(this);
     };
 
-    return (
-        <Fragment>
+    handleChange(e) {
+        console.log(e.target.value)
+    }
 
-        </Fragment>
-    );
+    render() {
+        return (
+            <Fragment>
+                <form>
+                    <input 
+                        type="text" 
+                        value={this.state.user} 
+                        placeholder="Username"
+                        onChange={this.handleChange}
+                    />
+                    <input
+                        type="text"
+                        value={this.state.pw}
+                        placeholder="Password"
+                        onChange={this.handleChange}
+                    />
+                </form>
+            </Fragment>
+        );
+    }
 };
 
 export default Auth;
