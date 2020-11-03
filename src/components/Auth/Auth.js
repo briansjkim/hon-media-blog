@@ -7,10 +7,17 @@ class Auth extends Component {
 
         this.state = {
             user: '',
-            pw: ''
+            pw: '',
+            valid: false
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.submitHandler = this.submitHandler.bind(this);
+    };
+
+    submitHandler(event) {
+        event.preventDefault();
+        // validity check
     };
 
     handleChange(e) {
@@ -20,8 +27,12 @@ class Auth extends Component {
     };
 
     render() {
+        let errorMessage = null;
+        // if username and pw are incorrect, show error message
+
         return (
             <Fragment>
+                {errorMessage}
                 <form 
                     css={tw`mx-auto mt-10 text-center w-4/5 border border-solid border-gray-200`}
                     style={{ boxShadow: '0 2px 3px #ccc'}}
@@ -44,6 +55,7 @@ class Auth extends Component {
                     />
                     <button
                         css={tw`border-none bg-white mt-8 mb-8 p-3 cursor-pointer outline-none`}
+                        onClick={this.submitHandler}
                     >
                         SUBMIT
                     </button>
