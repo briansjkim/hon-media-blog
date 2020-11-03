@@ -17,16 +17,22 @@ class Auth extends Component {
 
     submitHandler(event) {
         event.preventDefault();
+        
         // validity check
-        // user and pw are both admin
-            // if valid, redirect to home page with dev tools
-            // if not, error message
+        const userIsAdmin = this.state.user === 'admin';
+        const pwIsAdmin = this.state.pw === 'admin';
+        
+        if (userIsAdmin && pwIsAdmin) {
+            
+        } else {
+
+        }
 
         // clear input boxes after submit
-        // this.setState({
-        //     user: '',
-        //     pw: '',
-        // });
+        this.setState({
+            user: '',
+            pw: '',
+        });
     };
 
     handleChange(e) {
