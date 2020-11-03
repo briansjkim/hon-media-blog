@@ -1,3 +1,5 @@
+import { navigate } from 'gatsby';
+
 export const isBrowser = () => typeof window !== "undefined";
 
 export const getUser = () =>
@@ -14,17 +16,17 @@ export const handleLogin = ({ user, pw }) => {
       user: `admin`,
       name: `admin`
     });
-  }
+  };
 
   return false;
-}
+};
 
 export const isLoggedIn = () => {
   const user = getUser();
   return !!user.user;
-}
+};
 
-export const logout = callback => {
+export const logOut = () => {
   setUser({});
-  callback();
-}
+  navigate('/login');
+};

@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { navigate } from 'gatsby';
 import tw from 'tailwind.macro';
-import { handleLogin, isLoggedIn } from './auth';
+import { handleLogin, isLoggedIn } from './Auth';
 
 class Login extends Component {
     constructor() {
@@ -9,7 +9,8 @@ class Login extends Component {
 
         this.state = {
             user: '',
-            pw: ''
+            pw: '',
+            valid: true
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -19,6 +20,13 @@ class Login extends Component {
     submitHandler(event) {
         event.preventDefault();
         handleLogin(this.state);
+        if (isLoggedIn()) {
+            navigate('/');
+        } else if (handleLogin(this.state) === false) {
+            this.setState(prevState => {
+                return { valid: !prevState.valid };
+            });
+        };
     };
 
     handleChange(e) {
@@ -28,12 +36,20 @@ class Login extends Component {
     };
 
     render() {
-        // if username and pw are incorrect, show error message
-        let errorMessage = null;
-
         if (isLoggedIn()) {
             navigate('/');
-        }
+        };
+        
+        let errorMessage = null;
+        if (this.state.valid === false) {
+            errorMessage = (
+                <p
+                    css={tw`text-red-600 text-lg font-bold`}
+                >
+                    Please enter valid credentials!
+                </p>
+            );
+        };
 
         return (
             <Fragment>
@@ -41,6 +57,7 @@ class Login extends Component {
                     css={tw`mx-auto mt-10 text-center w-4/5 border border-solid border-gray-200`}
                     style={{ boxShadow: '0 2px 3px #ccc'}}
                 >
+                    {errorMessage}
                     <input
                         css={tw`w-3/5 p-2 block mx-auto mt-6 mb-6`}
                         type="text" 
