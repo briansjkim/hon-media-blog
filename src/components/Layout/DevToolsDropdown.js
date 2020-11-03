@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tw from 'tailwind.macro';
 
 class DevTools extends Component {
     constructor() {
@@ -8,7 +9,7 @@ class DevTools extends Component {
             showMenu: false,
         };
       
-         this.showMenu = this.showMenu.bind(this);
+        this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
     }
     
@@ -33,7 +34,9 @@ class DevTools extends Component {
   
     render() {
         return (
-            <div>
+            <div
+                css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+            >
                 <button 
                     onClick={this.showMenu}
                 >
