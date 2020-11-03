@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 import Logo from "../../assets/images/HonLogo.png";
+import { logOut } from '../Auth/Auth';
 
 const Footer = () => (
     <footer
@@ -16,18 +17,28 @@ const Footer = () => (
             css={tw`flex w-9/12 text-center m-auto`}>
             <div css={tw`float-left flex-1 w-4/12 ml-4`}>
                 <img
-                css={tw`mx-auto mt-6 mr-16`}
-                src={Logo}
-                alt="logo"
-                style={{ height: "25px", width: "45px" }}
+                    css={tw`mx-auto mt-6 mr-16`}
+                    src={Logo}
+                    alt="logo"
+                    style={{ height: "25px", width: "45px" }}
                 />
                 <div css={tw`text-sm mt-4`}>&copy; Hon Media 2020</div>
-                <Link
-                    to='/login'
-                    css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
-                >
-                    Dev Login
-                </Link>
+                
+                <div css={tw`block`}>
+                    <Link
+                        to='/login'
+                        css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
+                    >
+                        Dev Login
+                    </Link>
+                    <Link
+                        to='/login'
+                        css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
+                        onClick={logOut}
+                    >
+                        Logout
+                    </Link>
+                </div>
             </div>
 
             <div css={tw`float-left flex-1 w-4/12`}>
