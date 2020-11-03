@@ -23,10 +23,11 @@ class Auth extends Component {
         return (
             <Fragment>
                 <form 
-                    css={tw`mx-auto w-4/5 text-center border border-solid border-gray-200`}
+                    css={tw`mx-auto mt-10 text-center w-4/5 border border-solid border-gray-200`}
                     style={{ boxShadow: '0 2px 3px #ccc'}}
                 >
                     <input
+                        css={tw`w-3/5 p-2 block mx-auto mt-6 mb-6`}
                         type="text" 
                         id="user"
                         value={this.state.user} 
@@ -34,13 +35,16 @@ class Auth extends Component {
                         onChange={this.handleChange}
                     />
                     <input
+                        css={tw`w-3/5 p-2 block mx-auto mb-5`}
                         type="text"
                         id="pw"
                         value={this.state.pw}
                         placeholder="Password"
                         onChange={this.handleChange}
                     />
-                    <button>
+                    <button
+                        css={tw`border-none bg-white mt-8 mb-8 p-3 cursor-pointer outline-none`}
+                    >
                         SUBMIT
                     </button>
                 </form>
