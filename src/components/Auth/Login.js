@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { navigate } from 'gatsby';
 import tw from 'tailwind.macro';
-import { handleLogin, isLoggedIn } from './auth';
+import { handleLogin, isLoggedIn } from './Auth';
 
 class Login extends Component {
     constructor() {
