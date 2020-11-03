@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
 import Header from '../components/Layout/Header';
-import Auth from '../components/Auth/Auth';
+import Login from '../components/Auth/Login';
 
 // auth component will be used in this page
 export default function login() {
     return (
         <Fragment>
             <Header />
-            <Auth />
+            <Login />
         </Fragment>
     );
 };
