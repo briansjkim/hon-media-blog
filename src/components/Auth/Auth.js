@@ -22,8 +22,11 @@ class Auth extends Component {
     render() {
         return (
             <Fragment>
-                <form css={tw`mx-auto w-4/5 text-center`}>
-                    <input 
+                <form 
+                    css={tw`mx-auto w-4/5 text-center border border-solid border-gray-200`}
+                    style={{ boxShadow: '0 2px 3px #ccc'}}
+                >
+                    <input
                         type="text" 
                         id="user"
                         value={this.state.user} 
