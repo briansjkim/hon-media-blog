@@ -3,9 +3,9 @@ import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 import { isLoggedIn } from '../Auth/Auth';
 import DevTools from '../DevTools/DevToolsDropdown';
- 
+
 import Logo from '../../assets/images/HonLogo.png';
-// will hold a search feature, home feature (hon media home site), login/sign up?
+
 
 const Header = () => (
     <header css={tw`sticky top-0 bg-white shadow`}>
