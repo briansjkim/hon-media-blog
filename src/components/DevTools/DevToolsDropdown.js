@@ -1,49 +1,52 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+// IF YOU CAN
+    // try to make dropdown menu wider so that each feature has its own line
 
 class DevTools extends Component {
     constructor() {
         super();
-      
+
+        
         this.state = {
             showMenu: false,
         };
-      
-        this.showMenu = this.showMenu.bind(this);
-        this.closeMenu = this.closeMenu.bind(this);
-    }
-    
-    showMenu(event) {
-        event.preventDefault();
-      
-        this.setState({ showMenu: true }, () => {
-            document.addEventListener('click', this.closeMenu);
+        
+        this.handleClick = this.handleClick.bind(this);
+        this.toggleMenu = this.toggleMenu.bind(this);
+    };
+
+    toggleMenu() {
+        this.setState(prevState => {
+            return { showMenu: !prevState.showMenu}
         });
-    }
-    
-    closeMenu(event) {
-      
-        if (!this.dropdownMenu.contains(event.target)) {
-        
-            this.setState({ showMenu: false }, () => {
-                document.removeEventListener('click', this.closeMenu);
-            });  
-        
-        }
-    }
-  
+    };
+
+    handleClick() {
+        this.setState(prevState => {
+            return {
+                showMenu: !prevState.showMenu
+            };
+        });
+    };
+
     render() {
         return (
             <div
-                css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
+                aria-hidden="true"
+                onMouseEnter={this.toggleMenu}
+                onMouseLeave={this.toggleMenu}
+                css={tw`ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}
             >
-                <button 
-                    onClick={this.showMenu}
+                <button
+                    css={tw`text-sm font-medium border-none bg-white outline-none hover:text-blue-500 hover:text-opacity-75`}
                 >
                     DEV TOOLS
                 </button>
-          
             {
                 this.state.showMenu
                 ? (
@@ -52,14 +55,20 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute`}
+                        css={tw`absolute border-solid border-gray-200 bg-white w-full`}
+                        style={{boxShadow: '0 2px 3px #ccc'}}
                     >
-                        <Link
-                            to='/createpost'
-                            css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
-                        >
-                            Create Post
-                        </Link>
+                        <ul css={tw`list-none p-3`}>
+                            <li>
+                                <FontAwesomeIcon icon={faEdit} />
+                                <Link
+                                    to='/createpost'
+                                    css={tw`text-md text-left no-underline text-black`}
+                                >
+                                    Create Post
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                 ) : ( 
                     null

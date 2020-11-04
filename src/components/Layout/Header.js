@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 import { isLoggedIn } from '../Auth/Auth';
