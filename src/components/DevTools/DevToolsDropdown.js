@@ -47,12 +47,12 @@ class DevTools extends Component {
     render() {
         return (
             <div
-            css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
+            // css={tw`px-2 lg:px-4 no-underline text-black relative`}
             >
                 <button
                     ref={this.setWrapperRef}
                     onClick={this.handleClick}
-                    css={tw`border-none bg-white outline-none`}
+                    css={tw`text-sm font-medium border-none bg-white outline-none hover:text-blue-500 hover:text-opacity-75`}
                 >
                     DEV TOOLS
                 </button>
@@ -64,7 +64,7 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute`}
+                        css={tw`absolute border-solid bg-white shadow`}
                     >
                         <Link
                             to='/createpost'
