@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
+import { Link } from 'gatsby';
 
 class DevTools extends Component {
     constructor() {
@@ -35,7 +36,7 @@ class DevTools extends Component {
     render() {
         return (
             <div
-                css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
             >
                 <button 
                     onClick={this.showMenu}
@@ -51,10 +52,14 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
+                        css={tw`absolute`}
                     >
-                        <button> Menu item 1 </button>
-                        <button> Menu item 2 </button>
-                        <button> Menu item 3 </button>
+                        <Link
+                            to='/createpost'
+                            css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
+                        >
+                            Create Post
+                        </Link>
                     </div>
                 ) : ( 
                     null
