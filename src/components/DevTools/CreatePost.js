@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tw from 'tailwind.macro';
 
 class CreatePost extends Component {
     constructor() {
@@ -17,6 +18,9 @@ class CreatePost extends Component {
     render() {
         return (
             <div>
+                <div css={tw`tracking-wider`}>
+                    <h2>Create New Post</h2>
+                </div>
                 <form>
                     <br styles="clear:both" />
                     <div className="form-group">
