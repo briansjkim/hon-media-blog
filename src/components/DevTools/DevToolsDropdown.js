@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 
+// IF YOU CAN
+    // try to make dropdown menu wider so that each feature has its own line
+
 class DevTools extends Component {
     constructor() {
         super();
@@ -35,7 +38,7 @@ class DevTools extends Component {
                 aria-hidden="true"
                 onMouseEnter={this.toggleMenu}
                 onMouseLeave={this.toggleMenu}
-                css={tw`ml-6 mr-6 px-2 lg:px-4 no-underline text-black relative`}
+                css={tw`ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}
             >
                 <button
                     css={tw`text-sm font-medium border-none bg-white outline-none hover:text-blue-500 hover:text-opacity-75`}
@@ -50,13 +53,14 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute border-solid bg-white shadow w-full`}
+                        css={tw`absolute border-solid border-gray-200 bg-white shadow w-full`}
+                        style={{boxShadow: '0 2px 3px #ccc'}}
                     >
                         <ul css={tw`list-none`}>
                             <li>
                                 <Link
                                     to='/createpost'
-                                    css={tw`text-xs px-2 lg:px-4 no-underline text-black`}
+                                    css={tw`text-sm text-left no-underline text-black`}
                                 >
                                     Create Post
                                 </Link>
