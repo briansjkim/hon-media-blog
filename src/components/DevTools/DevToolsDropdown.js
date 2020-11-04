@@ -9,41 +9,50 @@ class DevTools extends Component {
         this.state = {
             showMenu: false,
         };
-      
+
         this.showMenu = this.showMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
-    }
+    };
     
-    showMenu(event) {
-        event.preventDefault();
-      
-        this.setState({ showMenu: true }, () => {
-            document.addEventListener('click', this.closeMenu);
+    // showMenu(event) {
+    //     event.preventDefault();
+
+    //     this.setState({ showMenu: true }, () => {
+    //         document.addEventListener('click', this.closeMenu);
+    //     });
+    // };
+    showMenu() {
+        this.setState(prevState => {
+            return { showMenu: !prevState.showMenu }
         });
-    }
+    };
+
+    closeMenu() {
+        this.setState(prevState => {
+            return { showMenu: !prevState.showMenu }
+        });
+    };
     
-    closeMenu(event) {
-      
-        if (!this.dropdownMenu.contains(event.target)) {
-        
-            this.setState({ showMenu: false }, () => {
-                document.removeEventListener('click', this.closeMenu);
-            });  
-        
-        }
-    }
-  
+    // closeMenu(event) {
+    //     if (!this.dropdownMenu.contains(event.target)) {
+    //         this.setState({ showMenu: false }, () => {
+    //             document.removeEventListener('click', this.closeMenu);
+    //         });  
+    //     };
+    // };
+
     render() {
         return (
             <div
                 css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
             >
-                <button 
-                    onClick={this.showMenu}
+                <button
+                    // onClick={this.showMenu}
+                    onMouseEnter={this.showMenu}
+                    css={tw`border-none bg-white`}
                 >
                     DEV TOOLS
                 </button>
-          
             {
                 this.state.showMenu
                 ? (
