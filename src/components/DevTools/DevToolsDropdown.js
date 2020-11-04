@@ -47,7 +47,7 @@ class DevTools extends Component {
     render() {
         return (
             <div
-            // css={tw`px-2 lg:px-4 no-underline text-black relative`}
+            css={tw`ml-6 mr-6 px-2 lg:px-4 no-underline text-black relative`}
             >
                 <button
                     ref={this.setWrapperRef}
@@ -64,15 +64,19 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute border-solid bg-white shadow`}
+                        css={tw`absolute border-solid bg-white shadow w-full`}
                     >
-                        <Link
-                            to='/createpost'
-                            onClick={this.closeMenu}
-                            css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
-                        >
-                            Create Post
-                        </Link>
+                        {/* <ul css={tw`list-none`}> */}
+                            {/* <li> */}
+                                <Link
+                                    to='/createpost'
+                                    // onClick={this.closeMenu}
+                                    css={tw`text-xs px-2 lg:px-4 no-underline text-black`}
+                                >
+                                    Create Post
+                                </Link>
+                            {/* </li> */}
+                        {/* </ul> */}
                     </div>
                 ) : ( 
                     null

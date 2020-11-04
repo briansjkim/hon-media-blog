@@ -17,7 +17,7 @@ class CreatePost extends Component {
     render() {
         return (
             <div>
-                <form role="form">
+                <form>
                     <br styles="clear:both" />
                     <div className="form-group">
                         <input type="text" id="title" name="title" placeholder="Title" required />
