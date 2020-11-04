@@ -35,7 +35,7 @@ class DevTools extends Component {
     render() {
         return (
             <div
-                css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
             >
                 <button 
                     onClick={this.showMenu}
@@ -51,10 +51,14 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
+                        css={tw`absolute`}
                     >
-                        <button> Menu item 1 </button>
-                        <button> Menu item 2 </button>
-                        <button> Menu item 3 </button>
+                        <button> Create Post </button>
+                        <button> Create Success Story </button>
+                        <button> Manage Home Page </button>
+                        <button> Manage Posts </button>
+                        <button> Drafts </button>
+                        <button> Hidden </button>
                     </div>
                 ) : ( 
                     null
