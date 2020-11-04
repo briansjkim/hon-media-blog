@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 // IF YOU CAN
     // try to make dropdown menu wider so that each feature has its own line
@@ -53,14 +55,15 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute border-solid border-gray-200 bg-white shadow w-full`}
+                        css={tw`absolute border-solid border-gray-200 bg-white w-full`}
                         style={{boxShadow: '0 2px 3px #ccc'}}
                     >
-                        <ul css={tw`list-none`}>
+                        <ul css={tw`list-none p-3`}>
                             <li>
+                                <FontAwesomeIcon icon={faEdit} />
                                 <Link
                                     to='/createpost'
-                                    css={tw`text-sm text-left no-underline text-black`}
+                                    css={tw`text-md text-left no-underline text-black`}
                                 >
                                     Create Post
                                 </Link>
