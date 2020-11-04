@@ -5,51 +5,54 @@ import { Link } from 'gatsby';
 class DevTools extends Component {
     constructor() {
         super();
-      
+
+        
         this.state = {
             showMenu: false,
         };
-
-        this.showMenu = this.showMenu.bind(this);
-        this.closeMenu = this.closeMenu.bind(this);
+        
+        this.setWrapperRef = this.setWrapperRef.bind(this);
+        this.handleClickOutside = this.handleClickOutside.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     };
-    
-    // showMenu(event) {
-    //     event.preventDefault();
 
-    //     this.setState({ showMenu: true }, () => {
-    //         document.addEventListener('click', this.closeMenu);
-    //     });
-    // };
-    showMenu() {
+    componentDidMount() {
+        document.addEventListener('mousedown', this.handleClickOutside);
+    };
+
+    componentWillUnmount() {
+        document.removeEventListener('mousedown', this.handleClickOutside);
+    };
+
+    setWrapperRef(node) {
+        this.wrapperRef = node;
+    };
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
+            this.setState({
+                showMenu: false
+            });
+        };
+    };
+
+    handleClick() {
         this.setState(prevState => {
-            return { showMenu: !prevState.showMenu }
+            return {
+                showMenu: !prevState.showMenu
+            };
         });
     };
-
-    closeMenu() {
-        this.setState(prevState => {
-            return { showMenu: !prevState.showMenu }
-        });
-    };
-    
-    // closeMenu(event) {
-    //     if (!this.dropdownMenu.contains(event.target)) {
-    //         this.setState({ showMenu: false }, () => {
-    //             document.removeEventListener('click', this.closeMenu);
-    //         });  
-    //     };
-    // };
 
     render() {
         return (
             <div
-                css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
+            css={tw`px-2 lg:px-4 no-underline text-black relative hover:text-blue-500 hover:text-opacity-75`}
             >
                 <button
-                    // onClick={this.showMenu}
-                    onMouseEnter={this.showMenu}
-                    css={tw`border-none bg-white`}
+                    ref={this.setWrapperRef}
+                    onClick={this.handleClick}
+                    css={tw`border-none bg-white outline-none`}
                 >
                     DEV TOOLS
                 </button>
@@ -65,6 +68,7 @@ class DevTools extends Component {
                     >
                         <Link
                             to='/createpost'
+                            onClick={this.closeMenu}
                             css={tw`text-xs px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75 mr-12`}
                         >
                             Create Post
