@@ -20,6 +20,7 @@ class Login extends Component {
     submitHandler(event) {
         event.preventDefault();
         handleLogin(this.state);
+        
         if (isLoggedIn()) {
             navigate('/');
         } else if (handleLogin(this.state) === false) {
@@ -39,7 +40,7 @@ class Login extends Component {
         if (isLoggedIn()) {
             navigate('/');
         };
-        //testing testing
+
         let errorMessage = null;
         if (this.state.valid === false) {
             errorMessage = (
