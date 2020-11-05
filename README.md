@@ -40,9 +40,20 @@ Navigate to `http://localhost:8000/`. The app will automatically reload if you c
 - [CircleCI](https://circleci.com/)
 
 ## Contributors
-* **Brian Kim** - [briaansjkim](https://github.com/briansjkim)
-* **Christie Hui** - [chui15](https://github.com/chui15)
-* **Joshua Kim** - [joshskkim](https://github.com/joshskkim)
+<a href="https://github.com/briaansjkim">
+  <img src="https://github.com/briaansjkim.png?size=50">
+</a>
+[briaansjkim](https://github.com/briansjkim)
+
+<a href="https://github.com/chui15">
+  <img src="https://github.com/chui15.png?size=50">
+</a>
+[chui15](https://github.com/chui15)
+
+<a href="https://github.com/joshskkim">
+  <img src="https://github.com/joshskkim.png?size=50">
+</a>
+[joshskkim](https://github.com/joshskkim)
 
 
 ## License
