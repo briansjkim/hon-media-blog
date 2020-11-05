@@ -26,7 +26,7 @@ class CreatePost extends Component {
         });
     };
 
-    cancelPost() {
+    returnHome() {
         navigate('/');
     };
 
@@ -43,7 +43,7 @@ class CreatePost extends Component {
         };
 
         axios.post('/posts.json', post)
-            .then(response => console.log(response))
+            .then(() => this.returnHome())
             .catch(error => console.log(error));
     };
 
@@ -109,7 +109,7 @@ class CreatePost extends Component {
                     <button
                         type="button"
                         id="cancel"
-                        onClick={this.cancelPost}
+                        onClick={this.returnHome}
                         name="cancel"
                         css={tw`border-gray-700 rounded-full cursor-pointer mr-6`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins', alignItems: 'center', textAlign: 'center' }}
