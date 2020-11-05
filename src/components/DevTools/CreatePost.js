@@ -18,7 +18,7 @@ class CreatePost extends Component {
     render() {
         return (
             <div>
-                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
+                <div css={tw` tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
                     Create New Post
                 </div>
                 <form>
@@ -49,6 +49,16 @@ class CreatePost extends Component {
                             required
                         >
                         </textarea>
+                    </div>
+                    <div css={tw`leading-8`}>
+                        <textarea
+                            type="textarea"
+                            id="name"
+                            placeholder="Name, Position"
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            required
+                        />
                     </div>
                     
                     <button
