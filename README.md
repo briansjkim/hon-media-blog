@@ -1,10 +1,14 @@
+![Logo](src/assets/images/HonLogo.png)
+
 # Hon Media Blog
-[![Logo](src/assets/images/HonLogo.png)]
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://thismypc.com/)
+
 [![Website thismypc.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://thismypc.com/)
 <img src="https://img.shields.io/github/license/briansjkim/hon-media-blog">
-<img src="https://img.shields.io/twitter/url?style=social">
+
+Official Blog site for Hon Media. Read up on our informative posts and join the list of our clients' success stories!
+Learn more of how Hon Media can drive your business to break into the current market.
 
 ## Installation
 
