@@ -1,10 +1,14 @@
+![Logo](src/assets/images/HonLogo.png)
+
 # Hon Media Blog
-[![Logo](src/assets/images/HonLogo.png)]
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://thismypc.com/)
-[![Website thismypc.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://thismypc.com/)
+
+[![https://hon-media.com/](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hon-media.com/)
 <img src="https://img.shields.io/github/license/briansjkim/hon-media-blog">
-<img src="https://img.shields.io/twitter/url?style=social">
+
+Official Blog site for Hon Media. Read up on our informative posts and join the list of our clients' success stories!
+Learn more of how Hon Media can drive your business to break into the current market.
 
 ## Installation
 
@@ -36,9 +40,14 @@ Navigate to `http://localhost:8000/`. The app will automatically reload if you c
 - [CircleCI](https://circleci.com/)
 
 ## Contributors
-* **Brian Kim** - [briaansjkim](https://github.com/briansjkim)
-* **Christie Hui** - [chui15](https://github.com/chui15)
-* **Joshua Kim** - [joshskkim](https://github.com/joshskkim)
+[![briansjkim](https://github.com/briansjkim.png?size=50)](https://github.com/briansjkim)
+Brian Kim - [briansjkim](https://github.com/briansjkim)
+
+[![chui15](https://github.com/chui15.png?size=50)](https://github.com/chui15)
+Christine Hui - [chui15](https://github.com/chui15)
+
+[![joshskkim](https://github.com/joshskkim.png?size=50)](https://github.com/joshskkim)
+Joshua Kim - [joshskkim](https://github.com/joshskkim)
 
 
 ## License

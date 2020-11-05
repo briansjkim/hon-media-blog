@@ -18,20 +18,50 @@ class CreatePost extends Component {
     render() {
         return (
             <div>
-                <div css={tw`tracking-wider`}>
-                    <h2>Create New Post</h2>
+                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
+                    Create New Post
                 </div>
                 <form>
-                    <br styles="clear:both" />
-                    <div className="form-group">
-                        <input type="text" id="title" name="title" placeholder="Title" required />
+                    <div 
+                        css={tw`tracking-wide leading-8`}
+                    >
+                        TEXT & CONTENT
+                        <br/>
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="Title"
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins'  }}
+                            required
+                        />
+                    </div>
+                    {/* don't know a better way to implement this space between text boxes atm */}
+                    <br/>
+                    <div css={tw`leading-8`}>
+                        <textarea
+                            type="textarea"
+                            id="content"
+                            placeholder="Content"
+                            maxLength="140"
+                            rows="7"
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            required
+                        >
+                        </textarea>
                     </div>
                     
-                    <div className="form-group">
-                        <textarea type="textarea" id="content" placeholder="Content" maxlength="140" rows="7"></textarea>
-                    </div>
-                    
-                    <button type="button" id="submit" name="submit" className="btn btn-primary pull-right">Add Post</button>
+                    <button
+                        type="button"
+                        id="submit"
+                        name="submit"
+                        css={tw`bg-purple-500 rounded-full border-0`}
+                        style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
+                    >
+                        POST
+                    </button>
                 </form>
             </div>
         );
