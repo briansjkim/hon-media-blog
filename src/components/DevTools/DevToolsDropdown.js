@@ -63,7 +63,7 @@ class DevTools extends Component {
                                 <FontAwesomeIcon icon={faEdit} />
                                 <Link
                                     to='/createpost'
-                                    css={tw`text-md text-left no-underline text-black`}
+                                    css={tw`text-sm text-left no-underline text-black`}
                                 >
                                     Create Post
                                 </Link>
