@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import tw from 'tailwind.macro';
+// import tw from 'tailwind.macro';
 
 import Header from './Header';
 import Footer from './Footer';
