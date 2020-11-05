@@ -25,6 +25,10 @@ class CreatePost extends Component {
         });
     };
 
+    cancelPost() {
+
+    }
+
     submitHandler(event) {
         event.preventDefault();
 
@@ -42,7 +46,15 @@ class CreatePost extends Component {
             .catch(error => console.log(error));
     };
 
+    checkValidity() {
+        const { title, content, name } = this.state;
+
+        return ( title.length > 0 && content.length > 0 && name.length > 0) ;
+    };
+
     render() {
+        const isValid = this.checkValidity();
+
         return (
             <div css={tw`mt-16`}>
                 <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
@@ -93,12 +105,20 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
-                    
-                    {/* maybe disable submit button until all fields are clear? */}
+                    <button
+                        type="button"
+                        id="cancel"
+                        onClick={this.submitHandler}
+                        name="cancel"
+                        css={tw`border-gray-700 rounded-full cursor-pointer mr-6`}
+                        style={{ width: '91px', height: '40px', fontFamily: 'Poppins', alignItems: 'center', textAlign: 'center' }}
+                    >
+                        CANCEL
+                    </button>
                     <button
                         type="button"
                         id="submit"
-                        onClick={this.submitHandler}
+                        onClick={isValid ? this.submitHandler : null }
                         name="submit"
                         css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
