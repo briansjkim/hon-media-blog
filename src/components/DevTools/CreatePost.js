@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
-import axios from 'axios';
+import axios from '../../axios-instance';
 
 class CreatePost extends Component {
     constructor() {
@@ -15,10 +15,19 @@ class CreatePost extends Component {
             commentsEnabled: true,
         };
 
+        this.handleChange = this.handleChange.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
     };
 
-    submitHandler() {
+    handleChange(e) {
+        this.setState({
+            [e.target.id]: e.target.value
+        });
+    };
+
+    submitHandler(event) {
+        event.preventDefault();
+
         const post = {
             title: this.state.title,
             content: this.state.content,
@@ -50,6 +59,8 @@ class CreatePost extends Component {
                             id="title"
                             name="title"
                             placeholder="Title"
+                            value={this.state.title}
+                            onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins'  }}
                             required
@@ -60,6 +71,8 @@ class CreatePost extends Component {
                             type="textarea"
                             id="content"
                             placeholder="Content"
+                            value={this.state.content}
+                            onChange={this.handleChange}
                             maxLength="140"
                             rows="7"
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
@@ -73,6 +86,8 @@ class CreatePost extends Component {
                             type="textarea"
                             id="name"
                             placeholder="Name, Position"
+                            value={this.state.name}
+                            onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
