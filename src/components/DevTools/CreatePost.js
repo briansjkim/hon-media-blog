@@ -18,7 +18,7 @@ class CreatePost extends Component {
     render() {
         return (
             <div>
-                <div css={tw` tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
+                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
                     Create New Post
                 </div>
                 <form>
@@ -26,7 +26,7 @@ class CreatePost extends Component {
                         css={tw`tracking-wide leading-8 mb-6`}
                     >
                         TEXT & CONTENT
-                        <br/>
+                        <br />
                         <input
                             type="text"
                             id="title"
@@ -65,7 +65,7 @@ class CreatePost extends Component {
                         type="button"
                         id="submit"
                         name="submit"
-                        css={tw`bg-purple-500 rounded-full border-0`}
+                        css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
                     >
                         POST
