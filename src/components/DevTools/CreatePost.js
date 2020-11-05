@@ -23,7 +23,7 @@ class CreatePost extends Component {
                 </div>
                 <form>
                     <div 
-                        css={tw`tracking-wide leading-8`}
+                        css={tw`tracking-wide leading-8 mb-6`}
                     >
                         TEXT & CONTENT
                         <br/>
@@ -37,8 +37,6 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
-                    {/* don't know a better way to implement this space between text boxes atm */}
-                    <br/>
                     <div css={tw`leading-8`}>
                         <textarea
                             type="textarea"
