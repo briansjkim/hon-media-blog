@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blog = ({ blog }) => (
     <div>
-        {console.log(blog)}
+        <img src={blog.image} width="100" height="100" />
         <p>{blog.content}</p>
     </div>
 );
