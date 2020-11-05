@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../axios-instance';
+import { navigate } from 'gatsby';
 
 class CreatePost extends Component {
     constructor() {
@@ -26,8 +27,8 @@ class CreatePost extends Component {
     };
 
     cancelPost() {
-
-    }
+        navigate('/');
+    };
 
     submitHandler(event) {
         event.preventDefault();
@@ -108,7 +109,7 @@ class CreatePost extends Component {
                     <button
                         type="button"
                         id="cancel"
-                        onClick={this.submitHandler}
+                        onClick={this.cancelPost}
                         name="cancel"
                         css={tw`border-gray-700 rounded-full cursor-pointer mr-6`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins', alignItems: 'center', textAlign: 'center' }}
