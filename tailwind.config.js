@@ -13,6 +13,12 @@ module.exports = {
         'xl': '1280px'
       }
     },
+    fontFamily: {
+      'poppins': ['Poppins', 'sans-serif']
+    },
+    fontSize: {
+      'h2': '40px'
+    },
   },
   variants: {},
   plugins: [],
