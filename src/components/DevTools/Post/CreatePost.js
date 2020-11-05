@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
-import axios from '../../axios-instance';
+import axios from '../../../axios-instance';
 import { navigate } from 'gatsby';
 
 class CreatePost extends Component {
