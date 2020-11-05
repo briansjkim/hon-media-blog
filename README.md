@@ -41,13 +41,16 @@ Navigate to `http://localhost:8000/`. The app will automatically reload if you c
 
 ## Contributors
 [![briansjkim](https://github.com/briansjkim.png?size=50)](https://github.com/briansjkim)
-Brian Kim - [briansjkim](https://github.com/briansjkim)
+
+Brian Kim
 
 [![chui15](https://github.com/chui15.png?size=50)](https://github.com/chui15)
-Christine Hui - [chui15](https://github.com/chui15)
+
+Christine Hui
 
 [![joshskkim](https://github.com/joshskkim.png?size=50)](https://github.com/joshskkim)
-Joshua Kim - [joshskkim](https://github.com/joshskkim)
+
+Joshua Kim
 
 
 ## License
