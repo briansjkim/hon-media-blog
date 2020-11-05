@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
+import axios from 'axios';
 
 class CreatePost extends Component {
     constructor() {
@@ -13,6 +14,23 @@ class CreatePost extends Component {
             isFeatured: true,
             commentsEnabled: true,
         };
+
+        this.submitHandler = this.submitHandler.bind(this);
+    };
+
+    submitHandler() {
+        const post = {
+            title: this.state.title,
+            content: this.state.content,
+            name: this.state.name,
+            tags: this.state.tags,
+            isFeatured: this.state.isFeatured,
+            commentsEnabled: this.state.commentsEnabled,
+        };
+
+        axios.post('/posts.json', post)
+            .then(response => console.log(response))
+            .catch(error => console.log(error));
     };
 
     render() {
@@ -61,9 +79,11 @@ class CreatePost extends Component {
                         />
                     </div>
                     
+                    {/* maybe disable submit button until all fields are clear? */}
                     <button
                         type="button"
                         id="submit"
+                        onClick={this.submitHandler}
                         name="submit"
                         css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
