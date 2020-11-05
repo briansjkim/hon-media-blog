@@ -52,7 +52,15 @@ class CreatePost extends Component {
                         </textarea>
                     </div>
                     
-                    <button type="button" id="submit" name="submit" className="btn btn-primary pull-right">Add Post</button>
+                    <button
+                        type="button"
+                        id="submit"
+                        name="submit"
+                        css={tw`bg-purple-500 rounded-full border-0`}
+                        style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
+                    >
+                        POST
+                    </button>
                 </form>
             </div>
         );
