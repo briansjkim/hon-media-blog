@@ -23,8 +23,7 @@ class CreatePost extends Component {
                 </div>
                 <form>
                     <div 
-                        className="form-group"
-                        css={tw`tracking-wide`}
+                        css={tw`tracking-wide leading-8`}
                     >
                         TEXT & CONTENT
                         <br/>
@@ -33,19 +32,21 @@ class CreatePost extends Component {
                             id="title"
                             name="title"
                             placeholder="Title"
-                            css={tw`border-2 border-solid border-gray-400 rounded`}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins'  }}
                             required
                         />
                     </div>
-                    <div className="form-group">
+                    {/* don't know a better way to implement this space between text boxes atm */}
+                    <br/>
+                    <div css={tw`leading-8`}>
                         <textarea
                             type="textarea"
                             id="content"
                             placeholder="Content"
                             maxLength="140"
                             rows="7"
-                            css={tw`border-2 border-solid border-gray-400 rounded`}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         >
