@@ -4,7 +4,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](http://thismypc.com/)
 
-[![Website thismypc.com](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://thismypc.com/)
+[![https://hon-media.com/](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://hon-media.com/)
 <img src="https://img.shields.io/github/license/briansjkim/hon-media-blog">
 
 Official Blog site for Hon Media. Read up on our informative posts and join the list of our clients' success stories!
@@ -40,20 +40,14 @@ Navigate to `http://localhost:8000/`. The app will automatically reload if you c
 - [CircleCI](https://circleci.com/)
 
 ## Contributors
-<a href="https://github.com/briaansjkim">
-  <img src="https://github.com/briaansjkim.png?size=50">
-</a>
-[briaansjkim](https://github.com/briansjkim)
+[![briaansjkim](https://github.com/briaansjkim.png?size=50)](https://github.com/briaansjkim)
+Brian Kim - [briaansjkim](https://github.com/briansjkim)
 
-<a href="https://github.com/chui15">
-  <img src="https://github.com/chui15.png?size=50">
-</a>
-[chui15](https://github.com/chui15)
+[![chui15](https://github.com/chui15.png?size=50)](https://github.com/chui15)
+Christine Hui - [chui15](https://github.com/chui15)
 
-<a href="https://github.com/joshskkim">
-  <img src="https://github.com/joshskkim.png?size=50">
-</a>
-[joshskkim](https://github.com/joshskkim)
+[![joshskkim](https://github.com/joshskkim.png?size=50)](https://github.com/joshskkim)
+Joshua Kim - [joshskkim](https://github.com/joshskkim)
 
 
 ## License
