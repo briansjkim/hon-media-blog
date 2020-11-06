@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
-import { navigate } from 'gatsby';
+import { navigate, Link } from 'gatsby';
 
 class Blog extends Component {
     constructor(props) {
@@ -19,18 +19,23 @@ class Blog extends Component {
 
     render() {
         return (
-            <div
-                css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
-                style={{ width: '200px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)', cursor: 'pointer' }}
-                onClick={this.handleClick}
+            <Link
+                to='/blog'
+                state={{ blog: this.props.blog }}
             >
-                <img
-                    alt="Blog"
-                    src={this.props.blog.image}
-                    width="200" height="200"
-                />
-                <p>{this.props.blog.content}</p>
-            </div>
+                <div
+                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
+                    style={{ width: '200px', boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)', cursor: 'pointer' }}
+                    // onClick={this.handleClick}
+                >
+                    <img
+                        alt="Blog"
+                        src={this.props.blog.image}
+                        width="200" height="200"
+                    />
+                    <p>{this.props.blog.content}</p>
+                </div>
+            </Link>
         );
     }
 };
