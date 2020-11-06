@@ -29,6 +29,9 @@ export default function blogs({ location }) {
             <div>
                 <p>{blog.content}</p>
             </div>
+            <div css={tw`flex`}>
+                <Interactions />
+            </div>
         </div>
     )
 };
