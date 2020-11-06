@@ -3,6 +3,7 @@ import tw from 'tailwind.macro';
 
 import Header from '../components/Layout/Header';
 import Interactions from '../components/DevTools/Interactions';
+import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
     const blog = location.state.blog;
@@ -10,6 +11,7 @@ export default function blogs({ location }) {
 
     return (
         <Fragment>
+            <SideDrawer />
             <Header />
             <div 
                 css={tw`text-center mb-16`}
@@ -29,7 +31,7 @@ export default function blogs({ location }) {
                             <p>{blog.name}</p>
                             <p>{blog.date}</p>
                         </div>
-                        <div css={tw`w-1/2 float-left flex`}>
+                        <div css={tw` w-1/2 flex justify-end`}>
                             <Interactions />
                         </div>
                     </div>
