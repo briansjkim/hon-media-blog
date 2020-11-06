@@ -39,9 +39,12 @@ class Blogs extends Component {
                 {this.state.loading ? 
                     <Spinner />
                         :
-                    this.state.blogs.map((blog, idx) =>
-                        <Blog blog={blog} key={idx} />
-                    )
+                    <div>
+                        <h3>All</h3>
+                        {this.state.blogs.map((blog, idx) =>
+                            <Blog blog={blog} key={idx} />
+                        )}
+                    </div>
                 }
             </div>
         );
