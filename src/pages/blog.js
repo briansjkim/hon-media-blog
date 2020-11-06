@@ -7,8 +7,6 @@ import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
     const blog = location.state.blog;
-    console.log(blog);
-
     return (
         <Fragment>
             <SideDrawer />
