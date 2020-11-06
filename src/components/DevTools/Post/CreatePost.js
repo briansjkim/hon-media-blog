@@ -20,11 +20,21 @@ class CreatePost extends Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     };
 
     handleChange(e) {
         this.setState({
             [e.target.id]: e.target.value
+        });
+    };
+
+    handleKeyDown(e) {
+        e.target.style.height= 'inherit';
+        e.target.style.height = `${e.target.scrollHeight}px`;
+
+        this.setState({
+            content: e.target.value
         });
     };
 
@@ -114,8 +124,7 @@ class CreatePost extends Component {
                             id="content"
                             placeholder="Content"
                             value={this.state.content}
-                            onChange={this.handleChange}
-                            rows="7"
+                            onChange={this.handleKeyDown}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins', overflow: 'hidden' }}
                             required
