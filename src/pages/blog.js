@@ -30,7 +30,7 @@ export default function blogs({ location }) {
                             <p>{blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions />
+                            <Interactions blog={blog} />
                         </div>
                     </div>
                 </div>
