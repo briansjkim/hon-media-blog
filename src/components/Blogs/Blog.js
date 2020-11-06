@@ -3,6 +3,7 @@ import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
 // keep Blog as a class component in order to add 'options' feature for devs
+    // maybe change to functional and make 'options' feature a component
 
 class Blog extends Component {
     constructor(props) {
