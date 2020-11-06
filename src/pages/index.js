@@ -4,6 +4,7 @@ import tw from 'tailwind.macro';
 
 import Layout from '../components/Layout/Layout';
 import Blogs from '../components/Blogs/Blogs';
+import SideDrawer from '../components/Layout/SideDrawer';
 
 export default () => (
     <Layout>
@@ -11,6 +12,7 @@ export default () => (
             <meta charSet="utf-8" content="width=device-width, initial-scale=1.0"/>
             <title>Hon Media | Blog</title>
         </Helmet>
+        <SideDrawer />
         <section 
             className="container"
             css={tw`mx-auto px-8 text-center`}
