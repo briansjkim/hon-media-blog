@@ -33,6 +33,7 @@ class Blog extends Component {
                         src={this.props.blog.image}
                         width="200" height="200"
                     />
+                    <h3>{this.props.blog.title}</h3>
                     <p>{this.props.blog.content}</p>
                 </div>
             </Link>
