@@ -31,18 +31,18 @@ class Blogs extends Component {
     };
 
     render() {
-        if (this.state.loading) {
-            let blog = <Spinner />
-        };
-
         return (
             <div
                 css={tw`mx-24 p-12 rounded-lg border border-solid border-gray-200`}
                 style={{ boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
             >
-                {this.state.blogs.map((blog, idx) =>
-                    <Blog blog={blog} key={idx} />
-                )}
+                {this.state.loading ? 
+                    <Spinner />
+                        :
+                    this.state.blogs.map((blog, idx) =>
+                        <Blog blog={blog} key={idx} />
+                    )
+                }
             </div>
         );
     };
