@@ -107,7 +107,7 @@ class CreatePost extends Component {
                         />
                     </div>
                     <div css={tw`leading-8`}>
-                        <label>Add an Image: </label>
+                        <label htmlFor="image_url">Add an Image: </label>
                         <input
                             type="url"
                             id="image_url"
