@@ -34,7 +34,7 @@ class Blogs extends Component {
         return (
             <div
                 css={tw`mx-24 p-12 rounded-lg border border-solid border-gray-200`}
-                style={{ boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
+                style={{ width: '1000px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
             >
                 {this.state.loading ? 
                     <Spinner />
