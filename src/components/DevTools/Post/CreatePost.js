@@ -7,6 +7,9 @@ class CreatePost extends Component {
     constructor() {
         super();
 
+        const today = new Date();
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
         this.state = {
             title: '',
             content: '',
@@ -15,15 +18,27 @@ class CreatePost extends Component {
             tags: '',
             isFeatured: true,
             commentsEnabled: true,
+            date: `${monthNames[today.getMonth()]} ${today.getDay()} ${today.getFullYear()}`,
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.submitHandler = this.submitHandler.bind(this);
+        this.handleKeyDown = this.handleKeyDown.bind(this);
     };
 
     handleChange(e) {
+        console.log(this.state);
         this.setState({
             [e.target.id]: e.target.value
+        });
+    };
+
+    handleKeyDown(e) {
+        e.target.style.height= 'inherit';
+        e.target.style.height = `${e.target.scrollHeight}px`;
+
+        this.setState({
+            content: e.target.value
         });
     };
 
@@ -42,6 +57,7 @@ class CreatePost extends Component {
             tags: this.state.tags,
             isFeatured: this.state.isFeatured,
             commentsEnabled: this.state.commentsEnabled,
+            date: this.state.date
         };
 
         axios.post('/posts.json', post)
@@ -60,14 +76,15 @@ class CreatePost extends Component {
 
         return (
             <div>
-                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
+                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800`}>
                     Create New Post
                 </div>
                 <form>
                     <div 
-                        css={tw`tracking-wide leading-8 mb-6`}
+                        css={tw`tracking-wide leading-8 mb-3`}
                     >
                         TEXT & CONTENT
+                        <br />
                         <input
                             type="text"
                             id="title"
@@ -76,21 +93,7 @@ class CreatePost extends Component {
                             value={this.state.title}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins'  }}
-                            required
-                        />
-                    </div>
-                    <div css={tw`leading-8`}>
-                        <textarea
-                            type="textarea"
-                            id="content"
-                            placeholder="Content"
-                            value={this.state.content}
-                            onChange={this.handleChange}
-                            maxLength="140"
-                            rows="7"
-                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins', overflowY: 'auto'  }}
                             required
                         />
                     </div>
@@ -106,16 +109,28 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
-                    <div css={tw`leading-8`}>
-                        <label htmlFor="image_url">Add an Image: </label>
+                    <div css={tw`leading-8 mb-3`}>
                         <input
                             type="url"
                             id="image_url"
                             name="image_url"
+                            placeholder="Banner Image URL"
                             value={this.state.image}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', height: '', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            required
+                        />
+                    </div>
+                    <div css={tw`leading-8`}>
+                        <textarea
+                            type="textarea"
+                            id="content"
+                            placeholder="Content"
+                            value={this.state.content}
+                            onChange={this.handleKeyDown}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins', overflow: 'hidden' }}
                             required
                         />
                     </div>
