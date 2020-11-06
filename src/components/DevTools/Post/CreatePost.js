@@ -7,6 +7,9 @@ class CreatePost extends Component {
     constructor() {
         super();
 
+        const today = new Date();
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
         this.state = {
             title: '',
             content: '',
@@ -15,7 +18,7 @@ class CreatePost extends Component {
             tags: '',
             isFeatured: true,
             commentsEnabled: true,
-            date: new Date().toLocaleString(),
+            date: `${monthNames[today.getMonth()]} ${today.getDay()} ${today.getFullYear()}`,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -24,6 +27,7 @@ class CreatePost extends Component {
     };
 
     handleChange(e) {
+        console.log(this.state);
         this.setState({
             [e.target.id]: e.target.value
         });
