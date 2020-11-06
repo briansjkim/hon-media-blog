@@ -49,6 +49,8 @@ class Interactions extends Component {
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
                     >
                         <FontAwesomeIcon icon={faShare} />
+                        {/* {this.props.blog.shares} */}
+                        Share
                     </button>
             </Fragment>
         )
