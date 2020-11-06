@@ -75,7 +75,7 @@ class CreatePost extends Component {
         const isValid = this.checkValidity();
 
         return (
-            <div>
+            <div css={tw`ml-40`}>
                 <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800`}>
                     Create New Post
                 </div>

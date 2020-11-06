@@ -4,20 +4,11 @@ import { Link } from 'gatsby';
 import { isLoggedIn } from '../Auth/Auth';
 import DevTools from '../DevTools/DevToolsDropdown';
 
-import Logo from '../../assets/images/HonLogo.png';
-
-
 const Header = () => (
-    <header css={tw`sticky top-0 bg-white shadow-xl mb-16`}>
-        <div className="container" css={tw`flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8`}>
-            <div css={tw`flex items-center text-3xl`}>
-                <img
-                    css={tw`mx-auto`}
-                    src={Logo}
-                    alt="logo"
-                    style={{ height: '40px' , width: '60px'}}
-                />
-            </div>
+    <header
+        css={tw`sticky top-0 bg-white shadow-xl`}
+    >
+        <div className="container" css={tw`flex flex-col sm:flex-row justify-end items-center mx-auto py-4 px-8`}>
             <div css={tw`flex mt-4 sm:mt-0`}>
                 <Link 
                     to='/'

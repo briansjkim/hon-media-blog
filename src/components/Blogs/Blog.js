@@ -12,23 +12,21 @@ class Blog extends Component {
 
     render() {
         return (
-            <div
-                css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
-                style={{
-                    width: "200px",
-                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-                    }}
+            <Link
+                to="/blog" 
+                state={{ blog: this.props.blog }}
+                css={tw`no-underline text-black`}
+                style={{ cursor: 'pointer' }}
+            >
+                <div
+                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '200px' }}
                 >
-                <img alt="Blog" src={this.props.blog.image} width="200" height="200" />
-                <Link 
-                    to="/blog" 
-                    state={{ blog: this.props.blog }}
-                    css={tw`cursor-pointer`}
-                >
+                    <img alt="Blog" src={this.props.blog.image} width="200" height="200" />
                     <h3>{this.props.blog.title}</h3>
                     <p>{this.props.blog.content}</p>
-                    </Link>
-            </div>
+                </div>
+            </Link>
         );
     };
 };
