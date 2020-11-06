@@ -16,7 +16,7 @@ class Blogs extends Component {
     };
 
     componentDidMount() {
-        const { blogs } = this.state
+        const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
                 // converts data to array

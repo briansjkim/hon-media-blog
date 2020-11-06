@@ -1,15 +1,32 @@
 import React from 'react';
 import tw from 'tailwind.macro';
 
+import { Link } from 'gatsby';
+import Logo from '../../assets/images/HonLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const SideDrawer = () => (
         <div
-            css={tw`border-solid fixed h-full border-none mt-16 flex flex-col text-center`}
-            style={{ width: '10%' }}
+            css={tw`border-solid fixed h-full border-none flex flex-col text-center`}
+            style={{ width: '10%', zIndex: '1' }}
         >
-            <div>FOLLOW</div>
+            <Link
+                to='/'
+                css={tw`py-2`}
+            >
+                <img
+                    css={tw`mx-auto`}
+                    src={Logo}
+                    alt="logo"
+                    style={{ height: '40px' , width: '60px'}}
+                />
+            </Link>
+            <div
+                css={tw`mt-20`}
+            >
+                FOLLOW
+            </div>
             <a 
                 href="https://www.instagram.com/honmediasd/"
                 target="_blank"

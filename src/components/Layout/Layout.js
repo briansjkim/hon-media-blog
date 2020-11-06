@@ -3,16 +3,16 @@ import React, { Fragment } from 'react';
 
 import Header from './Header';
 import Footer from './Footer';
-// import SideDrawer from './SideDrawer';
+import SideDrawer from './SideDrawer';
 
 const Layout = ({ children }) => (
     <Fragment>
+        <SideDrawer />
         <Header />
         {/* <div
             className="container"
             css={tw`flex`}
         > */}
-            {/* <SideDrawer /> */}
             <main className="text-gray-900">{children}</main>
         {/* </div> */}
         <Footer />
