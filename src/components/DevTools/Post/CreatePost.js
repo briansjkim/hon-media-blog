@@ -15,6 +15,7 @@ class CreatePost extends Component {
             tags: '',
             isFeatured: true,
             commentsEnabled: true,
+            date: new Date().toLocaleString(),
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -42,6 +43,7 @@ class CreatePost extends Component {
             tags: this.state.tags,
             isFeatured: this.state.isFeatured,
             commentsEnabled: this.state.commentsEnabled,
+            date: this.state.date
         };
 
         axios.post('/posts.json', post)
@@ -102,7 +104,7 @@ class CreatePost extends Component {
                             value={this.state.image}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', height: '', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         />
                     </div>
@@ -115,7 +117,7 @@ class CreatePost extends Component {
                             onChange={this.handleChange}
                             rows="7"
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins', overflow: 'hidden' }}
                             required
                         />
                     </div>
