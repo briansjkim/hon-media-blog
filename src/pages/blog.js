@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import tw from 'tailwind.macro';
 
 import Header from '../components/Layout/Header';
@@ -9,7 +9,7 @@ export default function blogs({ location }) {
     console.log(blog);
 
     return (
-        <div>
+        <Fragment>
             <Header />
             <div>
                 <div>
@@ -31,6 +31,6 @@ export default function blogs({ location }) {
             <div css={tw`flex`}>
                 <Interactions />
             </div>
-        </div>
+        </Fragment>
     )
 };
