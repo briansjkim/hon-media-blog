@@ -11,6 +11,7 @@ class CreatePost extends Component {
             title: '',
             content: '',
             name: '',
+            image: '',
             tags: '',
             isFeatured: true,
             commentsEnabled: true,
@@ -37,6 +38,7 @@ class CreatePost extends Component {
             title: this.state.title,
             content: this.state.content,
             name: this.state.name,
+            image: this.state.image,
             tags: this.state.tags,
             isFeatured: this.state.isFeatured,
             commentsEnabled: this.state.commentsEnabled,
@@ -66,7 +68,6 @@ class CreatePost extends Component {
                         css={tw`tracking-wide leading-8 mb-6`}
                     >
                         TEXT & CONTENT
-                        <br />
                         <input
                             type="text"
                             id="title"
@@ -91,8 +92,7 @@ class CreatePost extends Component {
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
-                        >
-                        </textarea>
+                        />
                     </div>
                     <div css={tw`leading-8`}>
                         <textarea
@@ -103,6 +103,19 @@ class CreatePost extends Component {
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            required
+                        />
+                    </div>
+                    <div css={tw`leading-8`}>
+                        <label htmlFor="image_url">Add an Image: </label>
+                        <input
+                            type="url"
+                            id="image_url"
+                            name="image_url"
+                            value={this.state.image}
+                            onChange={this.handleChange}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ width: '740px', height: '', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         />
                     </div>
