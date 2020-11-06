@@ -8,7 +8,7 @@ import Logo from '../../assets/images/HonLogo.png';
 
 
 const Header = () => (
-    <header css={tw`sticky top-0 bg-white shadow-xl`}>
+    <header css={tw`sticky top-0 bg-white shadow-xl mb-16`}>
         <div className="container" css={tw`flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8`}>
             <div css={tw`flex items-center text-3xl`}>
                 <img
