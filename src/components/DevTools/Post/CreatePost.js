@@ -27,7 +27,6 @@ class CreatePost extends Component {
     };
 
     handleChange(e) {
-        console.log(this.state);
         this.setState({
             [e.target.id]: e.target.value
         });
@@ -112,7 +111,7 @@ class CreatePost extends Component {
                     <div css={tw`leading-8 mb-3`}>
                         <input
                             type="url"
-                            id="image_url"
+                            id="image"
                             name="image_url"
                             placeholder="Banner Image URL"
                             value={this.state.image}
