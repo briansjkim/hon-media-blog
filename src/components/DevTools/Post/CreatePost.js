@@ -60,14 +60,15 @@ class CreatePost extends Component {
 
         return (
             <div>
-                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800 leading-10`}>
+                <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800`}>
                     Create New Post
                 </div>
                 <form>
                     <div 
-                        css={tw`tracking-wide leading-8 mb-6`}
+                        css={tw`tracking-wide leading-8 mb-3`}
                     >
                         TEXT & CONTENT
+                        <br />
                         <input
                             type="text"
                             id="title"
@@ -76,21 +77,7 @@ class CreatePost extends Component {
                             value={this.state.title}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins'  }}
-                            required
-                        />
-                    </div>
-                    <div css={tw`leading-8`}>
-                        <textarea
-                            type="textarea"
-                            id="content"
-                            placeholder="Content"
-                            value={this.state.content}
-                            onChange={this.handleChange}
-                            maxLength="140"
-                            rows="7"
-                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ width: '740px', fontSize: '24px', fontFamily: 'Poppins', overflowY: 'auto'  }}
                             required
                         />
                     </div>
@@ -106,16 +93,29 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
-                    <div css={tw`leading-8`}>
-                        <label htmlFor="image_url">Add an Image: </label>
+                    <div css={tw`leading-8 mb-3`}>
                         <input
                             type="url"
                             id="image_url"
                             name="image_url"
+                            placeholder="Banner Image URL"
                             value={this.state.image}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', height: '', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            required
+                        />
+                    </div>
+                    <div css={tw`leading-8`}>
+                        <textarea
+                            type="textarea"
+                            id="content"
+                            placeholder="Content"
+                            value={this.state.content}
+                            onChange={this.handleChange}
+                            rows="7"
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ top: '360px', width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         />
                     </div>
