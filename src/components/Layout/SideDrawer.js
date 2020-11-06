@@ -7,6 +7,7 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 const SideDrawer = () => (
         <div
             css={tw`border-solid fixed h-full border-none mt-16 flex flex-col text-center`}
+            style={{ width: '10%' }}
         >
             <div>FOLLOW</div>
             <a 
