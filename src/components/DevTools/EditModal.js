@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import tw from "tailwind.macro";
 
 class EditModal extends Component {
     constructor(props) {
@@ -17,16 +18,25 @@ class EditModal extends Component {
         }
 
         return (
-            <div id="modal">
-                <div>
-                    <h2>Options</h2>
-                    <button>X</button>
-                </div>
-                <div>
-                    <button>FEATURED</button>
-                    <button>EDIT</button>
-                    <div>LINE BREAK</div>
-                    <button>DELETE</button>
+            <div
+                id="overlay"
+                css={tw`fixed w-full h-full inset-0`}
+                style={{ backgroundColor: 'rgba(0,0,0,0.5)', cursor: 'pointer' }}
+            >
+                <div
+                    id="modal"
+                    css={tw`bg-white `}
+                >
+                    <div>
+                        <h2>Options</h2>
+                        <button>X</button>
+                    </div>
+                    <div>
+                        <button>FEATURED</button>
+                        <button>EDIT</button>
+                        <div>LINE BREAK</div>
+                        <button>DELETE</button>
+                    </div>
                 </div>
             </div>
         );
