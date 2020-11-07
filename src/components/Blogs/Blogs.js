@@ -92,7 +92,7 @@ class Blogs extends Component {
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} />
+                            <Blog blog={blog} key={idx} like={this.handleLike} />
                         )}
                     </div>
                 }
