@@ -59,9 +59,6 @@ class Blogs extends Component {
     
     handleLike() {
         console.log('reached');
-                });
-            };
-        };
     };
 
     render() {
@@ -69,7 +66,7 @@ class Blogs extends Component {
             this.setState({
                 selected: this.state.featureds[0]
             });
-        }
+        };
 
         return (
             <div
@@ -93,7 +90,6 @@ class Blogs extends Component {
                                 <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} />
                             )}
                         </div>
-                        {}
                         <SelectedBlog blog={this.state.selected} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
@@ -109,5 +105,6 @@ class Blogs extends Component {
         );
     };
 };
+
 
 export default Blogs;
