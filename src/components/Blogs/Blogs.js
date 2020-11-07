@@ -13,6 +13,8 @@ class Blogs extends Component {
             blogs: [],
             loading: true
         };
+
+        this.handleLike = this.handleLike.bind(this);
     };
 
     componentDidMount() {
@@ -30,6 +32,10 @@ class Blogs extends Component {
             .catch(error => console.log(error));
     };
 
+    handleLike() {
+        console.log('reached');
+    }
+
     render() {
         return (
             <div
@@ -42,7 +48,7 @@ class Blogs extends Component {
                     <div>
                         <h3>All</h3>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} />
+                            <Blog blog={blog} key={idx} like={this.handleLike} />
                         )}
                     </div>
                 }

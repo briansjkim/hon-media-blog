@@ -8,7 +8,7 @@ const Interactions = ({ blog }) => (
         <button
                 css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
                 style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
-                onClick={this.handleLike}
+                // onClick={this.handleLike}
             >
                 <FontAwesomeIcon icon={faHeart} />
                 {/* {this.props.blog.likes} */}

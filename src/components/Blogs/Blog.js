@@ -9,13 +9,14 @@ class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+        console.log(this.props.like)
     }
 
     render() {
         return (
             <Link
                 to="/blog" 
-                state={{ blog: this.props.blog }}
+                state={{  blog: this.props.blog }}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
             >
