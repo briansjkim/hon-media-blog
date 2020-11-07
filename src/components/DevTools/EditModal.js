@@ -25,17 +25,19 @@ class EditModal extends Component {
             >
                 <div
                     id="modal"
-                    css={tw`bg-white `}
+                    css={tw`bg-white w-1/4 h-56 m-auto`}
                 >
-                    <div>
+                    <div css={tw`flex`}>
                         <h2>Options</h2>
                         <button onClick={this.handleClose}>X</button>
                     </div>
-                    <div>
+                    <div css={tw`mb-6`}>
                         <button>FEATURED</button>
+                        <br />
                         <button>EDIT</button>
-                        <div>LINE BREAK</div>
-                        <button>DELETE</button>
+                    </div>
+                    <div css={tw`w-1/2 m-auto border-t border-b-0 border-l-0 border-r-0 border-gray-400 border-solid`}>
+                        <button css={tw`mt-4`}>DELETE</button>
                     </div>
                 </div>
             </div>
