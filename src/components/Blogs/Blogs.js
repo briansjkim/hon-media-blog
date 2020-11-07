@@ -19,7 +19,6 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
-        this.handleLike = this.handleLike.bind(this);
     };
 
     componentDidMount() {
