@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
 
-import FeaturedBlogs from './FeaturedBlogs';
+import FeaturedBlog from './FeaturedBlog';
 import Blog from './Blog';
 import Spinner from '../UI/Spinner';
 
@@ -12,6 +12,7 @@ class Blogs extends Component {
 
         this.state = {
             blogs: [],
+            featureds: [],
             loading: true
         };
     };
@@ -23,10 +24,19 @@ class Blogs extends Component {
                 // converts data to array
                 const blogsArray = Object.values(res.data);
                 const updatedBlogs = blogs.concat(blogsArray);
+
+                const featured = [];
+                for(let i = 0; i < updatedBlogs.length; i++) {
+                    if (updatedBlogs[i].isFeatured) {
+                        featured.push(updatedBlogs[i]);
+                    }
+                }
+
                 this.setState({
                     blogs: updatedBlogs,
+                    featureds: featured,
                     loading: false
-                })
+                });
             })
             .catch(error => console.log(error));
     };
@@ -48,7 +58,13 @@ class Blogs extends Component {
                         >
                             Featured
                         </h1>
-                            <FeaturedBlogs blogs={this.state.blogs} />
+                        <div
+                            css={tw`overflow-y-auto`}
+                        >
+                            {this.state.featureds.map((blog, idx) => 
+                                <FeaturedBlog blog={blog} key={idx} />
+                            )}
+                        </div>
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >

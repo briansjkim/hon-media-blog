@@ -31,7 +31,7 @@ const timeSince = (date) => {
     return Math.floor(seconds) + " seconds";
 }
 
-class Blog extends Component {
+class FeaturedBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
@@ -47,9 +47,8 @@ class Blog extends Component {
             >
                 <div
                     css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '200px' }}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px' }}
                 >
-                    <img alt="Blog" src={this.props.blog.image} width="200" height="200" />
                     <h3>{this.props.blog.title}</h3>
                     <div>{`${timeSince(this.props.blog.datetime)} ago`}</div>
                 </div>
@@ -58,4 +57,4 @@ class Blog extends Component {
     };
 };
 
-export default Blog;
+export default FeaturedBlog;
