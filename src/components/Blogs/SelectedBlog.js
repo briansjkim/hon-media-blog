@@ -21,8 +21,20 @@ class SelectedBlog extends Component {
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', height: '500px' }}
                 >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
-                    <h3>{this.props.blog.title}</h3>
-                    <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
+                    <div 
+                      id="info-container"
+                      css={tw`flex flex-col justify-between`}
+                      style={{ height: '200px' }}
+                    >
+                      <div css={tw`flex flex-row justify-between px-8`}>
+                        <h1>{this.props.blog.title}</h1>
+                        <div>Likes</div>
+                      </div>
+                      <div css={tw`flex flex-row justify-between px-8 pb-4`}>
+                        <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
+                        <div>Tags</div>
+                      </div>
+                    </div>
                 </div>
             </Link>
         );

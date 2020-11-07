@@ -24,8 +24,11 @@ class Blog extends Component {
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '300px' }}
                 >
                     <img alt="Blog" src={this.props.blog.image} width="300" height="356" />
-                    <h3>{this.props.blog.title}</h3>
-                    <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
+                    <h3 css={tw`text-left pl-4`}>{this.props.blog.title}</h3>
+                    <div css={tw`flex flex-row justify-between px-4 pb-4`}>
+                      <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
+                      <div>Likes</div>
+                    </div>
                 </div>
             </Link>
         );
