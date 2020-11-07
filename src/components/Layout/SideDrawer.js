@@ -8,7 +8,7 @@ import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands
 
 const SideDrawer = () => (
         <div
-            css={tw`border-solid fixed h-full border-none flex flex-col text-center`}
+            css={tw`border-solid fixed h-full bg-gray-100 border-none flex flex-col text-center`}
             style={{ width: '10%', zIndex: '1' }}
         >
             <Link

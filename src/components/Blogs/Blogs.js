@@ -6,6 +6,7 @@ import FeaturedBlog from './FeaturedBlog';
 import SelectedBlog from './SelectedBlog';
 import Blog from './Blog';
 import Spinner from '../UI/Spinner';
+import EditModal from '../DevTools/EditModal';
 
 class Blogs extends Component {
     constructor() {
@@ -15,10 +16,13 @@ class Blogs extends Component {
             blogs: [],
             featureds: [],
             selected: {},
-            loading: true
+            loading: true,
+            showModal: false
         };
 
         this.handleChoose = this.handleChoose.bind(this);
+        this.handleLike = this.handleLike.bind(this);
+        this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
 
@@ -54,6 +58,12 @@ class Blogs extends Component {
             }
         }
     };
+
+    showModal(e) {
+        this.setState({
+            showModal: !this.state.showModal
+        })
+    }
 
     timeSince(date) {
         const seconds = Math.floor(((new Date().getTime()/1000) - date));
@@ -93,6 +103,7 @@ class Blogs extends Component {
             <div
                 css={tw`mx-24 p-12 rounded-lg border border-gray-200`}
             >
+                <EditModal onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
                     <Spinner />
                         :
@@ -112,7 +123,7 @@ class Blogs extends Component {
                                 <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} />
                             )}
                         </div>
-                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} />
+                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.showModal} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
