@@ -56,14 +56,6 @@ class Blogs extends Component {
         }
     };
 
-    
-    handleLike() {
-        console.log('reached');
-                });
-            };
-        };
-    };
-
     render() {
         if(Object.keys(this.state.selected).length === 0 && !this.state.loading) {
             this.setState({
