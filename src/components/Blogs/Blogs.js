@@ -19,14 +19,13 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
-        this.handleLike = this.handleLike.bind(this);
+        this.timeSince = this.timeSince.bind(this);
     };
 
     componentDidMount() {
         const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
-                // converts data to array
                 const blogsArray = Object.values(res.data);
                 const updatedBlogs = blogs.concat(blogsArray);
 
@@ -34,8 +33,8 @@ class Blogs extends Component {
                 for(let i = 0; i < updatedBlogs.length; i++) {
                     if (updatedBlogs[i].isFeatured) {
                         featured.push(updatedBlogs[i]);
-                    }
-                }
+                    };
+                };
 
                 this.setState({
                     blogs: updatedBlogs,
@@ -44,10 +43,6 @@ class Blogs extends Component {
                 });
             })
             .catch(error => console.log(error));
-    };
-
-    handleLike() {
-        console.log('hello')
     };
 
     handleChoose(title) {
@@ -60,12 +55,39 @@ class Blogs extends Component {
         }
     };
 
+    timeSince(date) {
+        const seconds = Math.floor(((new Date().getTime()/1000) - date));
+      
+        let interval = seconds / 31536000;
+      
+        if (interval >= 1) {
+          return Math.floor(interval) + " years";
+        }
+        interval = seconds / 2592000;
+        if (interval >= 1) {
+          return Math.floor(interval) + " months";
+        }
+        interval = seconds / 86400;
+        if (interval >= 1) {
+          return Math.floor(interval) + " days";
+        }
+        interval = seconds / 3600;
+        if (interval >= 1) {
+          return Math.floor(interval) + " hours";
+        }
+        interval = seconds / 60;
+        if (interval >= 1) {
+          return Math.floor(interval) + " minutes";
+        }
+        return Math.floor(seconds) + " seconds";
+    };
+
     render() {
         if(Object.keys(this.state.selected).length === 0 && !this.state.loading) {
             this.setState({
                 selected: this.state.featureds[0]
             });
-        }
+        };
 
         return (
             <div
@@ -84,20 +106,20 @@ class Blogs extends Component {
                         </h1>
                         <div
                             css={tw`overflow-y-auto`}
+                            style={{ height: '500px' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
-                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} />
+                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} />
                             )}
                         </div>
-                        {}
-                        <SelectedBlog blog={this.state.selected} />
+                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} like={this.handleLike} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} />
                         )}
                     </div>
                 }
@@ -105,5 +127,6 @@ class Blogs extends Component {
         );
     };
 };
+
 
 export default Blogs;

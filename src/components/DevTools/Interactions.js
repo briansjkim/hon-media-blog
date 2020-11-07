@@ -8,25 +8,33 @@ const Interactions = ({ blog, handleLike }) => (
         <button
                 css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
                 style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
-                // onClick={handleLike}
+                onClick={handleLike}
             >
-                <FontAwesomeIcon icon={faHeart} />
-                {/* {this.props.blog.likes} */}
+                <FontAwesomeIcon 
+                    css={tw`mr-2`}
+                    icon={faHeart}
+                />
+                {blog.likes}
             </button>
             <button
                 css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
                 style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             >
-                <FontAwesomeIcon icon={faComment} />
-                {/* {console.log(this.props.blog.comments)} */}
+                <FontAwesomeIcon 
+                    css={tw`mr-2`}
+                    icon={faComment} 
+                />
+                {blog.comments}
             </button>
             <button
                 css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                 style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             >
-                <FontAwesomeIcon icon={faShare} />
-                {/* {this.props.blog.shares} */}
-                Share
+                <FontAwesomeIcon 
+                    css={tw`mr-2`}
+                    icon={faShare} 
+                />
+                {blog.shares}
             </button>
     </Fragment>
 );
