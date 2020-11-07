@@ -2,33 +2,6 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
-const timeSince = (date) => {
-    const seconds = Math.floor(((new Date().getTime()/1000) - date));
-  
-    let interval = seconds / 31536000;
-  
-    if (interval >= 1) {
-      return Math.floor(interval) + " years";
-    }
-    interval = seconds / 2592000;
-    if (interval >= 1) {
-      return Math.floor(interval) + " months";
-    }
-    interval = seconds / 86400;
-    if (interval >= 1) {
-      return Math.floor(interval) + " days";
-    }
-    interval = seconds / 3600;
-    if (interval >= 1) {
-      return Math.floor(interval) + " hours";
-    }
-    interval = seconds / 60;
-    if (interval >= 1) {
-      return Math.floor(interval) + " minutes";
-    }
-    return Math.floor(seconds) + " seconds";
-}
-
 class SelectedBlog extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +22,7 @@ class SelectedBlog extends Component {
                 >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
                     <h3>{this.props.blog.title}</h3>
-                    <div>{`${timeSince(this.props.blog.datetime)} ago`}</div>
+                    <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
                 </div>
             </Link>
         );
