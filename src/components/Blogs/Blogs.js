@@ -59,6 +59,9 @@ class Blogs extends Component {
     
     handleLike() {
         console.log('reached');
+                });
+            };
+        };
     };
 
     render() {

@@ -20,6 +20,9 @@ class CreatePost extends Component {
             commentsEnabled: true,
             date: `${monthNames[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
+            likes: 0,
+            comments: 0,
+            shares: 0
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -58,7 +61,10 @@ class CreatePost extends Component {
             isFeatured: this.state.isFeatured,
             commentsEnabled: this.state.commentsEnabled,
             date: this.state.date,
-            datetime: this.state.datetime
+            datetime: this.state.datetime,
+            likes: this.state.likes,
+            comments: this.state.comments,
+            shares: this.state.shares
         };
 
         axios.post('/posts.json', post)
