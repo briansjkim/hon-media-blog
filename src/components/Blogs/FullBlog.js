@@ -15,7 +15,6 @@ class FullBlog extends Component {
     handleLike() {
         let newLikes = this.props.blog.likes + 1;
         this.props.blog.likes = newLikes;
-        console.log(this.props.blog)
     };
 
     handleComment() {

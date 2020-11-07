@@ -27,7 +27,6 @@ class Blogs extends Component {
         const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
-                // converts data to array
                 const blogsArray = Object.values(res.data);
                 const updatedBlogs = blogs.concat(blogsArray);
 
@@ -35,8 +34,8 @@ class Blogs extends Component {
                 for(let i = 0; i < updatedBlogs.length; i++) {
                     if (updatedBlogs[i].isFeatured) {
                         featured.push(updatedBlogs[i]);
-                    }
-                }
+                    };
+                };
 
                 this.setState({
                     blogs: updatedBlogs,
