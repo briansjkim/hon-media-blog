@@ -21,7 +21,6 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
-        this.handleLike = this.handleLike.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
@@ -120,7 +119,7 @@ class Blogs extends Component {
                             style={{ height: '500px' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
-                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} />
+                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.showModal} />
                             )}
                         </div>
                         <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.showModal} />

@@ -6,6 +6,7 @@ import { isLoggedIn } from '../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
+
 class SelectedBlog extends Component {
     constructor(props) {
         super(props);
@@ -43,11 +44,11 @@ class SelectedBlog extends Component {
                     >
                       <div css={tw`flex flex-row justify-between px-8`}>
                         <h1>{this.props.blog.title}</h1>
-                        <div>Likes</div>
+                        {/* <div>Likes</div> */}
                       </div>
                       <div css={tw`flex flex-row justify-between px-8 pb-4`}>
                         <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
-                        <div>Tags</div>
+                        {/* <div>Tags</div> */}
                       </div>
                     </div>
                 </div>

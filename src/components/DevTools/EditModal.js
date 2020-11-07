@@ -29,7 +29,7 @@ class EditModal extends Component {
                 >
                     <div>
                         <h2>Options</h2>
-                        <button>X</button>
+                        <button onClick={this.handleClose}>X</button>
                     </div>
                     <div>
                         <button>FEATURED</button>
