@@ -17,7 +17,6 @@ class Blog extends Component {
             <Link
                 to="/blog" 
                 state={{  blog: this.props.blog }}
-                title={'Hello'}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
             >
