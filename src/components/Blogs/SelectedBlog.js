@@ -24,13 +24,18 @@ class SelectedBlog extends Component {
                     css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4`}
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', height: '500px' }}
                 >
+                  <div
+                    css={tw`relative`}
+                  >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
-                    <button
+                    <a
                       onClick={e => {
                         e.preventDefault()
                         this.props.edit(e)
                       }}
-                    >EDIT</button>
+                      css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none`}
+                    ><FontAwesomeIcon icon={faCog} /></a>
+                  </div>
                     <div 
                       id="info-container"
                       css={tw`flex flex-col justify-between`}
