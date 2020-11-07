@@ -19,7 +19,6 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
-        this.handleLike = this.handleLike.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
 
@@ -54,10 +53,6 @@ class Blogs extends Component {
                 })
             }
         }
-    };
-    
-    handleLike() {
-        console.log('reached');
     };
 
     timeSince(date) {
@@ -124,7 +119,7 @@ class Blogs extends Component {
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} like={this.handleLike} timeAgo={this.timeSince} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} />
                         )}
                     </div>
                 }

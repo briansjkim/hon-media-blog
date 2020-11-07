@@ -9,19 +9,13 @@ class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-
-        this.handleClick = this.handleClick.bind(this);
     };
-
-    handleClick() {
-      console.log('hi')
-    }
     
     render() {
         return (
             <Link
                 to="/blog" 
-                state={{  blog: this.handleClick }}
+                state={{  blog: this.props.blog }}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
             >
