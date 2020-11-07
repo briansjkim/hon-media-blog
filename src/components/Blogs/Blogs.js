@@ -19,6 +19,7 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     };
 
     componentDidMount() {
@@ -53,7 +54,11 @@ class Blogs extends Component {
                 })
             }
         }
-    }
+    };
+
+    handleLike() {
+        console.log('reached');
+    };
 
     render() {
         if(Object.keys(this.state.selected).length === 0 && !this.state.loading) {
