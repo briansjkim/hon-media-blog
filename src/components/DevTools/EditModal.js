@@ -26,7 +26,7 @@ class EditModal extends Component {
             >
                 <div
                     id="modal"
-                    css={tw` bg-white w-56 h-56 m-auto z-40 mt-64 rounded-md`}
+                    css={tw`bg-white w-56 h-64 m-auto z-40 mt-64 rounded-md`}
                 >
                     <div css={tw`flex justify-center items-center`}>
                         <h2>Options</h2>
@@ -37,22 +37,22 @@ class EditModal extends Component {
                             X
                         </button>
                     </div>
-                    <div css={tw`mb-6`}>
+                    <div css={tw`mb-6 mt-2`}>
                         <button 
-                            css={tw`border-none bg-white cursor-pointer mb-2`}
+                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
                         >
                             FEATURED
                         </button>
                         <br />
                         <button
-                            css={tw`border-none bg-white cursor-pointer`}
+                            css={tw`border-none bg-white cursor-pointer text-lg`}
                         >
                             EDIT
                         </button>
                     </div>
                     <div css={tw`w-1/2 m-auto border-t border-b-0 border-l-0 border-r-0 border-gray-400 border-solid`}>
                         <button 
-                            css={tw`mt-4 text-red-600 bg-white border-none cursor-pointer`}
+                            css={tw`mt-4 mb-4 text-red-600 bg-white border-none cursor-pointer text-lg`}
                         >
                             DELETE
                         </button>
