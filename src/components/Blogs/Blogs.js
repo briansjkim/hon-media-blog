@@ -3,6 +3,7 @@ import tw from "tailwind.macro";
 import axios from '../../axios-instance';
 
 import FeaturedBlog from './FeaturedBlog';
+import SelectedBlog from './SelectedBlog';
 import Blog from './Blog';
 import Spinner from '../UI/Spinner';
 
@@ -13,8 +14,11 @@ class Blogs extends Component {
         this.state = {
             blogs: [],
             featureds: [],
+            selected: {},
             loading: true
         };
+
+        this.handleChoose = this.handleChoose.bind(this);
     };
 
     componentDidMount() {
@@ -41,7 +45,23 @@ class Blogs extends Component {
             .catch(error => console.log(error));
     };
 
+    handleChoose(title) {
+        for(let i = 0; i < this.state.featureds.length; i++) {
+            if (this.state.featureds[i].title === title) {
+                this.setState({
+                    selected: this.state.featureds[i]
+                })
+            }
+        }
+    }
+
     render() {
+        if(Object.keys(this.state.selected).length === 0 && !this.state.loading) {
+            this.setState({
+                selected: this.state.featureds[0]
+            });
+        }
+
         return (
             <div
                 css={tw`mx-24 p-12 rounded-lg border border-gray-200`}
@@ -49,7 +69,6 @@ class Blogs extends Component {
                 {this.state.loading ? 
                     <Spinner />
                         :
-                        
                     <div
                         style={{ width: '1000px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
                     >  
@@ -62,9 +81,11 @@ class Blogs extends Component {
                             css={tw`overflow-y-auto`}
                         >
                             {this.state.featureds.map((blog, idx) => 
-                                <FeaturedBlog blog={blog} key={idx} />
+                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} />
                             )}
                         </div>
+                        {}
+                        <SelectedBlog blog={this.state.selected} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >

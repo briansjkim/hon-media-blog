@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
+import { Link } from "gatsby";
 
 const timeSince = (date) => {
     const seconds = Math.floor(((new Date().getTime()/1000) - date));
@@ -28,35 +29,31 @@ const timeSince = (date) => {
     return Math.floor(seconds) + " seconds";
 }
 
-class FeaturedBlog extends Component {
+class SelectedBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
-
-        this.handleClick = this.handleClick.bind(this);
-    }
-
-    handleClick(e) {
-      this.props.clickHandler(this.props.blog.title);
     }
     
     render() {
         return (
-            <div
+            <Link
+                to="/blog" 
+                state={{ blog: this.props.blog }}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
-                onClick={this.handleClick}
             >
                 <div
                     css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px' }}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '586px' }}
                 >
+                    <img alt="Blog" src={this.props.blog.image} width="600" height="300" />
                     <h3>{this.props.blog.title}</h3>
                     <div>{`${timeSince(this.props.blog.datetime)} ago`}</div>
                 </div>
-            </div>
+            </Link>
         );
     };
 };
 
-export default FeaturedBlog;
+export default SelectedBlog;
