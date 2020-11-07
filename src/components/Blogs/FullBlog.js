@@ -15,7 +15,6 @@ class FullBlog extends Component {
     handleLike() {
         let newLikes = this.props.blog.likes + 1;
         this.props.blog.likes = newLikes;
-        console.log(this.props.blog)
     };
 
     handleComment() {
@@ -48,7 +47,7 @@ class FullBlog extends Component {
                                 <p>{this.props.blog.date}</p>
                             </div>
                             <div css={tw` w-1/2 flex justify-end`}>
-                                <Interactions blog={this.props.blog} handleLike={this.handleLike} />
+                                {/* <Interactions blog={this.props.blog} handleLike={this.handleLike} /> */}
                             </div>
                         </div>
                     </div>
@@ -64,7 +63,7 @@ class FullBlog extends Component {
                         <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>
                     </div>
                     <div css={tw`flex w-1/2 m-auto mt-10`}>
-                        <Interactions blog={this.props.blog} />
+                        {/* <Interactions blog={this.props.blog} /> */}
                     </div>
             </div>
         );

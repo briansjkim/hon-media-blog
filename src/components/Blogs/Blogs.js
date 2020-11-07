@@ -30,7 +30,6 @@ class Blogs extends Component {
         const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
-                // converts data to array
                 const blogsArray = Object.values(res.data);
                 const updatedBlogs = blogs.concat(blogsArray);
 
@@ -38,8 +37,8 @@ class Blogs extends Component {
                 for(let i = 0; i < updatedBlogs.length; i++) {
                     if (updatedBlogs[i].isFeatured) {
                         featured.push(updatedBlogs[i]);
-                    }
-                }
+                    };
+                };
 
                 this.setState({
                     blogs: updatedBlogs,
@@ -58,10 +57,6 @@ class Blogs extends Component {
                 })
             }
         }
-    };
-    
-    handleLike() {
-        console.log('reached');
     };
 
     showModal(e) {
@@ -135,7 +130,7 @@ class Blogs extends Component {
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} like={this.handleLike} timeAgo={this.timeSince} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} />
                         )}
                     </div>
                 }
