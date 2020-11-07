@@ -50,10 +50,10 @@ class Blogs extends Component {
             if (this.state.featureds[i].title === title) {
                 this.setState({
                     selected: this.state.featureds[i]
-                })
-            }
-        }
-    }
+                });
+            };
+        };
+    };
 
     render() {
         if(Object.keys(this.state.selected).length === 0 && !this.state.loading) {
