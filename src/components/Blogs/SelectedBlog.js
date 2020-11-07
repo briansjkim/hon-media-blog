@@ -44,10 +44,10 @@ class SelectedBlog extends Component {
                 style={{ cursor: 'pointer' }}
             >
                 <div
-                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden m-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '586px' }}
+                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4`}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', height: '500px' }}
                 >
-                    <img alt="Blog" src={this.props.blog.image} width="600" height="300" />
+                    <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
                     <h3>{this.props.blog.title}</h3>
                     <div>{`${timeSince(this.props.blog.datetime)} ago`}</div>
                 </div>

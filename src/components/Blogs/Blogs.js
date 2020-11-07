@@ -85,6 +85,7 @@ class Blogs extends Component {
                         </h1>
                         <div
                             css={tw`overflow-y-auto`}
+                            style={{ height: '500px' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
                                 <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} />
