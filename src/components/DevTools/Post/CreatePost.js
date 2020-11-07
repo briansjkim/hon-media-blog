@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../../axios-instance';
 import { navigate } from 'gatsby';
+import { target } from 'tailwindcss/stubs/defaultConfig.stub';
 
 class CreatePost extends Component {
     constructor() {
@@ -31,9 +32,15 @@ class CreatePost extends Component {
     };
 
     handleChange(e) {
-        this.setState({
-            [e.target.id]: e.target.value
-        });
+        if (e.target.type === 'checkbox') {
+            this.setState({
+                isFeatured: !!e.target.checked
+            });
+        } else {
+            this.setState({
+                [e.target.id]: e.target.value
+            });
+        }
     };
 
     handleKeyDown(e) {
@@ -128,6 +135,20 @@ class CreatePost extends Component {
                             style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         />
+                    </div>
+                    <div css={tw`leading-8 mb-3`}>
+                        <div
+                            css={tw`font-bold`}
+                        >ADD TO FEATURED? (CHECKED BY DEFAULT)</div>
+                        <input
+                            type="checkbox"
+                            id="isFeatured"
+                            name="isFeatured"
+                            onChange={this.handleChange}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            checked={this.state.isFeatured ? 1 : 0}
+                        />
+                        <label htmlFor="isFeatured"> ENABLED</label>
                     </div>
                     <div css={tw`leading-8`}>
                         <textarea
