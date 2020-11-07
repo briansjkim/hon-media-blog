@@ -21,12 +21,12 @@ class EditModal extends Component {
         return (
             <div
                 id="overlay"
-                css={tw`fixed w-full h-full inset-0 z-1`}
+                css={tw`fixed w-full h-full inset-0`}
                 style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
             >
                 <div
                     id="modal"
-                    css={tw`bg-white w-56 h-56 m-auto`}
+                    css={tw` bg-white w-56 h-56 m-auto z-40 mt-64 rounded-md`}
                 >
                     <div css={tw`flex justify-center items-center`}>
                         <h2>Options</h2>
@@ -39,13 +39,13 @@ class EditModal extends Component {
                     </div>
                     <div css={tw`mb-6`}>
                         <button 
-                            css={tw`border-solid bg-white cursor-pointer`}
+                            css={tw`border-none bg-white cursor-pointer mb-2`}
                         >
                             FEATURED
                         </button>
                         <br />
                         <button
-                            css={tw`border-solid bg-white cursor-pointer`}
+                            css={tw`border-none bg-white cursor-pointer`}
                         >
                             EDIT
                         </button>
