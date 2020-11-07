@@ -5,7 +5,10 @@ import FullBlog from '../components/Blogs/FullBlog';
 import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
-    console.log(window.location)
+    if (!location.state.blog) {
+        return null;
+    }
+
     return (
         <Fragment>
             <SideDrawer />
