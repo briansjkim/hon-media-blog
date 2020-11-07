@@ -41,7 +41,7 @@ class Blog extends Component {
         return (
             <Link
                 to="/blog" 
-                state={{  blog: this.props.blog }}
+                state={{ handleLike: this.props.like }}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
             >

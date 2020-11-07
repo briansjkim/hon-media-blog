@@ -19,6 +19,7 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
+        this.handleLike = this.handleLike.bind(this);
     };
 
     componentDidMount() {
@@ -43,6 +44,10 @@ class Blogs extends Component {
                 });
             })
             .catch(error => console.log(error));
+    };
+
+    handleLike() {
+        console.log('hello')
     };
 
     handleChoose(title) {
