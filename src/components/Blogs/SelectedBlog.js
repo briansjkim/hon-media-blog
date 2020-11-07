@@ -2,6 +2,10 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
+import { isLoggedIn } from '../Auth/Auth.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
+
 class SelectedBlog extends Component {
     constructor(props) {
         super(props);
@@ -21,6 +25,12 @@ class SelectedBlog extends Component {
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', height: '500px' }}
                 >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
+                    <button
+                      onClick={e => {
+                        e.preventDefault()
+                        this.props.edit(e)
+                      }}
+                    >EDIT</button>
                     <div 
                       id="info-container"
                       css={tw`flex flex-col justify-between`}
