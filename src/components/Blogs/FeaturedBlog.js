@@ -26,7 +26,6 @@ class FeaturedBlog extends Component {
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px' }}
                 >
                     <h3>{this.props.blog.title}</h3>
-                    <p>{this.props.blog.content.slice(0, 25)}</p>
                     <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
                 </div>
             </div>

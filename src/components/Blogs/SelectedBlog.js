@@ -22,7 +22,6 @@ class SelectedBlog extends Component {
                 >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
                     <h3>{this.props.blog.title}</h3>
-                    <p>{this.props.blog.content.slice(0, 50)}</p>
                     <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
                 </div>
             </Link>
