@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
-import { isLoggedIn } from '../Auth/Auth.js';
+// import { isLoggedIn } from '../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
@@ -29,13 +29,15 @@ class SelectedBlog extends Component {
                     css={tw`relative`}
                   >
                     <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
-                    <a
+                    <button
+                      type="button"
+                      aria-label="Edit"
                       onClick={e => {
                         e.preventDefault()
                         this.props.edit(e)
                       }}
-                      css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none`}
-                    ><FontAwesomeIcon icon={faCog} /></a>
+                      css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
+                    ><FontAwesomeIcon icon={faCog} /></button>
                   </div>
                     <div 
                       id="info-container"
