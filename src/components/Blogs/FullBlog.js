@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../axios-instance';
 
+import ShareModal from './ShareModal';
 import Interactions from '../DevTools/Interactions';
 
 class FullBlog extends Component {
@@ -11,7 +12,7 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            shares: null
+            showModal: false
         }
 
         this.getBlog = this.getBlog.bind(this);
@@ -46,15 +47,17 @@ class FullBlog extends Component {
     };
 
     // needs to actually share content still
-    handleShare() {
-        let newShares = this.props.blog.shares + 1;
-        axios.patch(`/posts/${this.state.childName}/.json`, {
-            shares: newShares,
-        })
-            .then(() => this.getBlog())
-            .catch((err) => console.error(err));
+    handleShare(e) {
+        // let newShares = this.props.blog.shares + 1;
+        // axios.patch(`/posts/${this.state.childName}/.json`, {
+        //     shares: newShares,
+        // })
+        //     .then(() => this.getBlog())
+        //     .catch((err) => console.error(err));
+        this.setState({
+            showModal: !this.state.showModal
+        });
     };
-
 
     render() { 
         return (
@@ -62,6 +65,16 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
+                <ShareModal onClose={this.handleShare} show={this.state.showModal}/>
+                <div
+                    css={tw`w-4/5 block m-auto`}
+                >
+                    <img 
+                        alt="Blog" 
+                        src={this.props.blog.image}
+                        style={{ objectFit: 'scale-down', maxWidth: '100%' }}
+                    />
+                </div>
                 <div> 
                     <div css={tw`w-1/2 m-auto text-left`}>
                         <h1
@@ -77,17 +90,9 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} shares={this.state.shares} handleLike={this.handleLike} handleShare={this.handleShare} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} />
                         </div>
                     </div>
-                </div>
-                <div>
-                    <img 
-                        alt="Blog" 
-                        src={this.props.blog.image}
-                        width="400"
-                        height="400"
-                    />
                 </div>
                 <div css={tw`w-1/2 m-auto mt-6 text-left`}>
                     <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>

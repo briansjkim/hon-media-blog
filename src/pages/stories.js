@@ -3,7 +3,7 @@ import tw from 'tailwind.macro';
 
 import customerData from '../assets/data/customer-data';
 import Layout from '../components/Layout/Layout';
-import StoryCards from '../components/StoryCards/Stories/StoryCards';
+import StoryCards from '../components/StoryCards/StoryCards';
 
 export default function stories() {
     return (

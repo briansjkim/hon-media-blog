@@ -100,14 +100,16 @@ class Blogs extends Component {
 
         return (
             <div
-                css={tw`mx-24 p-12 rounded-lg border border-gray-200`}
+                css={tw`pt-8`}
+                style={{ marginLeft: '15%', marginRight: '5%' }}
             >
                 <EditModal onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
                     <Spinner />
                         :
                     <div
-                        style={{ width: '1000px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
+                        css={tw`rounded-lg border border-gray-200`}
+                        style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
                     >  
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
@@ -129,7 +131,7 @@ class Blogs extends Component {
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.showModal} />
                         )}
                     </div>
                 }

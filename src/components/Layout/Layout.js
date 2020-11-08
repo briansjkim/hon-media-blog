@@ -9,12 +9,7 @@ const Layout = ({ children }) => (
     <Fragment>
         <SideDrawer />
         <Header />
-        {/* <div
-            className="container"
-            css={tw`flex`}
-        > */}
-            <main className="text-gray-900">{children}</main>
-        {/* </div> */}
+        <main className="text-gray-900">{children}</main>
         <Footer />
     </Fragment>
 );
