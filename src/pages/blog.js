@@ -6,7 +6,11 @@ import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
     if (!location.state) {
-        return null;
+        location.createRedirect({
+            fromPath: '/blog',
+            toPath: '/',
+            isPermanent: 'true',
+        })
     }
 
     return (
