@@ -25,6 +25,7 @@ class DevTools extends Component {
             <div
                 aria-hidden="true"
                 onClick={this.toggleMenu}
+                // these two aren't working the way they're supposed to right now
                 // onMouseEnter={this.toggleMenu}
                 // onMouseLeave={this.toggleMenu}
                 css={tw`w-32 ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}

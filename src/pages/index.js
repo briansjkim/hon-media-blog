@@ -13,7 +13,7 @@ export default () => (
         </Helmet>
         <section 
             className="container"
-            css={tw`text-center`}
+            css={tw`m-auto mt-16 text-center`}
         >
             <Blogs />
         </section>

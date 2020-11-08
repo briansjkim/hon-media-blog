@@ -100,8 +100,7 @@ class Blogs extends Component {
 
         return (
             <div
-                css={tw`pt-8`}
-                style={{ marginLeft: '15%', marginRight: '5%' }}
+                style={{ marginLeft: '5%', marginRight: '5%' }}
             >
                 <EditModal onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
