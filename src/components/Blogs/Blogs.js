@@ -100,7 +100,7 @@ class Blogs extends Component {
 
         return (
             <div
-                css={tw`mx-24 p-12 rounded-lg border border-gray-200`}
+                css={tw`p-8 rounded-lg border border-gray-200`}
             >
                 <EditModal onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
