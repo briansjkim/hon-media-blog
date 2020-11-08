@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
 
-// import EditModal from '../DevTools/EditModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 

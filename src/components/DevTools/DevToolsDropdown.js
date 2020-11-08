@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
-
-// IF YOU CAN
-    // try to make dropdown menu wider so that each feature has its own line
+import { faEdit, faTools } from '@fortawesome/free-solid-svg-icons';
 
 class DevTools extends Component {
     constructor() {
         super();
-
-        
         this.state = {
             showMenu: false,
         };
@@ -40,12 +35,12 @@ class DevTools extends Component {
                 aria-hidden="true"
                 onMouseEnter={this.toggleMenu}
                 onMouseLeave={this.toggleMenu}
-                css={tw`ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}
+                css={tw`w-32 ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}
             >
                 <button
-                    css={tw`text-sm font-medium border-none bg-white outline-none hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`w-full text-sm font-medium border-none bg-white outline-none hover:text-blue-500 hover:text-opacity-75`}
                 >
-                    DEV TOOLS
+                    DEV <FontAwesomeIcon icon={faTools} />
                 </button>
             {
                 this.state.showMenu
@@ -55,7 +50,7 @@ class DevTools extends Component {
                         ref={(element) => {
                             this.dropdownMenu = element;
                         }}
-                        css={tw`absolute border-solid border-gray-200 bg-white w-full`}
+                        css={tw`absolute rounded-b border-gray-200 bg-white w-auto mt-4`}
                         style={{boxShadow: '0 2px 3px #ccc'}}
                     >
                         <ul css={tw`list-none p-3`}>
