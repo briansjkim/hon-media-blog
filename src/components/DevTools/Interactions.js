@@ -26,7 +26,7 @@ const Interactions = ({ likes, handleLike, handleShare }) => (
                 />
                 {blog.comments}
             </button> */}
-        <button
+        {/* <button
             css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
             style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             onClick={handleShare}
@@ -34,7 +34,7 @@ const Interactions = ({ likes, handleLike, handleShare }) => (
             <FontAwesomeIcon 
                 icon={faShare} 
             />
-        </button>
+        </button> */}
     </Fragment>
 );
 
