@@ -7,7 +7,7 @@ import DevTools from '../DevTools/DevToolsDropdown';
 
 const Header = () => (
     <header
-        css={tw`sticky top-0 bg-white shadow-xl z-10`}
+        css={tw`sticky top-0 bg-white shadow-xl z-10 mb-16`}
     >
         <div>
             <Link
