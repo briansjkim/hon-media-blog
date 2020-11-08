@@ -1,12 +1,10 @@
-import React, { Fragment } from 'react';
-// import tw from 'tailwind.macro';
-
-import FullCard from '../components/StoryCards/FullCard';
+import React from "react";
+import Layout from '../components/Layout/Layout';
 
 export default function card() {
-    return (
-        <Fragment>
-            <FullCard />
-        </Fragment>
-    )
-};
+  return (
+    <Layout>
+      <h1>Hello</h1>
+    </Layout>
+  )
+}

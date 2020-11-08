@@ -6,7 +6,10 @@ import Card from './Card';
 
 const StoryCards = ({ customers }) => {
     return (
-        <div css={tw`w-full text-center flex flex-col flex-wrap justify-center md:flex-row md:-mx-3 mt-12`}>
+        <div
+            css={tw`w-full text-center flex flex-col flex-wrap justify-center md:flex-row mt-12`}
+            style={{ marginLeft: '1%' }}
+        >
             {customers.map((customer, idx) =>
                 <Card 
                     key={idx}
