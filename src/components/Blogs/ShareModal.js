@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import tw from "tailwind.macro";
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faCopy } from '@fortawesome/free-regular-svg-icons';
 
 // need functionality on sharing buttons, add email as well
 // able to close if overlay is clicked also
@@ -42,30 +44,47 @@ class ShareModal extends Component {
                             css={tw`ml-8 border-none bg-white cursor-pointer font-bold`}
                             onClick={this.handleClose}
                         >
-                            X
+                            <FontAwesomeIcon 
+                                icon={faTimes} 
+                            />
                         </button>
                     </div>
                     <div css={tw`flex justify-between items-center`}>
                         <button 
                             css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
                         >
-                            Instagram
+                            <FontAwesomeIcon 
+                                icon={faInstagram} 
+                            />
                         </button>
                         <br />
                         <button
                             css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
                         >
-                            LinkedIn
+                            <FontAwesomeIcon 
+                                icon={faLinkedinIn} 
+                            />
                         </button>
                         <button 
                             css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
                         >
-                            Facebook
+                            <FontAwesomeIcon 
+                                icon={faFacebookF} 
+                            />
                         </button>
                         <button 
                             css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
                         >
-                            Twitter
+                            <FontAwesomeIcon 
+                                icon={faTwitter} 
+                            />
+                        </button>
+                        <button 
+                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faEnvelope} 
+                            />
                         </button>
                     </div>
                     <div css={tw`w-1/2 m-auto`}>
@@ -74,7 +93,9 @@ class ShareModal extends Component {
                             <button 
                                 css={tw`mt-4 mb-4 bg-white border-none cursor-pointer text-lg`}
                             >
-                                Copy link
+                                <FontAwesomeIcon 
+                                    icon={faCopy} 
+                                />
                             </button>
                         </div>
                     </div>

@@ -13,9 +13,8 @@ export default () => (
         </Helmet>
         <section 
             className="container"
-            css={tw`mx-auto px-8 text-center`}
+            css={tw`text-center`}
         >
-            {/* <h1 css={tw`text-4xl lg:text-5xl xl:text-6xl font-bold leading-none`}>Featured</h1> */}
             <Blogs />
         </section>
     </Layout>

@@ -66,6 +66,15 @@ class FullBlog extends Component {
                 style={{ fontFamily: 'Poppins'}}
             >
                 <ShareModal onClose={this.handleShare} show={this.state.showModal}/>
+                <div
+                    css={tw`w-4/5 block m-auto`}
+                >
+                    <img 
+                        alt="Blog" 
+                        src={this.props.blog.image}
+                        width='100%'
+                    />
+                </div>
                 <div> 
                     <div css={tw`w-1/2 m-auto text-left`}>
                         <h1
@@ -84,14 +93,6 @@ class FullBlog extends Component {
                             <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} />
                         </div>
                     </div>
-                </div>
-                <div>
-                    <img 
-                        alt="Blog" 
-                        src={this.props.blog.image}
-                        width="400"
-                        height="400"
-                    />
                 </div>
                 <div css={tw`w-1/2 m-auto mt-6 text-left`}>
                     <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>

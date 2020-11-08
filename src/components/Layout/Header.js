@@ -9,7 +9,7 @@ const Header = () => (
     <header
         css={tw`sticky top-0 bg-white shadow-xl z-10`}
     >
-        <div className="container" css={tw`flex flex-col sm:flex-row justify-end items-center mx-auto py-4 px-8`}>
+        <div>
             <Link
                 to='/'
                 css={tw`fixed right-0 top-0 left-0`}
@@ -22,7 +22,9 @@ const Header = () => (
                     style={{ height: '50px' , width: '50px'}}
                 />
             </Link>
-            <div css={tw`flex mt-4 sm:mt-0`}>
+            <div
+                css={tw`flex flex-col sm:flex-row justify-end items-center py-4`}
+                style={{ marginRight: '10%' }}>
                 <Link 
                     to='/'
                     css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}

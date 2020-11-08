@@ -100,14 +100,15 @@ class Blogs extends Component {
 
         return (
             <div
-                css={tw`p-8 rounded-lg border border-gray-200`}
+                css={tw`pt-8 rounded-lg border border-gray-200`}
+                style={{ marginLeft: '15%', marginRight: '5%' }}
             >
                 <EditModal onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
                     <Spinner />
                         :
                     <div
-                        style={{ width: '1000px', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
+                        style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
                     >  
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}

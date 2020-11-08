@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import tw from "tailwind.macro";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 class EditModal extends Component {
     constructor(props) {
         super(props);
@@ -34,7 +37,9 @@ class EditModal extends Component {
                             css={tw`ml-8 border-none bg-white cursor-pointer font-bold`}
                             onClick={this.handleClose}
                         >
-                            X
+                            <FontAwesomeIcon 
+                                icon={faTimes} 
+                            />
                         </button>
                     </div>
                     <div css={tw`mb-6 mt-2`}>
