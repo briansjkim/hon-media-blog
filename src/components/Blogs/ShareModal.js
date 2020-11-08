@@ -8,7 +8,7 @@ import { faCopy } from '@fortawesome/free-regular-svg-icons';
 
 // need functionality on sharing buttons, add email as well
 // able to close if overlay is clicked also
-// show grayed out link next to copy button, both should copy and notify user
+// IDK WHAT TO DO WITH COPY LINK
 
 
 class ShareModal extends Component {
@@ -17,16 +17,24 @@ class ShareModal extends Component {
         this.state = {};
 
         this.handleClose = this.handleClose.bind(this);
+        this.copy = this.copy.bind(this);
     };
 
     handleClose(e) {
         this.props.onClose && this.props.onClose(e);
     };
 
+    copy() {
+        this.elRef.select();
+        document.execCommand("copy");
+    }
+
     render() {
         if(!this.props.show) {
             return null;
         }
+
+        const url = window.location.href;
 
         return (
             <div
@@ -38,66 +46,73 @@ class ShareModal extends Component {
                     id="share_modal"
                     css={tw`bg-white w-1/3 h-auto m-auto z-40 mt-64 rounded-md`}
                 >
-                    <div css={tw`flex justify-between items-center`}>
-                        <h2>Share via</h2>
-                        <button
-                            css={tw`ml-8 border-none bg-white cursor-pointer font-bold`}
-                            onClick={this.handleClose}
+                    <button
+                        css={tw`float-right m-3 border-none bg-white cursor-pointer font-bold`}
+                        onClick={this.handleClose}
+                    >
+                        <FontAwesomeIcon 
+                            icon={faTimes} 
+                            size="2x"
+                        />
+                    </button>
+                    <h2
+                        css={tw`text-left ml-4 pt-4`}
+                    >Share via</h2>
+                    <div css={tw`flex flex-row justify-between items-center mx-4 mb-4`}>
+                        <a 
+                            css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
-                                icon={faTimes} 
+                                icon={faInstagram}
+                                size="2x"
                             />
-                        </button>
+                        </a>
+                        <a
+                            css={tw`border-none bg-white cursor-pointer`}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faLinkedinIn}
+                                size="2x"
+                            />
+                        </a>
+                        <a 
+                            css={tw`border-none bg-white cursor-pointer`}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faFacebookF}
+                                size="2x"
+                            />
+                        </a>
+                        <a 
+                            css={tw`border-none bg-white cursor-pointer`}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faTwitter}
+                                size="2x"
+                            />
+                        </a>
+                        <a 
+                            css={tw`border-none bg-white cursor-pointer`}
+                        >
+                            <FontAwesomeIcon 
+                                icon={faEnvelope}
+                                size="2x"
+                            />
+                        </a>
                     </div>
-                    <div css={tw`flex justify-between items-center`}>
+                    <h2
+                        css={tw`text-left ml-4`}
+                    >Copy link</h2>
+                    <div>
+                        <input id="url-input" ref={el => this.elRef = el} value={window.location.href} onClick={this.copy} readonly />
                         <button 
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
+                            css={tw`mt-4 mb-4 bg-white border-none cursor-pointer`}
                         >
                             <FontAwesomeIcon 
-                                icon={faInstagram} 
+                                icon={faCopy}
+                                size="2x"
                             />
                         </button>
-                        <br />
-                        <button
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
-                        >
-                            <FontAwesomeIcon 
-                                icon={faLinkedinIn} 
-                            />
-                        </button>
-                        <button 
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
-                        >
-                            <FontAwesomeIcon 
-                                icon={faFacebookF} 
-                            />
-                        </button>
-                        <button 
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
-                        >
-                            <FontAwesomeIcon 
-                                icon={faTwitter} 
-                            />
-                        </button>
-                        <button 
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
-                        >
-                            <FontAwesomeIcon 
-                                icon={faEnvelope} 
-                            />
-                        </button>
-                    </div>
-                    <div css={tw`w-1/2 m-auto`}>
-                        <h2>Copy link</h2>
-                        <div>
-                            <button 
-                                css={tw`mt-4 mb-4 bg-white border-none cursor-pointer text-lg`}
-                            >
-                                <FontAwesomeIcon 
-                                    icon={faCopy} 
-                                />
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>
