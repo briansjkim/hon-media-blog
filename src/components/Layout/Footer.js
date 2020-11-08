@@ -22,7 +22,7 @@ const Footer = () => (
                     alt="logo"
                     style={{ height: "45px", width: "45px" }}
                 />
-                <div css={tw`text-sm `}>&copy; Hon Media 2020</div>
+                <div css={tw`text-xs sm:text-sm`}>&copy; Hon Media 2020</div>
                 
                 <div css={tw`block`}>
                     {
@@ -65,7 +65,7 @@ const Footer = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
-                        css={tw`mx-2 p-2 text-black rounded-full bg-gray-400 text-md`}
+                        css={tw`p-2 text-black rounded-full text-md`}
                         ><FontAwesomeIcon icon={faInstagram} />
                     </a>
                     <a
@@ -73,7 +73,7 @@ const Footer = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        css={tw`mx-2 p-2 text-black rounded-full bg-gray-400 text-md`}
+                        css={tw`p-2 text-black rounded-full text-md`}
                         ><FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                     <a
@@ -81,7 +81,7 @@ const Footer = () => (
                         className="text-button hover:text-buttonHover"
                         target="_blank"
                         rel="noopener noreferrer"
-                        css={tw`mx-2 p-2 text-black rounded-full bg-gray-400 text-md`}
+                        css={tw`p-2 text-black rounded-full text-md`}
                         ><FontAwesomeIcon icon={faFacebookF} />
                     </a>
             </div>
