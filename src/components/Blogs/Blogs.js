@@ -21,7 +21,6 @@ class Blogs extends Component {
         };
 
         this.handleChoose = this.handleChoose.bind(this);
-        // this.handleLike = this.handleLike.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
