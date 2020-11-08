@@ -5,7 +5,7 @@ import FullBlog from '../components/Blogs/FullBlog';
 import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
-    if (!location.state.blog) {
+    if (!location.state) {
         return null;
     }
 
