@@ -21,7 +21,7 @@ class EditModal extends Component {
         return (
             <div
                 id="overlay"
-                css={tw`fixed w-full h-full inset-0`}
+                css={tw`fixed w-full h-full inset-0 z-30`}
                 style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
             >
                 <div
