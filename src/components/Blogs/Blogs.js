@@ -131,7 +131,7 @@ class Blogs extends Component {
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.showModal} />
                         )}
                     </div>
                 }

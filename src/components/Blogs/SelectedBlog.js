@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
-// import { isLoggedIn } from '../Auth/Auth.js';
+import { isLoggedIn } from '../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 
 class SelectedBlog extends Component {
@@ -23,7 +24,7 @@ class SelectedBlog extends Component {
             >
                 <div
                     css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', maxHeight: '500px' }}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px' }}
                 >
                   <div
                     css={tw`relative`}
@@ -31,8 +32,9 @@ class SelectedBlog extends Component {
                     <img
                       alt="Blog"
                       src={this.props.blog.image}
-                      style={{ objectFit: 'scale-down', maxWidth: '100%', maxHeight: '100%'}}
+                      style={{ objectFit: 'scale-down', maxWidth: '100%' }}
                     />
+                    {isLoggedIn() && 
                     <button
                       type="button"
                       aria-label="Edit"
@@ -42,15 +44,16 @@ class SelectedBlog extends Component {
                       }}
                       css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
                     ><FontAwesomeIcon icon={faCog} /></button>
+                    }
                   </div>
                     <div 
                       id="info-container"
                       css={tw`flex flex-col justify-between`}
-                      style={{ height: '200px' }}
+                      style={{ minHeight: '150px' }}
                     >
                       <div css={tw`flex flex-row justify-between px-8`}>
                         <h1>{this.props.blog.title}</h1>
-                        {/* <div>Likes</div> */}
+                        <div><FontAwesomeIcon icon={faHeart} /> {this.props.blog.likes}</div>
                       </div>
                       <div css={tw`flex flex-row justify-between px-8 pb-4`}>
                         <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
 
+import { isLoggedIn } from '../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
 class FeaturedBlog extends Component {
     constructor(props) {
@@ -29,16 +31,18 @@ class FeaturedBlog extends Component {
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px' }}
                 >
                     <div css={tw`relative`}>
+                        {isLoggedIn() &&
                         <FontAwesomeIcon 
                             onClick={this.props.edit}
                             css={tw`absolute top-0 right-0 mr-3`}
                             icon={faCog} 
                         />
+                        }
                         <h3 css={tw`text-left pl-6`}>{this.props.blog.title}</h3>
                     </div>
                   <div css={tw`flex flex-row justify-between px-6 pb-4`}>
                     <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
-                    {/* <div>Likes</div> */}
+                    <div><FontAwesomeIcon icon={faHeart} /> {this.props.blog.likes}</div>
                   </div>
                 </div>
             </div>
