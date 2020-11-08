@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../axios-instance';
 
+import ShareModal from './ShareModal';
 import Interactions from '../DevTools/Interactions';
 
 class FullBlog extends Component {
@@ -11,7 +12,8 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            shares: null
+            shares: null,
+            showModal: false
         }
 
         this.getBlog = this.getBlog.bind(this);
@@ -46,15 +48,17 @@ class FullBlog extends Component {
     };
 
     // needs to actually share content still
-    handleShare() {
-        let newShares = this.props.blog.shares + 1;
-        axios.patch(`/posts/${this.state.childName}/.json`, {
-            shares: newShares,
-        })
-            .then(() => this.getBlog())
-            .catch((err) => console.error(err));
+    handleShare(e) {
+        // let newShares = this.props.blog.shares + 1;
+        // axios.patch(`/posts/${this.state.childName}/.json`, {
+        //     shares: newShares,
+        // })
+        //     .then(() => this.getBlog())
+        //     .catch((err) => console.error(err));
+        this.setState({
+            showModal: !this.state.showModal
+        });
     };
-
 
     render() { 
         return (
