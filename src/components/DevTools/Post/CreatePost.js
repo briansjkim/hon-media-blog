@@ -136,6 +136,18 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
+                    <div css={tw`leading-8`}>
+                        <textarea
+                            type="textarea"
+                            id="content"
+                            placeholder="Content"
+                            value={this.state.content}
+                            onChange={this.handleKeyDown}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins', overflow: 'hidden' }}
+                            required
+                        />
+                    </div>
                     <div css={tw`leading-8 mb-3`}>
                         <div
                             css={tw`font-bold`}
@@ -149,18 +161,6 @@ class CreatePost extends Component {
                             checked={this.state.isFeatured ? 1 : 0}
                         />
                         <label htmlFor="isFeatured"> ENABLED</label>
-                    </div>
-                    <div css={tw`leading-8`}>
-                        <textarea
-                            type="textarea"
-                            id="content"
-                            placeholder="Content"
-                            value={this.state.content}
-                            onChange={this.handleKeyDown}
-                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins', overflow: 'hidden' }}
-                            required
-                        />
                     </div>
                     <button
                         type="button"

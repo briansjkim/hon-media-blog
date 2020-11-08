@@ -10,8 +10,7 @@ class DevTools extends Component {
         this.state = {
             showMenu: false,
         };
-        
-        this.handleClick = this.handleClick.bind(this);
+
         this.toggleMenu = this.toggleMenu.bind(this);
     };
 
@@ -21,20 +20,13 @@ class DevTools extends Component {
         });
     };
 
-    handleClick() {
-        this.setState(prevState => {
-            return {
-                showMenu: !prevState.showMenu
-            };
-        });
-    };
-
     render() {
         return (
             <div
                 aria-hidden="true"
-                onMouseEnter={this.toggleMenu}
-                onMouseLeave={this.toggleMenu}
+                onClick={this.toggleMenu}
+                // onMouseEnter={this.toggleMenu}
+                // onMouseLeave={this.toggleMenu}
                 css={tw`w-32 ml-4 mr-4 px-2 lg:px-4 no-underline text-black relative`}
             >
                 <button
