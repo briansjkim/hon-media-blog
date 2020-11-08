@@ -46,7 +46,7 @@ Brian Kim
 
 [![chui15](https://github.com/chui15.png?size=50)](https://github.com/chui15)
 
-Christine Hui
+Christie Hui
 
 [![joshskkim](https://github.com/joshskkim.png?size=50)](https://github.com/joshskkim)
 
