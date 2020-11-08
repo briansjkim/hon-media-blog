@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
 
-import EditModal from '../DevTools/EditModal';
+// import EditModal from '../DevTools/EditModal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,13 +13,14 @@ class FeaturedBlog extends Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(e) {
+    handleClick() {
       this.props.clickHandler(this.props.blog.title);
     };
     
     render() {
         return (
             <div
+                aria-hidden="true"
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
                 onClick={this.handleClick}

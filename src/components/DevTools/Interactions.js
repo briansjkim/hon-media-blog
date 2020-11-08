@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import tw from 'tailwind.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart, faComment, faShare } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faShare } from '@fortawesome/free-solid-svg-icons';
 
 const Interactions = ({ likes, shares, handleLike, handleShare }) => (
     <Fragment>
