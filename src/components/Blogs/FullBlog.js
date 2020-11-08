@@ -66,6 +66,7 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
+                <ShareModal onClose={this.handleShare} show={this.state.showModal}/>
                 <div> 
                     <div css={tw`w-1/2 m-auto text-left`}>
                         <h1
