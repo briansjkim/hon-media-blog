@@ -2,13 +2,26 @@ import React from "react";
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
 import { isLoggedIn } from '../Auth/Auth';
+import Logo from '../../assets/images/HonLogo.png';
 import DevTools from '../DevTools/DevToolsDropdown';
 
 const Header = () => (
     <header
-        css={tw`sticky top-0 bg-white shadow-xl`}
+        css={tw`sticky top-0 bg-white shadow-xl z-10`}
     >
         <div className="container" css={tw`flex flex-col sm:flex-row justify-end items-center mx-auto py-4 px-8`}>
+            <Link
+                to='/'
+                css={tw`fixed right-0 top-0 left-0`}
+                style={{ width: '10%' }}
+            >
+                <img
+                    css={tw`block m-auto`}
+                    src={Logo}
+                    alt="logo"
+                    style={{ height: '50px' , width: '50px'}}
+                />
+            </Link>
             <div css={tw`flex mt-4 sm:mt-0`}>
                 <Link 
                     to='/'

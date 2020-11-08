@@ -1,29 +1,16 @@
 import React from 'react';
 import tw from 'tailwind.macro';
 
-import { Link } from 'gatsby';
-import Logo from '../../assets/images/HonLogo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 const SideDrawer = () => (
         <div
-            css={tw`border-solid fixed h-full bg-gray-100 border-none flex flex-col text-center`}
+            css={tw`border-solid fixed h-full bg-white border-0 flex flex-col text-center`}
             style={{ width: '10%', zIndex: '1' }}
         >
-            <Link
-                to='/'
-                css={tw`py-2`}
-            >
-                <img
-                    css={tw`mx-auto`}
-                    src={Logo}
-                    alt="logo"
-                    style={{ height: '40px' , width: '60px'}}
-                />
-            </Link>
             <div
-                css={tw`mt-20`}
+                css={tw`mt-40`}
             >
                 FOLLOW
             </div>
