@@ -12,7 +12,6 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            shares: null,
             showModal: false
         }
 
@@ -82,7 +81,7 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} shares={this.state.shares} handleLike={this.handleLike} handleShare={this.handleShare} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} />
                         </div>
                     </div>
                 </div>
