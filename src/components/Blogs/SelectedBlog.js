@@ -23,12 +23,16 @@ class SelectedBlog extends Component {
             >
                 <div
                     css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', height: '500px' }}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px', maxHeight: '500px' }}
                 >
                   <div
                     css={tw`relative`}
                   >
-                    <img alt="Blog" src={this.props.blog.image} width="570" height="300" />
+                    <img
+                      alt="Blog"
+                      src={this.props.blog.image}
+                      style={{ objectFit: 'scale-down', maxWidth: '100%', maxHeight: '100%'}}
+                    />
                     <button
                       type="button"
                       aria-label="Edit"

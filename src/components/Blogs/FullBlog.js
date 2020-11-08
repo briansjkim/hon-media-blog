@@ -72,7 +72,7 @@ class FullBlog extends Component {
                     <img 
                         alt="Blog" 
                         src={this.props.blog.image}
-                        width='100%'
+                        style={{ objectFit: 'scale-down', maxWidth: '100%' }}
                     />
                 </div>
                 <div> 

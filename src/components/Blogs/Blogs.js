@@ -100,7 +100,7 @@ class Blogs extends Component {
 
         return (
             <div
-                css={tw`pt-8 rounded-lg border border-gray-200`}
+                css={tw`pt-8`}
                 style={{ marginLeft: '15%', marginRight: '5%' }}
             >
                 <EditModal onClose={this.showModal} show={this.state.showModal} />
@@ -108,6 +108,7 @@ class Blogs extends Component {
                     <Spinner />
                         :
                     <div
+                        css={tw`rounded-lg border border-gray-200`}
                         style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
                     >  
                         <h1
