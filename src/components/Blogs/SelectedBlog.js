@@ -12,6 +12,12 @@ class SelectedBlog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+
+        this.handleEdit = this.handleEdit.bind(this);
+    }
+
+    handleEdit() {
+      this.props.edit(this.props.blog);
     }
     
     render() {
@@ -40,7 +46,7 @@ class SelectedBlog extends Component {
                       aria-label="Edit"
                       onClick={e => {
                         e.preventDefault()
-                        this.props.edit(e)
+                        this.handleEdit()
                       }}
                       css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
                     ><FontAwesomeIcon icon={faCog} /></button>

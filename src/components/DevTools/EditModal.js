@@ -9,15 +9,22 @@ class EditModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isFeatured: false
+            isFeatured: this.props.blog.isFeatured
         };
 
         this.handleClose = this.handleClose.bind(this);
+        this.handleFeatured = this.handleFeatured.bind(this);
     };
 
     handleClose(e) {
         this.props.onClose && this.props.onClose(e);
     };
+
+    handleFeatured() {
+        this.setState({
+            isFeatured: !this.state.isFeatured
+        })
+    }
 
     render() {
         if(!this.props.show) {
@@ -48,6 +55,7 @@ class EditModal extends Component {
                     <div css={tw`mb-6 mt-2`}>
                         <button 
                             css={tw`outline-none border-none bg-white cursor-pointer mb-4 text-lg`}
+                            onClick={this.handleFeatured}
                         >
                             {this.state.isFeatured ?
                             <FontAwesomeIcon 

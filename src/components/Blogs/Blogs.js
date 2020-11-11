@@ -17,10 +17,12 @@ class Blogs extends Component {
             featureds: [],
             selected: {},
             loading: true,
-            showModal: false
+            showModal: false,
+            editedBlog: {}
         };
 
         this.handleChoose = this.handleChoose.bind(this);
+        this.editBlog = this.editBlog.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
@@ -58,11 +60,18 @@ class Blogs extends Component {
         }
     };
 
-    showModal(e) {
+    editBlog(blog) {
+        this.setState({
+            editedBlog: blog
+        });
+        this.showModal();
+    }
+
+    showModal() {
         this.setState({
             showModal: !this.state.showModal
         })
-    }
+    };
 
     timeSince(date) {
         const seconds = Math.floor(((new Date().getTime()/1000) - date));
@@ -102,7 +111,7 @@ class Blogs extends Component {
             <div
                 style={{ marginLeft: '10%', marginRight: '5%' }}
             >
-                <EditModal onClose={this.showModal} show={this.state.showModal} />
+                <EditModal onClose={this.showModal} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
                     <Spinner />
                         :
@@ -120,17 +129,17 @@ class Blogs extends Component {
                             style={{ height: '500px' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
-                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.showModal} />
+                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.editBlog} />
                             )}
                         </div>
-                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.showModal} />
+                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.editBlog} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.showModal} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.editBlog} />
                         )}
                     </div>
                 }
