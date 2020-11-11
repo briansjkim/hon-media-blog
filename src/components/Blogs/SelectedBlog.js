@@ -32,7 +32,7 @@ class SelectedBlog extends Component {
                     <img
                       alt="Blog"
                       src={this.props.blog.image}
-                      style={{ objectFit: 'scale-down', maxWidth: '100%' }}
+                      style={{ width: '100%', maxHeight: '350px' }}
                     />
                     {isLoggedIn() && 
                     <button
