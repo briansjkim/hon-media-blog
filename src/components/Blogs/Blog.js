@@ -16,11 +16,17 @@ class Blog extends Component {
         this.state = {};
 
         this.handleEdit = this.handleEdit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     };
 
     handleEdit() {
         this.props.edit(this.props.blog);
     }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.handleEdit();
+    };
     
     render() {
         return (
@@ -46,11 +52,8 @@ class Blog extends Component {
                         <button
                         type="button"
                         aria-label="Edit"
-                        onClick={e => {
-                            e.preventDefault()
-                            this.handleEdit()
-                        }}
-                        css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
+                        onClick={this.handleClick}
+                        css={tw`outline-none absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
                         ><FontAwesomeIcon icon={faCog} /></button>
                         }
                     </div>

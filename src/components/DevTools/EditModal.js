@@ -23,7 +23,9 @@ class EditModal extends Component {
     handleFeatured() {
         this.setState({
             isFeatured: !this.state.isFeatured
-        })
+        });
+
+        console.log(this.props.blog)
     }
 
     render() {

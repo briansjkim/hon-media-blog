@@ -31,7 +31,12 @@ class Blogs extends Component {
         const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
+                const childNamesArray = Object.keys(res.data);
                 const blogsArray = Object.values(res.data);
+                for(let i = 0; i < blogsArray.length; i++) {
+                    blogsArray[i].childName = childNamesArray[i];
+                }
+
                 const updatedBlogs = blogs.concat(blogsArray);
 
                 const featured = [];
