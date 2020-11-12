@@ -3,29 +3,45 @@ import tw from "tailwind.macro";
 import { navigate } from 'gatsby';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import axios from '../../axios-instance';
+import { faTimes, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
 
 class EditModal extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            isFeatured: this.props.blog.isFeatured
+        };
 
         this.handleClose = this.handleClose.bind(this);
-        this.deleteBlog = this.deleteBlog.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleFeatured = this.handleFeatured.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     };
 
     handleClose(e) {
         this.props.onClose && this.props.onClose(e);
     };
 
-    deleteBlog() {
-        const post = this.props.blog;
+    handleFeatured() {
+        this.setState({
+            isFeatured: !this.state.isFeatured
+        });
 
-        axios.delete('/posts.json', post)
-            .then(() => window.location.reload(true))
-            .catch(error => console.log(error))
-    };
+        this.props.changeFeatured(this.state.isFeatured, this.props.blog.childName);
+    }
+
+    handleEdit() {
+        const blog = this.props.blog;
+        navigate('/editpost', 
+        {
+            state: { blog }
+        });
+    }
+
+    handleDelete() {
+        this.props.deleteBlog(this.props.blog.childName);
+    }
 
     render() {
         if(!this.props.show) {
@@ -45,7 +61,7 @@ class EditModal extends Component {
                     <div css={tw`flex justify-center items-center`}>
                         <h2>Options</h2>
                         <button
-                            css={tw`ml-8 border-none bg-white cursor-pointer font-bold`}
+                            css={tw`outline-none ml-8 border-none bg-white cursor-pointer font-bold`}
                             onClick={this.handleClose}
                         >
                             <FontAwesomeIcon 
@@ -55,23 +71,40 @@ class EditModal extends Component {
                     </div>
                     <div css={tw`mb-6 mt-2`}>
                         <button 
-                            css={tw`border-none bg-white cursor-pointer mb-4 text-lg`}
+                            css={tw`outline-none border-none bg-white cursor-pointer mb-4 text-lg`}
+                            onClick={this.handleFeatured}
                         >
-                            FEATURED
+                            {this.state.isFeatured ?
+                            <FontAwesomeIcon 
+                                icon={faSquare} 
+                            />
+                            :
+                            <FontAwesomeIcon 
+                                icon={faCheckSquare} 
+                            />
+                            }
+                            {' FEATURED'}
                         </button>
                         <br />
                         <button
-                            css={tw`border-none bg-white cursor-pointer text-lg`}
+                            css={tw`outline-none border-none bg-white cursor-pointer text-lg`}
+                            onClick={this.handleEdit}
                         >
-                            EDIT
+                            <FontAwesomeIcon 
+                                icon={faPen} 
+                            />
+                            {' EDIT'}
                         </button>
                     </div>
                     <div css={tw`w-1/2 m-auto border-t border-b-0 border-l-0 border-r-0 border-gray-400 border-solid`}>
                         <button 
-                            css={tw`mt-4 mb-4 text-red-600 bg-white border-none cursor-pointer text-lg`}
-                            onClick={this.deleteBlog}
+                            css={tw`mt-4 mb-4 text-red-600 bg-white outline-none border-none cursor-pointer text-lg`}
+                            onClick={this.handleDelete}
                         >
-                            DELETE
+                            <FontAwesomeIcon 
+                                icon={faTrash} 
+                            />
+                            {' DELETE'}
                         </button>
                     </div>
                 </div>

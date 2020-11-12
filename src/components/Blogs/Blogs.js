@@ -17,36 +17,47 @@ class Blogs extends Component {
             featureds: [],
             selected: {},
             loading: true,
-            showModal: false
+            showModal: false,
+            editedBlog: {}
         };
 
         this.handleChoose = this.handleChoose.bind(this);
+        this.editBlog = this.editBlog.bind(this);
+        this.getBlogs = this.getBlogs.bind(this);
+        this.changeFeatured = this.changeFeatured.bind(this);
+        this.deleteBlog = this.deleteBlog.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
 
     componentDidMount() {
-        const { blogs } = this.state;
+        this.getBlogs();
+    };
+    
+    getBlogs() {
         axios.get('/posts.json')
             .then((res) => {
+                const childNamesArray = Object.keys(res.data);
                 const blogsArray = Object.values(res.data);
-                const updatedBlogs = blogs.concat(blogsArray);
+                for(let i = 0; i < blogsArray.length; i++) {
+                    blogsArray[i].childName = childNamesArray[i];
+                }
 
                 const featured = [];
-                for(let i = 0; i < updatedBlogs.length; i++) {
-                    if (updatedBlogs[i].isFeatured) {
-                        featured.push(updatedBlogs[i]);
+                for(let i = 0; i < blogsArray.length; i++) {
+                    if (blogsArray[i].isFeatured) {
+                        featured.push(blogsArray[i]);
                     };
                 };
 
                 this.setState({
-                    blogs: updatedBlogs,
+                    blogs: blogsArray,
                     featureds: featured,
                     loading: false
                 });
             })
             .catch(error => console.log(error));
-    };
+    }
 
     handleChoose(title) {
         for(let i = 0; i < this.state.featureds.length; i++) {
@@ -58,11 +69,32 @@ class Blogs extends Component {
         }
     };
 
-    showModal(e) {
+    editBlog(blog) {
+        this.setState({
+            editedBlog: blog
+        });
+        this.showModal();
+    }
+
+    changeFeatured(featured, childName) {
+        axios.patch(`/posts/${childName}/.json`, {
+            isFeatured: featured,
+        })
+            .then(() => this.getBlogs())
+            .catch((err) => console.error(err));
+    }
+
+    deleteBlog(childName) {
+        axios.delete(`/posts/${childName}/.json`)
+            .then(() => window.location.reload())
+            .catch((err) => console.error(err));
+    }
+
+    showModal() {
         this.setState({
             showModal: !this.state.showModal
         })
-    }
+    };
 
     timeSince(date) {
         const seconds = Math.floor(((new Date().getTime()/1000) - date));
@@ -100,9 +132,9 @@ class Blogs extends Component {
 
         return (
             <div
-                style={{ marginLeft: '5%', marginRight: '5%' }}
+                style={{ marginLeft: '10%', marginRight: '5%' }}
             >
-                <EditModal blog={this.state.selected} onClose={this.showModal} show={this.state.showModal} />
+                <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
                     <Spinner />
                         :
@@ -120,17 +152,17 @@ class Blogs extends Component {
                             style={{ height: '500px' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
-                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.showModal} />
+                                <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.editBlog} />
                             )}
                         </div>
-                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.showModal} />
+                        <SelectedBlog blog={this.state.selected} timeAgo={this.timeSince} edit={this.editBlog} />
                         <h1
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
                             All
                         </h1>
                         {this.state.blogs.map((blog, idx) =>
-                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.showModal} />
+                            <Blog blog={blog} key={idx} timeAgo={this.timeSince} edit={this.editBlog} />
                         )}
                     </div>
                 }

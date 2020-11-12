@@ -14,6 +14,18 @@ class Blog extends Component {
     constructor(props) {
         super(props);
         this.state = {};
+
+        this.handleEdit = this.handleEdit.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    };
+
+    handleEdit() {
+        this.props.edit(this.props.blog);
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.handleEdit();
     };
     
     render() {
@@ -34,17 +46,14 @@ class Blog extends Component {
                         <img
                             alt="Blog"
                             src={this.props.blog.image}
-                            style={{ objectFit: 'scale-down', maxWidth: '100%', maxHeight: '100%'}}
+                            style={{ width: '100%' }}
                         />
                         {isLoggedIn() && 
                         <button
                         type="button"
                         aria-label="Edit"
-                        onClick={e => {
-                            e.preventDefault()
-                            this.props.edit(e)
-                        }}
-                        css={tw`absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
+                        onClick={this.handleClick}
+                        css={tw`outline-none absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
                         ><FontAwesomeIcon icon={faCog} /></button>
                         }
                     </div>

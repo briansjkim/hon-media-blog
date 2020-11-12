@@ -12,11 +12,16 @@ class FeaturedBlog extends Component {
         this.state = {};
 
         this.handleClick = this.handleClick.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     handleClick() {
       this.props.clickHandler(this.props.blog.title);
     };
+
+    handleEdit() {
+        this.props.edit(this.props.blog);
+    }
     
     render() {
         return (
@@ -33,7 +38,7 @@ class FeaturedBlog extends Component {
                     <div css={tw`relative`}>
                         {isLoggedIn() &&
                         <FontAwesomeIcon 
-                            onClick={this.props.edit}
+                            onClick={this.handleEdit}
                             css={tw`absolute top-0 right-0 mr-3`}
                             icon={faCog} 
                         />
