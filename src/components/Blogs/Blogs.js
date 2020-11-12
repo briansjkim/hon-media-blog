@@ -35,7 +35,6 @@ class Blogs extends Component {
     };
     
     getBlogs() {
-        const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
                 const childNamesArray = Object.keys(res.data);
@@ -85,9 +84,9 @@ class Blogs extends Component {
             .catch((err) => console.error(err));
     }
 
-    deleteBlog(blog) {
-        axios.delete('/posts.json', blog)
-            .then(() => this.getBlogs())
+    deleteBlog(childName) {
+        axios.delete(`/posts/${childName}/.json`)
+            .then(() => window.location.reload())
             .catch((err) => console.error(err));
     }
 

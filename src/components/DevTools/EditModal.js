@@ -31,7 +31,7 @@ class EditModal extends Component {
     }
 
     handleDelete() {
-        this.props.deleteBlog(this.props.blog);
+        this.props.deleteBlog(this.props.blog.childName);
     }
 
     render() {
