@@ -23,11 +23,17 @@ class Blogs extends Component {
 
         this.handleChoose = this.handleChoose.bind(this);
         this.editBlog = this.editBlog.bind(this);
+        this.getBlogs = this.getBlogs.bind(this);
+        this.changeFeatured = this.changeFeatured.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
 
     componentDidMount() {
+        this.getBlogs();
+    };
+    
+    getBlogs() {
         const { blogs } = this.state;
         axios.get('/posts.json')
             .then((res) => {
@@ -37,23 +43,21 @@ class Blogs extends Component {
                     blogsArray[i].childName = childNamesArray[i];
                 }
 
-                const updatedBlogs = blogs.concat(blogsArray);
-
                 const featured = [];
-                for(let i = 0; i < updatedBlogs.length; i++) {
-                    if (updatedBlogs[i].isFeatured) {
-                        featured.push(updatedBlogs[i]);
+                for(let i = 0; i < blogsArray.length; i++) {
+                    if (blogsArray[i].isFeatured) {
+                        featured.push(blogsArray[i]);
                     };
                 };
 
                 this.setState({
-                    blogs: updatedBlogs,
+                    blogs: blogsArray,
                     featureds: featured,
                     loading: false
                 });
             })
             .catch(error => console.log(error));
-    };
+    }
 
     handleChoose(title) {
         for(let i = 0; i < this.state.featureds.length; i++) {
@@ -70,6 +74,14 @@ class Blogs extends Component {
             editedBlog: blog
         });
         this.showModal();
+    }
+
+    changeFeatured(featured, childName) {
+        axios.patch(`/posts/${childName}/.json`, {
+            isFeatured: featured,
+        })
+            .then(() => this.getBlogs())
+            .catch((err) => console.error(err));
     }
 
     showModal() {
@@ -116,7 +128,7 @@ class Blogs extends Component {
             <div
                 style={{ marginLeft: '10%', marginRight: '5%' }}
             >
-                <EditModal onClose={this.showModal} show={this.state.showModal} blog={this.state.editedBlog} />
+                <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
                     <Spinner />
                         :

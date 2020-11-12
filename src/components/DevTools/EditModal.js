@@ -25,7 +25,7 @@ class EditModal extends Component {
             isFeatured: !this.state.isFeatured
         });
 
-        console.log(this.props.blog)
+        this.props.changeFeatured(this.state.isFeatured, this.props.blog.childName);
     }
 
     render() {
@@ -61,11 +61,11 @@ class EditModal extends Component {
                         >
                             {this.state.isFeatured ?
                             <FontAwesomeIcon 
-                                icon={faCheckSquare} 
+                                icon={faSquare} 
                             />
                             :
                             <FontAwesomeIcon 
-                                icon={faSquare} 
+                                icon={faCheckSquare} 
                             />
                             }
                             {' FEATURED'}
