@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import tw from "tailwind.macro";
+import { navigate } from 'gatsby';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -22,7 +23,7 @@ class EditModal extends Component {
         const post = this.props.blog;
 
         axios.delete('/posts.json', post)
-            .then((res) => console.log(res))
+            .then(() => window.location.reload(true))
             .catch(error => console.log(error))
     };
 
