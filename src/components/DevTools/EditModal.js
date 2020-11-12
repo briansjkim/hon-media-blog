@@ -32,7 +32,11 @@ class EditModal extends Component {
     }
 
     handleEdit() {
-        navigate('/editpost');
+        const blog = this.props.blog;
+        navigate('/editpost', 
+        {
+            state: { blog }
+        });
     }
 
     handleDelete() {

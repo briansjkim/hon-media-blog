@@ -4,8 +4,8 @@ import axios from '../../../axios-instance';
 import { navigate } from 'gatsby';
 
 class EditPost extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         const today = new Date();
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -90,7 +90,7 @@ class EditPost extends Component {
         return (
             <div css={tw`ml-64`}>
                 <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800`}>
-                    Create New Post
+                    Edit Post
                 </div>
                 <form>
                     <div 
