@@ -51,7 +51,7 @@ class SelectedBlog extends Component {
                       type="button"
                       aria-label="Edit"
                       onClick={this.handleClick}
-                      css={tw`outline-none absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
+                      css={tw`outline-none cursor-pointer absolute z-1 top-0 right-0 mt-3 mr-3 border-none bg-transparent`}
                     ><FontAwesomeIcon icon={faCog} /></button>
                     }
                   </div>
