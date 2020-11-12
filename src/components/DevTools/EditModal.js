@@ -3,13 +3,8 @@ import tw from "tailwind.macro";
 import { navigate } from 'gatsby';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-<<<<<<< HEAD
 import { faTimes, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faSquare, faCheckSquare } from '@fortawesome/free-regular-svg-icons';
-=======
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-import axios from '../../axios-instance';
->>>>>>> 9c90b2937c780d26e18dc5e862acaf96b9f14152
 
 class EditModal extends Component {
     constructor(props) {
@@ -20,6 +15,7 @@ class EditModal extends Component {
 
         this.handleClose = this.handleClose.bind(this);
         this.handleFeatured = this.handleFeatured.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     };
 
     handleClose(e) {
@@ -35,7 +31,7 @@ class EditModal extends Component {
     }
 
     handleDelete() {
-
+        this.props.deleteBlog(this.props.blog);
     }
 
     render() {
@@ -93,7 +89,7 @@ class EditModal extends Component {
                     <div css={tw`w-1/2 m-auto border-t border-b-0 border-l-0 border-r-0 border-gray-400 border-solid`}>
                         <button 
                             css={tw`mt-4 mb-4 text-red-600 bg-white outline-none border-none cursor-pointer text-lg`}
-                            onClick={this.deleteBlog}
+                            onClick={this.handleDelete}
                         >
                             <FontAwesomeIcon 
                                 icon={faTrash} 

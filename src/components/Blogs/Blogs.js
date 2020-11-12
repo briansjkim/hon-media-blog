@@ -25,6 +25,7 @@ class Blogs extends Component {
         this.editBlog = this.editBlog.bind(this);
         this.getBlogs = this.getBlogs.bind(this);
         this.changeFeatured = this.changeFeatured.bind(this);
+        this.deleteBlog = this.deleteBlog.bind(this);
         this.showModal = this.showModal.bind(this);
         this.timeSince = this.timeSince.bind(this);
     };
@@ -84,6 +85,12 @@ class Blogs extends Component {
             .catch((err) => console.error(err));
     }
 
+    deleteBlog(blog) {
+        axios.delete('/posts.json', blog)
+            .then(() => this.getBlogs())
+            .catch((err) => console.error(err));
+    }
+
     showModal() {
         this.setState({
             showModal: !this.state.showModal
@@ -128,7 +135,7 @@ class Blogs extends Component {
             <div
                 style={{ marginLeft: '10%', marginRight: '5%' }}
             >
-                <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} show={this.state.showModal} blog={this.state.editedBlog} />
+                <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
                     <Spinner />
                         :
