@@ -11,18 +11,18 @@ class EditPost extends Component {
         const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         this.state = {
-            title: '',
-            content: '',
-            name: '',
-            image: '',
-            tags: '',
-            isFeatured: true,
-            commentsEnabled: true,
+            title: this.props.blog.title,
+            content: this.props.blog.content,
+            name: this.props.blog.name,
+            image: this.props.blog.image,
+            tags: this.props.blog.tags,
+            isFeatured: this.props.blog.isFeatured,
+            commentsEnabled: this.props.blog.commentsEnabled,
             date: `${monthNames[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
-            likes: 0,
-            comments: 0,
-            shares: 0
+            likes: this.props.blog.likes,
+            comments: this.props.blog.comments,
+            shares: this.props.blog.shares
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -73,9 +73,9 @@ class EditPost extends Component {
             shares: this.state.shares
         };
 
-        axios.post('/posts.json', post)
+        axios.put(`/posts/${this.props.blog.childName}/.json`, post)
             .then(() => this.returnHome())
-            .catch(error => console.log(error));
+            .catch((err) => console.error(err));
     };
 
     checkValidity() {
@@ -90,7 +90,7 @@ class EditPost extends Component {
         return (
             <div css={tw`ml-64`}>
                 <div css={tw`tracking-wide w-740px h-60px font-semibold text-4xl text-gray-800`}>
-                    Edit Post
+                    Edit Post {this.props.blog.title}
                 </div>
                 <form>
                     <div 
@@ -102,7 +102,6 @@ class EditPost extends Component {
                             type="text"
                             id="title"
                             name="title"
-                            placeholder="Title"
                             value={this.state.title}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
