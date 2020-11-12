@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../../axios-instance';
-import { navigate } from 'gatsby';\
+import { navigate } from 'gatsby';
 
 class EditPost extends Component {
     constructor() {

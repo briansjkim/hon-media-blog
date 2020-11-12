@@ -14,6 +14,7 @@ class EditModal extends Component {
         };
 
         this.handleClose = this.handleClose.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
         this.handleFeatured = this.handleFeatured.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
     };
@@ -28,6 +29,10 @@ class EditModal extends Component {
         });
 
         this.props.changeFeatured(this.state.isFeatured, this.props.blog.childName);
+    }
+
+    handleEdit() {
+        navigate('/editpost');
     }
 
     handleDelete() {
@@ -79,6 +84,7 @@ class EditModal extends Component {
                         <br />
                         <button
                             css={tw`outline-none border-none bg-white cursor-pointer text-lg`}
+                            onClick={this.handleEdit}
                         >
                             <FontAwesomeIcon 
                                 icon={faPen} 
