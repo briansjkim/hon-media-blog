@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import tw from "tailwind.macro";
+import { navigate } from 'gatsby';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import axios from '../../axios-instance';
 
 class EditModal extends Component {
     constructor(props) {
@@ -10,16 +12,25 @@ class EditModal extends Component {
         this.state = {};
 
         this.handleClose = this.handleClose.bind(this);
+        this.deleteBlog = this.deleteBlog.bind(this);
     };
 
     handleClose(e) {
         this.props.onClose && this.props.onClose(e);
     };
 
+    deleteBlog() {
+        const post = this.props.blog;
+
+        axios.delete('/posts.json', post)
+            .then(() => window.location.reload(true))
+            .catch(error => console.log(error))
+    };
+
     render() {
         if(!this.props.show) {
             return null;
-        }
+        };
 
         return (
             <div
@@ -58,6 +69,7 @@ class EditModal extends Component {
                     <div css={tw`w-1/2 m-auto border-t border-b-0 border-l-0 border-r-0 border-gray-400 border-solid`}>
                         <button 
                             css={tw`mt-4 mb-4 text-red-600 bg-white border-none cursor-pointer text-lg`}
+                            onClick={this.deleteBlog}
                         >
                             DELETE
                         </button>
