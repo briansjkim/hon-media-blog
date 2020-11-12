@@ -102,7 +102,7 @@ class Blogs extends Component {
             <div
                 style={{ marginLeft: '5%', marginRight: '5%' }}
             >
-                <EditModal onClose={this.showModal} show={this.state.showModal} />
+                <EditModal blog={this.state.selected} onClose={this.showModal} show={this.state.showModal} />
                 {this.state.loading ? 
                     <Spinner />
                         :

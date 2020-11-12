@@ -10,6 +10,7 @@ class EditModal extends Component {
         this.state = {};
 
         this.handleClose = this.handleClose.bind(this);
+        
     };
 
     handleClose(e) {
@@ -19,7 +20,8 @@ class EditModal extends Component {
     render() {
         if(!this.props.show) {
             return null;
-        }
+        };
+        console.log(this.props)
 
         return (
             <div
