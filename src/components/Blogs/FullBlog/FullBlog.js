@@ -4,6 +4,7 @@ import axios from '../../../axios-instance';
 
 import ShareModal from '../../DevTools/ShareModal';
 import Interactions from '../Interactions/Interactions';
+import CommentSection from '../Interactions/Comments/CommentSection';
 
 class FullBlog extends Component {
     constructor(props) {
@@ -12,17 +13,20 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            showModal: false
+            showShares: false,
+            showComments: false
         }
 
         this.getBlog = this.getBlog.bind(this);
         this.handleLike = this.handleLike.bind(this);
         this.handleShare = this.handleShare.bind(this);
+        this.toggleComments = this.toggleComments.bind(this);
     };
 
     componentDidMount() {
         this.getBlog();
-    }
+        console.log(this.props)
+    };
 
     getBlog() {
         axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
@@ -34,7 +38,7 @@ class FullBlog extends Component {
                 });
             })
             .catch((err) => console.error(err));
-    }
+    };
 
     // need to handle unliking as well
     handleLike() {
@@ -55,7 +59,14 @@ class FullBlog extends Component {
         //     .then(() => this.getBlog())
         //     .catch((err) => console.error(err));
         this.setState({
-            showModal: !this.state.showModal
+            showShares: !this.state.showShares
+        });
+    };
+
+    toggleComments() {
+        // sliding comment section
+        this.setState({
+            showComments: !this.state.showComments
         });
     };
 
@@ -65,7 +76,7 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
-                <ShareModal onClose={this.handleShare} show={this.state.showModal}/>
+                <ShareModal onClose={this.handleShare} show={this.state.showShares}/>
                 <div
                     css={tw`w-4/5 block m-auto`}
                 >
@@ -90,7 +101,7 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} toggleComments={this.toggleComments} />
                         </div>
                     </div>
                 </div>
@@ -99,6 +110,9 @@ class FullBlog extends Component {
                 </div>
                 <div css={tw`flex w-1/2 m-auto mt-10`}>
                     {/* <Interactions blog={this.props.blog} /> */}
+                </div>
+                <div>
+                    <CommentSection onClose={this.toggleComments} show={this.state.showComments} blog={this.props.blog} />
                 </div>
             </div>
         );
