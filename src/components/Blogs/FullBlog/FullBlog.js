@@ -4,6 +4,7 @@ import axios from '../../../axios-instance';
 
 import ShareModal from '../../DevTools/ShareModal';
 import Interactions from '../Interactions/Interactions';
+import CommentSection from '../Interactions/CommentSection';
 
 class FullBlog extends Component {
     constructor(props) {
@@ -12,12 +13,14 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            showModal: false
+            showModal: false,
+            showComments: false
         }
 
         this.getBlog = this.getBlog.bind(this);
         this.handleLike = this.handleLike.bind(this);
         this.handleShare = this.handleShare.bind(this);
+        this.handleComment = this.handleComment.bind(this);
     };
 
     componentDidMount() {
@@ -59,6 +62,12 @@ class FullBlog extends Component {
         });
     };
 
+    handleComment() {
+        this.setState({
+            showComments: !this.state.showComments
+        });
+    };
+
     render() { 
         return (
             <div
@@ -90,7 +99,7 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} handleComment={this.handleComment} />
                         </div>
                     </div>
                 </div>

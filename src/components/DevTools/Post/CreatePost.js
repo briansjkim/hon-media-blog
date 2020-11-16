@@ -22,7 +22,10 @@ class CreatePost extends Component {
             date: `${monthNames[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
             likes: 0,
-            comments: 0,
+            comments: {
+                numofComments: 0,
+                comments: []
+            },
             shares: 0
         };
 
