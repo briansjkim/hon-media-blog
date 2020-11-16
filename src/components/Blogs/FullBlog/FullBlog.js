@@ -13,7 +13,7 @@ class FullBlog extends Component {
         this.state = {
             childName: '',
             likes: null,
-            showModal: false,
+            showShares: false,
             showComments: false
         }
 
@@ -59,7 +59,7 @@ class FullBlog extends Component {
         //     .then(() => this.getBlog())
         //     .catch((err) => console.error(err));
         this.setState({
-            showModal: !this.state.showModal
+            showShares: !this.state.showShares
         });
     };
 
@@ -76,7 +76,7 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
-                <ShareModal onClose={this.handleShare} show={this.state.showModal}/>
+                <ShareModal onClose={this.handleShare} show={this.state.showShares}/>
                 <div
                     css={tw`w-4/5 block m-auto`}
                 >
@@ -112,7 +112,7 @@ class FullBlog extends Component {
                     {/* <Interactions blog={this.props.blog} /> */}
                 </div>
                 <div>
-                    <CommentSection blog={this.props.blog} />
+                    <CommentSection onClose={this.openComments} show={this.state.showComments} blog={this.props.blog} />
                 </div>
             </div>
         );

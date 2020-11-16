@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
+import axios from '../../../../axios-instance';
 
 import Comment from './Comment';
 
@@ -9,24 +10,44 @@ class CommentSection extends Component {
 
         this.state = {
             comment: '',
+            comments: [],
             author: ''
         };
 
+        this.getComments = this.getComments.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkValidity = this.checkValidity.bind(this);
     };
 
+    // handleClose(e) {
+    //     this.props.onClose && this.propse.onClose(e);
+    // };
+
     componentDidMount() {
         console.log(this.props);
-    }
+        // this.getComments();
+    };
 
-    handleChange() {
+    getComments() {
+        axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
+            .then((res) => {
+                // this.setState({
+                //     childName: Object.keys(res.data)[0],
+                // });
+            })
+            .catch((err) => console.error(err));
+    };
 
+    handleChange(e) {
+        // console.log(e.target.value)
+        this.setState({
+            [e.target.id]: e.target.value
+        });
     };
 
     handleSubmit() {
-
+        
     };
 
     checkValidity() {
@@ -47,10 +68,10 @@ class CommentSection extends Component {
                     <div css={tw`leading-8`}>
                         <textarea
                             type="textarea"
-                            id="comments"
+                            id="comment"
                             placeholder="Write a comment"
-                            // value={this.state.comment}
-                            // onChange={this.handleKeyDown}
+                            value={this.state.comment}
+                            onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{
                                 width: "740px",
@@ -66,8 +87,8 @@ class CommentSection extends Component {
                             type="textarea"
                             id="author"
                             placeholder="Name"
-                            // value={this.state.author}
-                            // onChange={this.handleChange}
+                            value={this.state.author}
+                            onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
                             style={{ width: '740px', height: '35px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
