@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import tw from 'tailwind.macro';
-import axios from '../../axios-instance';
+import axios from '../../../axios-instance';
 
-import ShareModal from '../DevTools/ShareModal';
-import Interactions from '../DevTools/Interactions';
+import ShareModal from '../../DevTools/ShareModal';
+import Interactions from '../Interactions/Interactions';
 
 class FullBlog extends Component {
     constructor(props) {

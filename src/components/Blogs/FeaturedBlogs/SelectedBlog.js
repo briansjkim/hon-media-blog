@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
-import { isLoggedIn } from '../Auth/Auth.js';
+import { isLoggedIn } from '../../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';

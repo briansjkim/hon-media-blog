@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
 
-import FeaturedBlog from './FeaturedBlog';
-import SelectedBlog from './SelectedBlog';
+import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
+import SelectedBlog from './FeaturedBlogs/SelectedBlog';
 import Blog from './Blog';
 import Loading from '../UI/Loading';
 import EditModal from '../DevTools/EditModal';

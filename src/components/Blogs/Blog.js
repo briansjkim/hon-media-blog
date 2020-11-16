@@ -7,9 +7,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 
-// keep Blog as a class component in order to add 'options' feature for devs
-// maybe change to functional and make 'options' feature a component
-
 class Blog extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +56,7 @@ class Blog extends Component {
                     </div>
                     <h3 css={tw`text-left pl-4`}>{this.props.blog.title}</h3>
                     <div css={tw`flex flex-row justify-between px-4 pb-4`}>
-                      <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
+                    <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
                     <div><FontAwesomeIcon icon={faHeart} /> {this.props.blog.likes}</div>
                     </div>
                 </div>
