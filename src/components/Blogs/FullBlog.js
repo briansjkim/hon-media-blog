@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import tw from 'tailwind.macro';
 import axios from '../../axios-instance';
 
-import ShareModal from './ShareModal';
+import ShareModal from '../DevTools/ShareModal';
 import Interactions from '../DevTools/Interactions';
 
 class FullBlog extends Component {

@@ -5,7 +5,7 @@ import axios from '../../axios-instance';
 import FeaturedBlog from './FeaturedBlog';
 import SelectedBlog from './SelectedBlog';
 import Blog from './Blog';
-import Spinner from '../UI/Spinner';
+import Loading from '../UI/Loading';
 import EditModal from '../DevTools/EditModal';
 
 class Blogs extends Component {
@@ -138,7 +138,7 @@ class Blogs extends Component {
             >
                 <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
-                    <Spinner />
+                    <Loading />
                         :
                     <div
                         css={tw`rounded-lg border border-gray-200`}
