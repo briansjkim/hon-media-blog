@@ -8,7 +8,8 @@ import DevTools from '../DevTools/DevToolsDropdown';
 const Header = () => (
     <header
         css={tw`sticky top-0 bg-white shadow-xl z-10 mb-16`}
-        style={{ width: '105%' }}
+        // CHrstie code
+        // style={{ width: '105%' }}
     >
         <div>
             <Link

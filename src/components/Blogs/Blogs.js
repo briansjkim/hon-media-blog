@@ -132,7 +132,9 @@ class Blogs extends Component {
 
         return (
             <div
-                style={{ marginLeft: '10%', width: '100%'}}
+                // Christie code below
+                // style={{ marginLeft: '10%', width: '100%'}}
+                style={{ width: '100% '}}
             >
                 <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 

@@ -14,7 +14,8 @@ export default () => (
         <section 
             className="container"
             css={tw`sm:m-auto sm:mt-16 sm:text-center`}
-            style={{ overflow: 'hidden', width: '100%'}}
+            // Christie code
+            // style={{ overflow: 'hidden', width: '100%'}}
         >
             <Blogs />
         </section>
