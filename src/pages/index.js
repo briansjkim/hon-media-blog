@@ -13,7 +13,8 @@ export default () => (
         </Helmet>
         <section 
             className="container"
-            css={tw`m-auto mt-16 text-center`}
+            css={tw`sm:m-auto sm:mt-16 sm:text-center`}
+            style={{ overflow: 'hidden', width: '100%'}}
         >
             <Blogs />
         </section>

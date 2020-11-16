@@ -14,6 +14,10 @@ module.exports = {
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px'
+      },
+      colors: {
+        button: '#0000ff',
+        buttonHover: '#0000d1'
       }
     },
   },

@@ -132,7 +132,7 @@ class Blogs extends Component {
 
         return (
             <div
-                style={{ marginLeft: '10%', marginRight: '5%' }}
+                style={{ marginLeft: '10%', width: '100%'}}
             >
                 <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
@@ -140,16 +140,16 @@ class Blogs extends Component {
                         :
                     <div
                         css={tw`rounded-lg border border-gray-200`}
-                        style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
+                        style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)', overflow: 'hidden' }}
                     >  
                         <h1
+                            css={tw`text-center mb-12`}
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
                             Featured
                         </h1>
                         <div
-                            css={tw`overflow-y-auto`}
-                            style={{ height: '500px' }}
+                            style={{ height: '500px', overflow: 'hidden' }}
                         >
                             {this.state.featureds.map((blog, idx) => 
                                 <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.editBlog} />

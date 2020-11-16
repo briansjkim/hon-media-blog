@@ -50,7 +50,7 @@ const Footer = () => (
                 <a
                     href="https://hon-media.com/#contact"
                     target='_blank'
-                    css={tw`text-sm px-2 lg:px-4 text-black hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`text-sm px-2 lg:px-4 text-black hover:text-opacity-75 hover:text-buttonHover`}
                     rel="noreferrer noopener"
                 >
                     Send us a message
@@ -65,7 +65,7 @@ const Footer = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Instagram"
-                        css={tw`p-2 text-black rounded-full text-md`}
+                        css={tw`p-2 text-black rounded-full text-lg hover:text-buttonHover mr-4`}
                         ><FontAwesomeIcon icon={faInstagram} />
                     </a>
                     <a
@@ -73,7 +73,7 @@ const Footer = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="LinkedIn"
-                        css={tw`p-2 text-black rounded-full text-md`}
+                        css={tw`p-2 text-black rounded-full text-lg hover:text-buttonHover mr-4`}
                         ><FontAwesomeIcon icon={faLinkedinIn} />
                     </a>
                     <a
@@ -81,7 +81,7 @@ const Footer = () => (
                         className="text-button hover:text-buttonHover"
                         target="_blank"
                         rel="noopener noreferrer"
-                        css={tw`p-2 text-black rounded-full text-md`}
+                        css={tw`p-2 text-black rounded-full text-lg hover:text-buttonHover`}
                         ><FontAwesomeIcon icon={faFacebookF} />
                     </a>
             </div>
