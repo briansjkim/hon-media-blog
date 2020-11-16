@@ -65,11 +65,12 @@ class CommentSection extends Component {
 
         return (
             <div 
-                // css={tw`h-full w-2/5 bg-white fixed top-0 right-0 z-50 shadow`}
+                css={tw`h-full w-2/5 bg-white fixed top-0 right-0 z-50 shadow`}
                 // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
             >
                 <div>
                     <h1>Comments</h1>
+                    <button onClick={this.props.onClose}>X</button>
                 </div>
                 <form>
                     <div css={tw`leading-8`}>

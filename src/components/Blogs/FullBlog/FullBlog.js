@@ -63,7 +63,7 @@ class FullBlog extends Component {
         });
     };
 
-    openComments() {
+    toggleComments() {
         // sliding comment section
         this.setState({
             showComments: !this.state.showComments
