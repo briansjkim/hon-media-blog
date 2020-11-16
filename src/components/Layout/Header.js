@@ -16,10 +16,10 @@ const Header = () => (
                 style={{ width: '10%' }}
             >
                 <img
-                    css={tw`block m-auto`}
+                    css={tw`block m-auto pl-10`}
                     src={Logo}
                     alt="logo"
-                    style={{ height: '50px' , width: '50px'}}
+                    style={{ height: '60px', width: '60px'}}
                 />
             </Link>
             <div
@@ -27,20 +27,20 @@ const Header = () => (
                 style={{ marginRight: '10%' }}>
                 <Link 
                     to='/'
-                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`px-6 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
                 >
                     HOME
                 </Link>
                 <Link
                     to='/stories'
-                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`px-6 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
                 >
                     SUCCESS STORIES
                 </Link>
                 <a 
                     href='https://hon-media.com/'
                     target='_blank'
-                    css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                    css={tw`px-6 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
                     OUR GOAL
