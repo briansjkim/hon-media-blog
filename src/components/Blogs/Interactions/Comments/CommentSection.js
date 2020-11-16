@@ -4,8 +4,8 @@ import tw from "tailwind.macro";
 import Comment from './Comment';
 
 class CommentSection extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
             comment: '',
@@ -16,6 +16,10 @@ class CommentSection extends Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.checkValidity = this.checkValidity.bind(this);
     };
+
+    componentDidMount() {
+        console.log(this.props);
+    }
 
     handleChange() {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Comment = () => (
-    <div>Comment</div>
+    <div>Comments</div>
 );
 
 export default Comment;

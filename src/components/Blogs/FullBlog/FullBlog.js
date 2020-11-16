@@ -26,7 +26,7 @@ class FullBlog extends Component {
     componentDidMount() {
         this.getBlog();
         console.log(this.props)
-    }
+    };
 
     getBlog() {
         axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
@@ -38,7 +38,7 @@ class FullBlog extends Component {
                 });
             })
             .catch((err) => console.error(err));
-    }
+    };
 
     // need to handle unliking as well
     handleLike() {
@@ -112,7 +112,7 @@ class FullBlog extends Component {
                     {/* <Interactions blog={this.props.blog} /> */}
                 </div>
                 <div>
-                    <CommentSection />
+                    <CommentSection blog={this.props.blog} />
                 </div>
             </div>
         );
