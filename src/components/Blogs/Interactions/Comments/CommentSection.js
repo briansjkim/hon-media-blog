@@ -57,10 +57,17 @@ class CommentSection extends Component {
     };
 
     render() {
+        if (!this.props.show) {
+            return null;
+        };
+
         const isValid = this.checkValidity();
 
         return (
-            <div>
+            <div 
+                // css={tw`h-full w-2/5 bg-white fixed top-0 right-0 z-50 shadow`}
+                // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
+            >
                 <div>
                     <h1>Comments</h1>
                 </div>
