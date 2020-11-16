@@ -143,6 +143,7 @@ class Blogs extends Component {
                         style={{ width: '100%', display: 'flex', flexDirection: 'row', flexWrap: 'wrap', boxShadow: '0 10px 28px rgba(0,0,0,.08)' }}
                     >  
                         <h1
+                            css={tw`mb-12`}
                             style={{ fontSize: '40px', flex: '0 0 100%' }}
                         >
                             Featured

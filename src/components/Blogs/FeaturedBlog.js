@@ -32,7 +32,7 @@ class FeaturedBlog extends Component {
                 onClick={this.handleClick}
             >
                 <div
-                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4 mb-4`}
+                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-10 mb-4 mt-2`}
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px' }}
                 >
                     <div css={tw`relative`}>

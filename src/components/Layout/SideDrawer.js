@@ -10,7 +10,7 @@ const SideDrawer = () => (
             style={{ width: '10%', zIndex: '1' }}
         >
             <div
-                css={tw`mt-40`}
+                css={tw`ml-2 mt-40 pt-40 mb-4 text-lg font-bold`}
             >
                 FOLLOW
             </div>
@@ -19,7 +19,7 @@ const SideDrawer = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                css={tw`mx-2 p-2 text-black rounded-full text-md`}
+                css={tw`mx-2 mb-6 p-2 text-black rounded-full text-lg hover:text-buttonHover`}
                 ><FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
@@ -27,7 +27,7 @@ const SideDrawer = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                css={tw`mx-2 p-2 text-black rounded-full text-md`}
+                css={tw`mx-2 mb-6 p-2 text-black rounded-full text-lg hover:text-buttonHover`}
                 ><FontAwesomeIcon icon={faLinkedinIn} />
             </a>
             <a
@@ -35,7 +35,7 @@ const SideDrawer = () => (
                 className="text-button hover:text-buttonHover"
                 target="_blank"
                 rel="noopener noreferrer"
-                css={tw`mx-2 p-2 text-black rounded-full text-md`}
+                css={tw`mx-2 mb-6 p-2 text-black rounded-full text-lg hover:text-buttonHover`}
                 ><FontAwesomeIcon icon={faFacebookF} />
             </a>
         </div>
