@@ -20,11 +20,12 @@ class FullBlog extends Component {
         this.getBlog = this.getBlog.bind(this);
         this.handleLike = this.handleLike.bind(this);
         this.handleShare = this.handleShare.bind(this);
-        this.handleComment = this.handleComment.bind(this);
+        this.openComments = this.openComments.bind(this);
     };
 
     componentDidMount() {
         this.getBlog();
+        console.log(this.props)
     }
 
     getBlog() {
@@ -62,7 +63,8 @@ class FullBlog extends Component {
         });
     };
 
-    handleComment() {
+    openComments() {
+        // sliding comment section
         this.setState({
             showComments: !this.state.showComments
         });
@@ -99,7 +101,7 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} handleComment={this.handleComment} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} openComments={this.openComments} />
                         </div>
                     </div>
                 </div>
@@ -108,6 +110,9 @@ class FullBlog extends Component {
                 </div>
                 <div css={tw`flex w-1/2 m-auto mt-10`}>
                     {/* <Interactions blog={this.props.blog} /> */}
+                </div>
+                <div>
+                    <CommentSection />
                 </div>
             </div>
         );
