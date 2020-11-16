@@ -20,7 +20,7 @@ class FullBlog extends Component {
         this.getBlog = this.getBlog.bind(this);
         this.handleLike = this.handleLike.bind(this);
         this.handleShare = this.handleShare.bind(this);
-        this.openComments = this.openComments.bind(this);
+        this.toggleComments = this.toggleComments.bind(this);
     };
 
     componentDidMount() {
@@ -101,7 +101,7 @@ class FullBlog extends Component {
                             <p>{this.props.blog.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} openComments={this.openComments} />
+                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} toggleComments={this.toggleComments} />
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@ class FullBlog extends Component {
                     {/* <Interactions blog={this.props.blog} /> */}
                 </div>
                 <div>
-                    <CommentSection onClose={this.openComments} show={this.state.showComments} blog={this.props.blog} />
+                    <CommentSection onClose={this.toggleComments} show={this.state.showComments} blog={this.props.blog} />
                 </div>
             </div>
         );

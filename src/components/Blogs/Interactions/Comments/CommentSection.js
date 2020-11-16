@@ -20,10 +20,6 @@ class CommentSection extends Component {
         this.checkValidity = this.checkValidity.bind(this);
     };
 
-    // handleClose(e) {
-    //     this.props.onClose && this.propse.onClose(e);
-    // };
-
     componentDidMount() {
         console.log(this.props);
         // this.getComments();
@@ -40,7 +36,6 @@ class CommentSection extends Component {
     };
 
     handleChange(e) {
-        // console.log(e.target.value)
         this.setState({
             [e.target.id]: e.target.value
         });
@@ -65,12 +60,19 @@ class CommentSection extends Component {
 
         return (
             <div 
-                css={tw`h-full w-2/5 bg-white fixed top-0 right-0 z-50 shadow`}
+            // need to figure out how to add transition
+                css={tw`h-full w-1/4 bg-white fixed top-0 right-0 z-50 shadow-2xl`}
                 // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
+                style={{ transform: 'translateX(0)'}}
             >
-                <div>
-                    <h1>Comments</h1>
-                    <button onClick={this.props.onClose}>X</button>
+                <div css={tw`flex`}>
+                    <h1 css={tw`ml-8`}>Comments</h1>
+                    <button 
+                        onClick={this.props.onClose}
+                        css={tw`float-right outline-none border-none bg-white cursor-pointer font-bold`}
+                    >
+                        X
+                    </button>
                 </div>
                 <form>
                     <div css={tw`leading-8`}>
@@ -80,12 +82,13 @@ class CommentSection extends Component {
                             placeholder="Write a comment"
                             value={this.state.comment}
                             onChange={this.handleChange}
-                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            css={tw`border-2 border-solid border-gray-400 rounded-l`}
                             style={{
-                                width: "740px",
+                                width: "300px",
+                                height: '50px',
                                 fontSize: "16px",
                                 fontFamily: "Poppins",
-                                overflow: "hidden",
+                                overflow: "auto",
                             }}
                             required
                         />
@@ -98,7 +101,13 @@ class CommentSection extends Component {
                             value={this.state.author}
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            style={{ width: '740px', height: '35px', fontSize: '16px', fontFamily: 'Poppins'  }}
+                            style={{ 
+                                width: '300px',
+                                height: '25px',
+                                fontSize: '16px', 
+                                fontFamily: 'Poppins',
+                                overflow: 'hidden'
+                            }}
                             required
                         />
                     </div>

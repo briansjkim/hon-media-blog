@@ -3,7 +3,7 @@ import tw from 'tailwind.macro';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart, faShare, faComment } from '@fortawesome/free-solid-svg-icons';
 
-const Interactions = ({ likes, handleLike, handleShare, openComments }) => (
+const Interactions = ({ likes, handleLike, handleShare, toggleComments }) => (
     <Fragment>
         <button
             css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
@@ -19,7 +19,7 @@ const Interactions = ({ likes, handleLike, handleShare, openComments }) => (
         <button
             css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
             style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
-            onClick={openComments}
+            onClick={toggleComments}
         >
             <FontAwesomeIcon 
                 css={tw`mr-2`}
