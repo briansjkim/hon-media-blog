@@ -4,7 +4,7 @@ import axios from '../../../axios-instance';
 
 import ShareModal from '../../DevTools/ShareModal';
 import Interactions from '../Interactions/Interactions';
-import CommentSection from '../Interactions/CommentSection';
+import CommentSection from '../Interactions/Comments/CommentSection';
 
 class FullBlog extends Component {
     constructor(props) {
