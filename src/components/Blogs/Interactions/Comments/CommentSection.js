@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../../../axios-instance';
 
+import '../../../../css/index.css';
 import Comment from './Comment';
 
 class CommentSection extends Component {
@@ -42,7 +43,6 @@ class CommentSection extends Component {
     };
 
     handleSubmit() {
-        
     };
 
     checkValidity() {
@@ -63,16 +63,20 @@ class CommentSection extends Component {
             // need to figure out how to add transition
                 css={tw`h-full w-1/4 bg-white fixed top-0 right-0 z-50 shadow-2xl`}
                 // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
-                style={{ transform: 'translateX(0)'}}
+                // style={{ transform: 'translateX(0)'}}
             >
-                <div css={tw`flex`}>
-                    <h1 css={tw`ml-8`}>Comments</h1>
-                    <button 
-                        onClick={this.props.onClose}
-                        css={tw`float-right outline-none border-none bg-white cursor-pointer font-bold`}
-                    >
-                        X
-                    </button>
+                <div css={tw`text-center`}>
+                    <div css={tw`float-left ml-10`}>
+                        <h1>Comments</h1>
+                    </div>
+                    <div css={tw`float-right`}>
+                        <button 
+                            onClick={this.props.onClose}
+                            css={tw`text-xl mt-2 mr-2 outline-none border-none bg-white cursor-pointer font-bold`}
+                        >
+                            X
+                        </button>
+                    </div>
                 </div>
                 <form>
                     <div css={tw`leading-8`}>
@@ -114,7 +118,7 @@ class CommentSection extends Component {
                     <button
                         type="button"
                         id="submit"
-                        // onClick={isValid ? this.handleSubmit : null }
+                        onClick={isValid ? this.handleSubmit : null }
                         name="submit"
                         css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}

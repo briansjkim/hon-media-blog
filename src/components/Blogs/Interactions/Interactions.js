@@ -6,7 +6,7 @@ import { faHeart, faShare, faComment } from '@fortawesome/free-solid-svg-icons';
 const Interactions = ({ likes, handleLike, handleShare, toggleComments }) => (
     <Fragment>
         <button
-            css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
+            css={tw`outline-none bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
             style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             onClick={handleLike}
         >
@@ -17,7 +17,7 @@ const Interactions = ({ likes, handleLike, handleShare, toggleComments }) => (
             {likes}
         </button>
         <button
-            css={tw`bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
+            css={tw`outline-none bg-purple-500 rounded-full border-0 cursor-pointer mr-4`}
             style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             onClick={toggleComments}
         >
@@ -27,7 +27,7 @@ const Interactions = ({ likes, handleLike, handleShare, toggleComments }) => (
             />
         </button>
         <button
-            css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
+            css={tw`outline-none bg-purple-500 rounded-full border-0 cursor-pointer`}
             style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
             onClick={handleShare}
         >
