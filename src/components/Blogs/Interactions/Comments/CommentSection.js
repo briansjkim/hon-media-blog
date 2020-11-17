@@ -59,11 +59,8 @@ class CommentSection extends Component {
         const isValid = this.checkValidity();
 
         return (
-            <div 
-            // need to figure out how to add transition
+            <div
                 css={tw`h-full w-1/4 bg-white fixed top-0 right-0 z-50 shadow-2xl`}
-                // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
-                // style={{ transform: 'translateX(0)'}}
             >
                 <div css={tw`text-center`}>
                     <div css={tw`float-left ml-10`}>
