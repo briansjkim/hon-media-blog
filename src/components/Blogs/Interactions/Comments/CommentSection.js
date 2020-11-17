@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../../../axios-instance';
 
-import '../../../../css/index.css';
 import Comment from './Comment';
 
 class CommentSection extends Component {
