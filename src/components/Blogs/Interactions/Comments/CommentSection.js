@@ -26,6 +26,7 @@ class CommentSection extends Component {
     };
 
     getComments() {
+        // store data into comments array
         axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
             // .then((res) => { console.log(res)})
             .then((res) => {
@@ -41,6 +42,9 @@ class CommentSection extends Component {
     };
 
     handleSubmit() {
+        // sending author and comment
+        const commentInput = { author: this.state.author, comment: this.state.comment };
+        // axios.post();
     };
 
     checkValidity() {
@@ -55,6 +59,7 @@ class CommentSection extends Component {
         };
 
         const isValid = this.checkValidity();
+        console.log(this.state);
 
         return (
             <div
