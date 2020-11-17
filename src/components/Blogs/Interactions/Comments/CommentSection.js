@@ -22,15 +22,14 @@ class CommentSection extends Component {
 
     componentDidMount() {
         console.log(this.props);
-        // this.getComments();
+        this.getComments();
     };
 
     getComments() {
         axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
+            // .then((res) => { console.log(res)})
             .then((res) => {
-                // this.setState({
-                //     childName: Object.keys(res.data)[0],
-                // });
+                
             })
             .catch((err) => console.error(err));
     };
