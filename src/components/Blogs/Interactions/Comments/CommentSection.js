@@ -22,15 +22,15 @@ class CommentSection extends Component {
 
     componentDidMount() {
         console.log(this.props);
-        // this.getComments();
+        this.getComments();
     };
 
     getComments() {
+        // store data into comments array
         axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
+            // .then((res) => { console.log(res)})
             .then((res) => {
-                // this.setState({
-                //     childName: Object.keys(res.data)[0],
-                // });
+                
             })
             .catch((err) => console.error(err));
     };
@@ -42,7 +42,9 @@ class CommentSection extends Component {
     };
 
     handleSubmit() {
-        
+        // sending author and comment
+        const commentInput = { author: this.state.author, comment: this.state.comment };
+        // axios.post();
     };
 
     checkValidity() {
@@ -57,22 +59,24 @@ class CommentSection extends Component {
         };
 
         const isValid = this.checkValidity();
+        console.log(this.state);
 
         return (
-            <div 
-            // need to figure out how to add transition
+            <div
                 css={tw`h-full w-1/4 bg-white fixed top-0 right-0 z-50 shadow-2xl`}
-                // style={{ transform: 'translateX(100%)', transition: 'transform 0.3s ease-out'}}
-                style={{ transform: 'translateX(0)'}}
             >
-                <div css={tw`flex`}>
-                    <h1 css={tw`ml-8`}>Comments</h1>
-                    <button 
-                        onClick={this.props.onClose}
-                        css={tw`float-right outline-none border-none bg-white cursor-pointer font-bold`}
-                    >
-                        X
-                    </button>
+                <div css={tw`text-center`}>
+                    <div css={tw`float-left ml-10`}>
+                        <h1>Comments</h1>
+                    </div>
+                    <div css={tw`float-right`}>
+                        <button 
+                            onClick={this.props.onClose}
+                            css={tw`text-xl mt-2 mr-2 outline-none border-none bg-white cursor-pointer font-bold`}
+                        >
+                            X
+                        </button>
+                    </div>
                 </div>
                 <form>
                     <div css={tw`leading-8`}>
@@ -114,7 +118,7 @@ class CommentSection extends Component {
                     <button
                         type="button"
                         id="submit"
-                        // onClick={isValid ? this.handleSubmit : null }
+                        onClick={isValid ? this.handleSubmit : null }
                         name="submit"
                         css={tw`bg-purple-500 rounded-full border-0 cursor-pointer`}
                         style={{ width: '91px', height: '40px', fontFamily: 'Poppins',  color: 'white', alignItems: 'center', textAlign: 'center' }}
