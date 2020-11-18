@@ -5,7 +5,6 @@ import FullBlog from '../components/Blogs/FullBlog/FullBlog';
 import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
-  console.log(location);
     const { state = {} } = location;
     const { blog } = state;
     return blog ? (

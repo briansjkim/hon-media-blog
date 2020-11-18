@@ -6,11 +6,6 @@ import { faFacebookF, faInstagram, faLinkedinIn, faTwitter } from '@fortawesome/
 import { faTimes, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faCopy } from '@fortawesome/free-regular-svg-icons';
 
-// need functionality on sharing buttons, add email as well
-// able to close if overlay is clicked also
-// IDK WHAT TO DO WITH COPY LINK
-
-
 class ShareModal extends Component {
     constructor(props) {
         super(props);
@@ -33,8 +28,16 @@ class ShareModal extends Component {
         if(!this.props.show) {
             return null;
         }
+        
+        // instagram only can be shared on mobile (from what i can find)
 
-        const url = window.location.href;
+        // const url = window.location.href;
+        const url = 'https://google.com';
+
+        const twitterUrl = `http://twitter.com/share?text=${this.props.blogTitle}&url=${url}`;
+        const facebookUrl = `http://www.facebook.com/sharer.php?u=${url}&p[title]=${this.props.blogTitle}`;
+        const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${this.props.blogTitle}`;
+        const emailUrl =`mailto:?subject=Check this out from HON Media&amp;body=${this.props.blogTitle} URL here: ${url}`
 
         return (
             <div
@@ -59,15 +62,16 @@ class ShareModal extends Component {
                         css={tw`text-left ml-4 pt-4`}
                     >Share via</h2>
                     <div css={tw`flex flex-row justify-between items-center mx-4 mb-4`}>
-                        <a 
+                        {/* <a 
                             css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faInstagram}
                                 size="2x"
                             />
-                        </a>
+                        </a> */}
                         <a
+                            href={linkedInUrl}
                             css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
@@ -76,6 +80,7 @@ class ShareModal extends Component {
                             />
                         </a>
                         <a 
+                            href={facebookUrl}
                             css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
@@ -84,6 +89,7 @@ class ShareModal extends Component {
                             />
                         </a>
                         <a 
+                            href={twitterUrl}
                             css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
@@ -92,6 +98,7 @@ class ShareModal extends Component {
                             />
                         </a>
                         <a 
+                            href={emailUrl}
                             css={tw`border-none bg-white cursor-pointer`}
                         >
                             <FontAwesomeIcon 
