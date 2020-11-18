@@ -41,6 +41,7 @@ class Blogs extends Component {
                 const blogsArray = Object.values(res.data);
                 for(let i = 0; i < blogsArray.length; i++) {
                     blogsArray[i].childName = childNamesArray[i];
+                    blogsArray[i].id = i;
                 }
 
                 const featured = [];
