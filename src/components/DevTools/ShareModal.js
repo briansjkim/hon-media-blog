@@ -72,7 +72,7 @@ class ShareModal extends Component {
                         </a> */}
                         <a
                             href={linkedInUrl}
-                            css={tw`border-none bg-white cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faLinkedinIn}
@@ -81,7 +81,7 @@ class ShareModal extends Component {
                         </a>
                         <a 
                             href={facebookUrl}
-                            css={tw`border-none bg-white cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faFacebookF}
@@ -90,7 +90,7 @@ class ShareModal extends Component {
                         </a>
                         <a 
                             href={twitterUrl}
-                            css={tw`border-none bg-white cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faTwitter}
@@ -99,7 +99,7 @@ class ShareModal extends Component {
                         </a>
                         <a 
                             href={emailUrl}
-                            css={tw`border-none bg-white cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faEnvelope}
@@ -108,14 +108,23 @@ class ShareModal extends Component {
                         </a>
                     </div>
                     <h2
-                        css={tw`text-left ml-4`}
+                        css={tw`text-left ml-4 mb-2`}
                     >Copy link</h2>
-                    <div>
-                        <input id="url-input" ref={el => this.elRef = el} value={window.location.href} onClick={this.copy} readonly />
+                    <div css={tw`flex flex-row justify-center items-center mx-4 mb-4`}>
+                        <input
+                            id="url-input"
+                            ref={el => this.elRef = el}
+                            value={window.location.href}
+                            css={tw`mb-4 border-gray-300 border-solid rounded-full`}
+                            onClick={this.copy}
+                            readonly
+                        />
                         <button 
-                            css={tw`mt-4 mb-4 bg-white border-none cursor-pointer`}
+                            css={tw`ml-4 mb-4 flex justify-center items-center border-none text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
+                            onClick={this.copy}
                         >
                             <FontAwesomeIcon 
+                                id="url-button"
                                 icon={faCopy}
                                 size="2x"
                             />
