@@ -25,7 +25,6 @@ class FullBlog extends Component {
 
     componentDidMount() {
         this.getBlog();
-        console.log(this.props)
     };
 
     getBlog() {
@@ -76,7 +75,7 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
-                <ShareModal onClose={this.handleShare} show={this.state.showShares}/>
+                <ShareModal onClose={this.handleShare} show={this.state.showShares} blogTitle={this.props.blog.title}/>
                 <div
                     css={tw`w-4/5 block m-auto`}
                 >
