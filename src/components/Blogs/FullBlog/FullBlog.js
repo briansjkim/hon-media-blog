@@ -25,7 +25,6 @@ class FullBlog extends Component {
 
     componentDidMount() {
         this.getBlog();
-        console.log(this.props)
     };
 
     getBlog() {
@@ -50,14 +49,7 @@ class FullBlog extends Component {
             .catch((err) => console.error(err));
     };
 
-    // needs to actually share content still
     handleShare(e) {
-        // let newShares = this.props.blog.shares + 1;
-        // axios.patch(`/posts/${this.state.childName}/.json`, {
-        //     shares: newShares,
-        // })
-        //     .then(() => this.getBlog())
-        //     .catch((err) => console.error(err));
         this.setState({
             showShares: !this.state.showShares
         });
@@ -76,7 +68,7 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
-                <ShareModal onClose={this.handleShare} show={this.state.showShares}/>
+                <ShareModal onClose={this.handleShare} show={this.state.showShares} blogTitle={this.props.blog.title}/>
                 <div
                     css={tw`w-4/5 block m-auto`}
                 >
