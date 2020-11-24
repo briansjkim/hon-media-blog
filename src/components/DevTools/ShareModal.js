@@ -32,7 +32,7 @@ class ShareModal extends Component {
         // instagram only can be shared on mobile (from what i can find)
 
         // const url = window.location.href;
-        const url = 'https://google.com';
+        const url = 'https://blog-hon-media.web.app';
 
         const twitterUrl = `http://twitter.com/share?text=${this.props.blogTitle}&url=${url}`;
         const facebookUrl = `http://www.facebook.com/sharer.php?u=${url}&p[title]=${this.props.blogTitle}`;

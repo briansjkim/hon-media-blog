@@ -8,8 +8,6 @@ import DevTools from '../DevTools/DevToolsDropdown';
 const Header = () => (
     <header
         css={tw`sticky top-0 bg-white shadow-xl z-10 mb-16`}
-        // CHrstie code
-        // style={{ width: '105%' }}
     >
         <div>
             <Link
@@ -26,7 +24,6 @@ const Header = () => (
             </Link>
             <div
                 css={tw`sm:flex sm:flex-col sm:flex-row justify-end items-center py-4`}
-                // 
                 >
                 <Link 
                     to='/'
