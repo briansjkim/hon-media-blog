@@ -39,6 +39,7 @@
     "postcss-preset-env": "^6.7.0",
     "react": "^16.13.1",
     "react-dom": "^17.0.1",
+    "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
     "save-dev": "0.0.1-security",
     "stylelint": "^13.7.2",
