@@ -49,14 +49,7 @@ class FullBlog extends Component {
             .catch((err) => console.error(err));
     };
 
-    // needs to actually share content still
     handleShare(e) {
-        // let newShares = this.props.blog.shares + 1;
-        // axios.patch(`/posts/${this.state.childName}/.json`, {
-        //     shares: newShares,
-        // })
-        //     .then(() => this.getBlog())
-        //     .catch((err) => console.error(err));
         this.setState({
             showShares: !this.state.showShares
         });

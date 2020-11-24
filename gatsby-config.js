@@ -30,6 +30,11 @@ module.exports = {
         },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-fontawesome-css`,
-        
+        {
+          resolve: 'gatsby-plugin-preconnect',
+          options: {
+            domains: ['https://ksr-ugc.imgix.net', 'https://blog-hon-media.firebaseio.com'],
+          },
+        },
     ]
 }
