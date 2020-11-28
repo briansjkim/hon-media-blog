@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
 
-import FeaturedBlog from './FeaturedBlog';
-import SelectedBlog from './SelectedBlog';
+import { PageView, initGA } from '../DevTools/Tracking/ga';
+import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
+import SelectedBlog from './FeaturedBlogs/SelectedBlog';
 import Blog from './Blog';
-import Spinner from '../UI/Spinner';
+import Loading from '../UI/Loading';
 import EditModal from '../DevTools/EditModal';
 
 class Blogs extends Component {
@@ -31,6 +32,8 @@ class Blogs extends Component {
     };
 
     componentDidMount() {
+        initGA('G-6JFH4ZDE1E');
+        PageView();
         this.getBlogs();
     };
     
@@ -132,11 +135,13 @@ class Blogs extends Component {
 
         return (
             <div
-                style={{ marginLeft: '10%', width: '90%'}}
+                // Christie code below
+                // style={{ marginLeft: '10%', width: '100%'}}
+                style={{ width: '100% '}}
             >
                 <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 
-                    <Spinner />
+                    <Loading />
                         :
                     <div
                         css={tw`rounded-lg border border-gray-200`}

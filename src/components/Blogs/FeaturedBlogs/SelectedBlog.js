@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import { Link } from "gatsby";
 
-import { isLoggedIn } from '../Auth/Auth.js';
+import { isLoggedIn } from '../../Auth/Auth.js';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -29,8 +29,8 @@ class SelectedBlog extends Component {
     render() {
         return (
             <Link
-                to="/blog" 
-                state={{ blog: this.props.blog }}
+              to={ `/blog/${this.props.blog.id}` } 
+              state={{ blog: this.props.blog, slug: this.props.blog.id }}
                 css={tw`no-underline text-black`}
                 style={{ cursor: 'pointer' }}
             >

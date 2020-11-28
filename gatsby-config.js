@@ -24,8 +24,17 @@ module.exports = {
               icon: 'src/assets/images/HonLogo.png'
             }
         },
+        {
+          resolve: `gatsby-plugin-create-client-paths`,
+          options: { prefixes: [`/blog/*`] },
+        },
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-fontawesome-css`,
-        
+        {
+          resolve: 'gatsby-plugin-preconnect',
+          options: {
+            domains: ['https://ksr-ugc.imgix.net', 'https://blog-hon-media.firebaseio.com'],
+          },
+        },
     ]
 }
