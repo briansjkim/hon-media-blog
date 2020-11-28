@@ -61,7 +61,7 @@ class SelectedBlog extends Component {
                       style={{ minHeight: '150px' }}
                     >
                       <div css={tw`flex flex-row justify-between px-8`}>
-                        <h1>{this.props.blog.title}</h1>
+                        <h1 css={tw`hover:text-buttonHover`}>{this.props.blog.title}</h1>
                         <div><FontAwesomeIcon icon={faHeart} /> {this.props.blog.likes}</div>
                       </div>
                       <div css={tw`flex flex-row justify-between px-8 pb-4`}>

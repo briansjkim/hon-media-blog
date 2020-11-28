@@ -43,7 +43,7 @@ class FeaturedBlog extends Component {
                             icon={faCog} 
                         />
                         }
-                        <h3 css={tw`text-left pl-6`}>{this.props.blog.title}</h3>
+                        <h3 css={tw`text-left pl-6 hover:text-buttonHover`}>{this.props.blog.title}</h3>
                     </div>
                   <div css={tw`flex flex-row justify-between px-6 pb-4`}>
                     <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
