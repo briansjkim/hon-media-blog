@@ -35,11 +35,11 @@ class SelectedBlog extends Component {
                 style={{ cursor: 'pointer' }}
             >
                 <div
-                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4`}
-                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '570px' }}
+                    css={tw`bg-white rounded-lg border-solid border-0 overflow-hidden mx-4 sm:max-w-md md:self-center lg:max-w-lg`}
+                    style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)" }}
                 >
                   <div
-                    css={tw`relative`}
+                    css={tw`lg:relative`}
                   >
                     <img
                       alt="Blog"

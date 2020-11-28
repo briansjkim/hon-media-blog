@@ -18,7 +18,7 @@ const StoryCards = ({ customers }) => {
                     <h4 css={tw`text-3xl`}>
                         <Link
                             to="/"
-                            css={tw`px-2 lg:px-4 no-underline text-black hover:text-blue-500 hover:text-opacity-75`}
+                            css={tw`px-2 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
                         >
                             {customer.title}
                         </Link>

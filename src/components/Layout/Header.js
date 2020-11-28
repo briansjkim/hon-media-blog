@@ -35,14 +35,14 @@ const Header = () => (
                 </Link> */}
                 <Link
                     to='/stories'
-                    css={tw`px-6 mr-8 ml-8 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
+                    css={tw`px-6 mr-8 ml-12 lg:mr-8 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
                 >
                     SUCCESS STORIES
                 </Link>
                 <a 
                     href='https://hon-media.com/'
                     target='_blank'
-                    css={tw`px-6 mr-8 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
+                    css={tw`px-6 ml-12 lg:mr-12 lg:ml-4 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
                     OUR GOAL

@@ -150,6 +150,7 @@ class Blogs extends Component {
                         </h1>
                         <div
                             style={{ height: '500px', overflow: 'hidden' }}
+                            css={tw`hidden lg:block`}
                         >
                             {this.state.featureds.map((blog, idx) => 
                                 <FeaturedBlog blog={blog} key={idx} clickHandler={this.handleChoose} timeAgo={this.timeSince} edit={this.editBlog} />
