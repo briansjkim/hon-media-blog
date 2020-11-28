@@ -8,7 +8,7 @@ import DevTools from '../DevTools/DevToolsDropdown';
 const Header = () => (
     <header
         css={tw`sticky top-0 bg-white shadow-xl z-10 mb-16`}
-        style={{ width: '105%' }}
+        style={{ width: '100%' }}
     >
         <div>
             <Link
@@ -42,7 +42,7 @@ const Header = () => (
                 <a 
                     href='https://hon-media.com/'
                     target='_blank'
-                    css={tw`px-6 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
+                    css={tw`px-6 mr-8 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
                     OUR GOAL
