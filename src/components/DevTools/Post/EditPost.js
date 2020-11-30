@@ -18,7 +18,7 @@ class EditPost extends Component {
             tags: this.props.blog.tags,
             isFeatured: this.props.blog.isFeatured,
             commentsEnabled: this.props.blog.commentsEnabled,
-            date: `${monthNames[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`,
+            date: `${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
             likes: this.props.blog.likes,
             comments: this.props.blog.comments,

@@ -19,7 +19,7 @@ class CreatePost extends Component {
             tags: '',
             isFeatured: true,
             commentsEnabled: true,
-            date: `${monthNames[today.getMonth()]} ${today.getDay()}, ${today.getFullYear()}`,
+            date: `${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
             likes: 0,
             comments: {
