@@ -6,7 +6,7 @@ import SideDrawer from '../components/Layout/SideDrawer';
 
 export default function blogs({ location }) {
     const { state = {} } = location;
-    const { blog } = state;
+    const { blog } = (state) ? state : {};
     return blog ? (
         <Fragment>
             <SideDrawer />
@@ -14,6 +14,10 @@ export default function blogs({ location }) {
             <FullBlog blog={location.state.blog} />
         </Fragment>
     ) : (
-        <div>This is just here for CircleCI</div>
+        <Fragment>
+            <SideDrawer />
+            <Header />
+            <FullBlog />
+        </Fragment>
     )
 };
