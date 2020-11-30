@@ -29,7 +29,7 @@ class Blog extends Component {
         return (
             <Link
                 to={ `/blog/${this.props.blog.title}` } 
-                state={{ blog: this.props.blog, slug: this.props.blog.id }}
+                state={{ blog: this.props.blog, slug: this.props.blog.title }}
                 css={tw`no-underline text-black m-4`}
                 style={{ cursor: 'pointer', width: '30%' }}
             >

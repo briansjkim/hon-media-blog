@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
 
-import { PageView, initGA } from '../DevTools/Tracking/ga';
 import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
 import SelectedBlog from './FeaturedBlogs/SelectedBlog';
 import Blog from './Blog';
@@ -32,8 +31,6 @@ class Blogs extends Component {
     };
 
     componentDidMount() {
-        initGA('G-6JFH4ZDE1E');
-        PageView();
         this.getBlogs();
     };
     

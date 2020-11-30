@@ -13,7 +13,11 @@ class FullBlog extends Component {
         super(props);
 
         this.state = {
+            title: '',
             childName: '',
+            image: '',
+            date: '',
+            content: '',
             likes: null,
             showShares: false,
             showComments: false
@@ -26,16 +30,24 @@ class FullBlog extends Component {
     };
 
     componentDidMount() {
+        const title = decodeURI(window.location.pathname).slice(6);
+        this.setState({
+            title: title,
+        })
         this.getBlog();
     };
 
     getBlog() {
-        axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
+        axios.get(`/posts.json?orderBy="title"&startAt="${this.state.title}"&print=pretty`)
             .then((res) => {
                 this.setState({
                     childName: Object.keys(res.data)[0],
+                    image: Object.values(res.data)[0].image,
+                    name: Object.values(res.data)[0].name,
+                    date: Object.values(res.data)[0].date,
+                    content: Object.values(res.data)[0].content,
                     likes: Object.values(res.data)[0].likes,
-                    shares: Object.values(res.data)[0].shares
+                    shares: Object.values(res.data)[0].shares,
                 });
             })
             .catch((err) => console.error(err));
@@ -43,7 +55,7 @@ class FullBlog extends Component {
 
     // need to handle unliking as well
     handleLike() {
-        let newLikes = this.props.blog.likes + 1;
+        let newLikes = this.state.blog.likes + 1;
         axios.patch(`/posts/${this.state.childName}/.json`, {
             likes: newLikes,
         })
@@ -70,13 +82,13 @@ class FullBlog extends Component {
                 css={tw`text-center mb-16`}
                 style={{ fontFamily: 'Poppins'}}
             >
-                <ShareModal onClose={this.handleShare} show={this.state.showShares} blogTitle={this.props.blog.title}/>
+                <ShareModal onClose={this.handleShare} show={this.state.showShares} blogTitle={this.state.title}/>
                 <div
                     css={tw`w-4/5 block m-auto`}
                 >
                     <img 
                         alt="Blog" 
-                        src={this.props.blog.image}
+                        src={this.state.image}
                         style={{ objectFit: 'scale-down', maxWidth: '100%' }}
                     />
                 </div>
@@ -85,14 +97,14 @@ class FullBlog extends Component {
                         <h1
                             style={{ fontWeight: '500', fontSize: '38px'}}
                         >
-                            {this.props.blog.title}
+                            {this.state.title}
                         </h1>
                     </div>
                     <div css={tw`w-1/2 flex m-auto`}>
                         <div 
                             css={tw`w-1/2 float-left mr-10 text-left`}>
-                            <p>{this.props.blog.name}</p>
-                            <p>{this.props.blog.date}</p>
+                            <p>{this.state.name}</p>
+                            <p>{this.state.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
                             <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} toggleComments={this.toggleComments} />
@@ -101,14 +113,14 @@ class FullBlog extends Component {
                 </div>
                 <div css={tw`w-1/2 m-auto mt-6 text-left`}>
                     <Linkify componentDecorator={componentDecorator}>
-                        <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>
+                        <p css={tw`whitespace-pre-line`}>{this.state.content}</p>
                     </Linkify>
                 </div>
                 <div css={tw`flex w-1/2 m-auto mt-10`}>
                     {/* <Interactions blog={this.props.blog} /> */}
                 </div>
                 <div>
-                    <CommentSection onClose={this.toggleComments} show={this.state.showComments} blog={this.props.blog} />
+                    <CommentSection onClose={this.toggleComments} show={this.state.showComments} blog={this.state} />
                 </div>
             </div>
         );
