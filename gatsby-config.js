@@ -60,5 +60,6 @@ module.exports = {
             // Defers execution of google analytics script after page load
             defer: false,
           },
+        }
     ]
 }
