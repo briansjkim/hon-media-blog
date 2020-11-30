@@ -12,8 +12,10 @@ class FullBlog extends Component {
     constructor(props) {
         super(props);
 
+        const title = window && decodeURI(window.location.pathname).slice(6);
+
         this.state = {
-            title: decodeURI(window.location.pathname).slice(6),
+            title: title,
             childName: '',
             image: '',
             date: '',
