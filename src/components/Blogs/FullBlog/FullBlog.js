@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Linkify from 'react-linkify';
 import tw from 'tailwind.macro';
 import axios from '../../../axios-instance';
 
 import ShareModal from '../../DevTools/ShareModal';
 import Interactions from '../Interactions/Interactions';
 import CommentSection from '../Interactions/Comments/CommentSection';
+import componentDecorator from './componentDecorator';
 
 class FullBlog extends Component {
     constructor(props) {
@@ -98,7 +100,9 @@ class FullBlog extends Component {
                     </div>
                 </div>
                 <div css={tw`w-1/2 m-auto mt-6 text-left`}>
-                    <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>
+                    <Linkify componentDecorator={componentDecorator}>
+                        <p css={tw`whitespace-pre-line`}>{this.props.blog.content}</p>
+                    </Linkify>
                 </div>
                 <div css={tw`flex w-1/2 m-auto mt-10`}>
                     {/* <Interactions blog={this.props.blog} /> */}
