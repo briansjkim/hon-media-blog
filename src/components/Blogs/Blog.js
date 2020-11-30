@@ -54,7 +54,7 @@ class Blog extends Component {
                         ><FontAwesomeIcon icon={faCog} /></button>
                         }
                     </div>
-                    <h3 css={tw`text-left pl-4`}>{this.props.blog.title}</h3>
+                    <h3 css={tw`text-left pl-4 hover:text-buttonHover`}>{this.props.blog.title}</h3>
                     <div css={tw`flex flex-row justify-between px-4 pb-4`}>
                     <div>{`${this.props.timeAgo(this.props.blog.datetime)} ago`}</div>
                     <div><FontAwesomeIcon icon={faHeart} /> {this.props.blog.likes}</div>

@@ -126,7 +126,7 @@ class CreatePost extends Component {
                             required
                         />
                     </div>
-                    <div css={tw`leading-8 mb-3`}>
+                    {/* <div css={tw`leading-8 mb-3`}>
                         <input
                             type="url"
                             id="image"
@@ -138,7 +138,7 @@ class CreatePost extends Component {
                             style={{ width: '740px', fontSize: '16px', fontFamily: 'Poppins'  }}
                             required
                         />
-                    </div>
+                    </div> */}
                     <div css={tw`leading-8`}>
                         <textarea
                             type="textarea"
