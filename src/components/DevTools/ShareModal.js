@@ -37,7 +37,7 @@ class ShareModal extends Component {
         const twitterUrl = `http://twitter.com/share?text=${this.props.blogTitle}&url=${url}`;
         const facebookUrl = `http://www.facebook.com/sharer.php?u=${url}&p[title]=${this.props.blogTitle}`;
         const linkedInUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${this.props.blogTitle}`;
-        const emailUrl =`mailto:?subject=Check this out from HON Media&amp;body=${this.props.blogTitle} URL here: ${url}`
+        // const emailUrl =`mailto:?subject=Check this out from HON Media&amp;body=${this.props.blogTitle} URL here: ${url}`
 
         return (
             <div
@@ -97,7 +97,7 @@ class ShareModal extends Component {
                                 size="2x"
                             />
                         </a>
-                        <a 
+                        {/* <a 
                             href={emailUrl}
                             css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
                         >
@@ -105,7 +105,7 @@ class ShareModal extends Component {
                                 icon={faEnvelope}
                                 size="2x"
                             />
-                        </a>
+                        </a> */}
                     </div>
                     <h2
                         css={tw`text-left ml-4 mb-2`}
