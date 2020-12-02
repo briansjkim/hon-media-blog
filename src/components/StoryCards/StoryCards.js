@@ -23,7 +23,7 @@ const StoryCards = ({ customers }) => {
                             {customer.title}
                         </Link>
                     </h4>
-                    <i css={tw`text-xl`}><q>{customer.content}</q></i>
+                    <i css={tw`text-xl whitespace-pre-wrap`}><q>{customer.content}</q></i>
                     <p css={tw`text-gray-600`}>{customer.customerName}, { customer.customerTitle} </p>
                     {customer.customerTitle2 ? <p css={tw`text-gray-600`}>{ customer.customerTitle2} </p> : null }
                     <div css={tw`text-center mt-8`}>
