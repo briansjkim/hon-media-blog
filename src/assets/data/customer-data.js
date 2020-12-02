@@ -7,7 +7,8 @@ export default [
         customerName: 'Joe Siwoo An',
         customerTitle: 'CEO',
         customerTitle2: 'Previously: CEO, Bibigo USA',
-        customerImage: 'https://ricegobanusa.com/wp-content/uploads/2019/09/logo_homepage1.png'
+        customerImage: 'https://ricegobanusa.com/wp-content/uploads/2019/09/logo_homepage1.png',
+        customerSite: 'https://ricegobanusa.com/'
     },
     {
         title: 'UC San Diego Design Lab',
@@ -16,7 +17,8 @@ export default [
         snippet: 'Hon Media has consistently demonstrated their knowledge of narrative storytelling, social media strategy, collaboration, and knowledge of human-center design',
         customerName: 'Ian Strelsky',
         customerTitle: 'Sr. Business Manager',
-        customerImage: 'https://designlab.ucsd.edu/wp-content/uploads/2019/11/design-lab-logo-new.svg'
+        customerImage: 'https://designlab.ucsd.edu/wp-content/uploads/2019/11/design-lab-logo-new.svg',
+        customerSite: 'https://designlab.ucsd.edu/'
     },
     {
         title: 'Naicha Tea',
@@ -24,6 +26,7 @@ export default [
         snippet: "Hon Media team was great to work with and had creative video ideas to demonstrate my company's mission. Definitely would recommend working with this team again.",
         customerName: 'Wesley Lin',
         customerTitle: 'CEO',
-        customerImage: 'https://cdn.shopify.com/s/files/1/2809/8798/files/output-onlinepngtools_180x.png?v=1598741484'
+        customerImage: 'https://cdn.shopify.com/s/files/1/2809/8798/files/output-onlinepngtools_180x.png?v=1598741484',
+        customerSite: 'https://naichatea.com/'
     }
 ];
