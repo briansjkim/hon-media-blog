@@ -13,17 +13,18 @@ const StoryCards = ({ customers }) => {
             {customers.map((customer, idx) =>
                 <Card 
                     key={idx}
-                    css={tw`mb-8 float-left`}
                 >
                     <h4 css={tw`text-3xl`}>
-                        <Link
+                        {/* <Link
                             to="/"
                             css={tw`px-2 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
-                        >
+                        > */}
                             {customer.title}
-                        </Link>
+                        {/* </Link> */}
                     </h4>
                     <i css={tw`text-xl`}><q>{customer.snippet}</q></i>
+                    <p css={tw`text-gray-600`}>{customer.customerName}, { customer.customerTitle} </p>
+                    {customer.customerTitle2 ? <p css={tw`text-gray-600`}>{ customer.customerTitle2} </p> : null }
                     <div css={tw`text-center mt-8`}>
                         <img
                             css={tw`w-56 h-56 mt-10 rounded-full`}
