@@ -17,5 +17,13 @@ export default [
         customerName: 'Ian Strelsky',
         customerTitle: 'Sr. Business Manager',
         customerImage: 'https://designlab.ucsd.edu/wp-content/uploads/2019/11/design-lab-logo-new.svg'
+    },
+    {
+        title: 'Naicha Tea',
+        content: "Hon Media team was great to work with and had creative video ideas to demonstrate my company's mission. Steven was great at communicating with following up, meeting deadlines, and creating the storyboard. Definitely would recommend working with this team again.",
+        snippet: "Hon Media team was great to work with and had creative video ideas to demonstrate my company's mission. Definitely would recommend working with this team again.",
+        customerName: 'Wesley Lin',
+        customerTitle: 'CEO',
+        customerImage: 'https://cdn.shopify.com/s/files/1/2809/8798/files/output-onlinepngtools_180x.png?v=1598741484'
     }
 ];
