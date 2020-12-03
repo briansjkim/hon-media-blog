@@ -41,7 +41,7 @@ module.exports = {
           options: {
             credentials: {
               apiKey: "AIzaSyAI6ggWUoXrN9vrFfR8sdaVqfJEMZn8SNM",
-              authDomain: "blog-hon-media.firebaseapp.com",
+              authDomain: "blog-hon-media.web.app",
               databaseURL: "https://blog-hon-media.firebaseio.com",
               projectId: "blog-hon-media",
               storageBucket: "blog-hon-media.appspot.com",
