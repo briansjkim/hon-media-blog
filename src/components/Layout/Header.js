@@ -1,7 +1,6 @@
 import React from "react";
 import tw from 'tailwind.macro';
 import { Link } from 'gatsby';
-import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import { isLoggedIn } from '../Auth/Auth';
 import Logo from '../../assets/images/HonLogo.png';
 import DevTools from '../DevTools/DevToolsDropdown';
@@ -38,14 +37,14 @@ const Header = () => (
                 >
                     SUCCESS STORIES
                 </Link>
-                <OutboundLink 
+                <a
                     href='https://hon-media.com/'
                     target='_blank'
                     css={tw`px-6 ml-12 lg:mr-12 lg:ml-4 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
                     OUR GOAL
-                </OutboundLink>
+                </a>
                 { isLoggedIn() && <DevTools /> }
             </div>
         </div>
