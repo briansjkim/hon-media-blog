@@ -32,7 +32,7 @@ class Blogs extends Component {
     };
 
     componentDidMount() {
-        firebase.analytics();
+        firebase.analytics().logEvent('Visited home page');
         this.getBlogs();
     };
     
