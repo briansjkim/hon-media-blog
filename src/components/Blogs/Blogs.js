@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
+import firebase from 'gatsby-plugin-firebase';
 import axios from '../../axios-instance';
 
 import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
@@ -31,6 +32,7 @@ class Blogs extends Component {
     };
 
     componentDidMount() {
+        firebase.analytics();
         this.getBlogs();
     };
     
