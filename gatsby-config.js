@@ -36,5 +36,19 @@ module.exports = {
             domains: ['https://ksr-ugc.imgix.net', 'https://blog-hon-media.firebaseio.com'],
           },
         },
+        {
+          resolve: "gatsby-plugin-firebase",
+          options: {
+            credentials: {
+              apiKey: "AIzaSyAI6ggWUoXrN9vrFfR8sdaVqfJEMZn8SNM",
+              authDomain: "blog-hon-media.firebaseapp.com",
+              databaseURL: "https://blog-hon-media.firebaseio.com",
+              projectId: "blog-hon-media",
+              storageBucket: "blog-hon-media.appspot.com",
+              messagingSenderId: "1:149751637126:web:8b3ab9b331a1c51ebc1d07",
+              appId: "G-G8W84Z7ZC0"
+            }
+          }
+        }
     ]
 }
