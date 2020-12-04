@@ -55,7 +55,7 @@ class FullBlog extends Component {
 
     // need to handle unliking as well
     handleLike() {
-        let newLikes = this.state.blog.likes + 1;
+        let newLikes = this.state.likes + 1;
         axios.patch(`/posts/${this.state.childName}/.json`, {
             likes: newLikes,
         })

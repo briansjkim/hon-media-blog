@@ -27,6 +27,8 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "autosize": "^4.0.2",
     "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "firebase": "^8.1.1",
     "firebase-tools": "^8.14.1",
     "gatsby": "^2.24.68",
     "gatsby-plugin-create-client-paths": "^2.4.0",
