@@ -8,14 +8,14 @@ module.exports = {
         resolve: "gatsby-plugin-firebase",
         options: {
           credentials: {
-            apiKey: "AIzaSyAI6ggWUoXrN9vrFfR8sdaVqfJEMZn8SNM",
-            authDomain: "blog-hon-media.web.app",
-            databaseURL: "https://blog-hon-media.firebaseio.com",
-            projectId: "blog-hon-media",
-            storageBucket: "blog-hon-media.appspot.com",
-            messagingSenderId: "149751637126",
-            appId: "1:149751637126:web:8b3ab9b331a1c51ebc1d07",
-            measurementId: "G-G8W84Z7ZC0"
+            apiKey: process.env.GA_API_KEY,
+            authDomain: process.env.GA_AUTH_DOMAIN,
+            databaseURL: process.env.GA_DATABASE_URL,
+            projectId: process.env.GA_PROJECT_ID,
+            storageBucket: process.env.GA_STORAGE_BUCKET,
+            messagingSenderId: process.env.GA_MESSAGING_SENDER_ID,
+            appId: process.env.GA_APP_ID,
+            measurementId: process.env.GA_MEASUREMENT_ID
           }
         }
       },
