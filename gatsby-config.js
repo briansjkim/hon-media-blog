@@ -17,7 +17,7 @@ module.exports = {
           apiKey: process.env.GA_API_KEY,
           authDomain: process.env.GA_AUTH_DOMAIN,
           databaseURL: process.env.GA_DATABASE_URL,
-          projectId: process.env.GA_PROJECT_ID,
+          projectId: "blog-hon-media",
           storageBucket: process.env.GA_STORAGE_BUCKET,
           messagingSenderId: process.env.GA_MESSAGING_SENDER_ID,
           appId: process.env.GA_APP_ID,
