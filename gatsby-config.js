@@ -4,7 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
+    title: `blog-hon-media`,
+    description: `The best blog site on the internet!`,
     siteUrl: `https://blog-hon-media.web.app/`,
+    author: `Hon Media`
   },
   plugins: [
     {
@@ -56,6 +59,8 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/blog/*`] },
     },
+    `gatsby-plugin-zopfli`,
+    `gatsby-plugin-minify`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-fontawesome-css`,
