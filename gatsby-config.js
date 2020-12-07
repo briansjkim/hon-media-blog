@@ -59,7 +59,7 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/blog/*`] },
     },
-    `gatsby-plugin-zopfli`,
+    // `gatsby-plugin-zopfli`,
     `gatsby-plugin-minify`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
