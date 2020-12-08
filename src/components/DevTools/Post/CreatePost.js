@@ -176,7 +176,7 @@ class CreatePost extends Component {
                     <div css={tw`leading-8 mb-3`}>
                         <div
                             css={tw`font-bold`}
-                        >LISTED? (USED FOR TESTING PURPOSES)</div>
+                        >ADD TO LISTED? (USED FOR TESTING PURPOSES)</div>
                         <input
                             type="checkbox"
                             id="isListed"
