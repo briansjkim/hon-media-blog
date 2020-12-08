@@ -27,6 +27,6 @@ export default [
         customerName: 'Wesley Lin',
         customerTitle: 'CEO',
         customerImage: 'https://cdn.shopify.com/s/files/1/2809/8798/files/output-onlinepngtools_180x.png?v=1598741484',
-        customerSite: 'https://naichatea.com/'
+        customerSite: 'https://naichatea.com/',
     }
 ];
