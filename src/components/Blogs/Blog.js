@@ -63,7 +63,7 @@ class Blog extends Component {
                 </div>
             </Link>
             )
-        } else if (this.props.blog.isListed === true && !isLoggedIn()) {
+        } else if (this.props.blog.isListed === true && isLoggedIn() === false) {
             return null;
         } else {
             return (
