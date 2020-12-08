@@ -34,11 +34,11 @@ class FullBlog extends Component {
         this.setState({
             title: title,
         })
-        this.getBlog();
+        this.getBlog(title);
     };
 
-    getBlog() {
-        axios.get(`/posts.json?orderBy="title"&startAt="${this.state.title}"&print=pretty`)
+    getBlog(title) {
+        axios.get(`/posts.json?orderBy="title"&equalTo="${title}"&print=pretty`)
             .then((res) => {
                 console.log(res.data);
                 this.setState({
