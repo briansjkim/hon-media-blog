@@ -3,6 +3,12 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    title: `blog-hon-media`,
+    description: `The best blog site on the internet!`,
+    siteUrl: `https://blog-hon-media.web.app/`,
+    author: `Hon Media`
+  },
   plugins: [
     {
       resolve: "gatsby-plugin-firebase",
@@ -11,7 +17,7 @@ module.exports = {
           apiKey: process.env.GA_API_KEY,
           authDomain: process.env.GA_AUTH_DOMAIN,
           databaseURL: process.env.GA_DATABASE_URL,
-          projectId: process.env.GA_PROJECT_ID,
+          projectId: "blog-hon-media",
           storageBucket: process.env.GA_STORAGE_BUCKET,
           messagingSenderId: process.env.GA_MESSAGING_SENDER_ID,
           appId: process.env.GA_APP_ID,
@@ -44,9 +50,18 @@ module.exports = {
         }
     },
     {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/stories`, `/blog/*`]
+      }
+    },
+    {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/blog/*`] },
     },
+    // `gatsby-plugin-zopfli`,
+    `gatsby-plugin-minify`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-fontawesome-css`,
     {
