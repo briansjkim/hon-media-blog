@@ -27,7 +27,7 @@ class CreatePost extends Component {
                 comments: []
             },
             shares: 0,
-            isListed: true,
+            isTesting: false,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -41,9 +41,9 @@ class CreatePost extends Component {
                 this.setState({
                     isFeatured: !!e.target.checked,
                 });
-            } else if (e.target.id === 'isListed') {
+            } else if (e.target.id === 'isTesting') {
                 this.setState({
-                    isListed: !!e.target.checked
+                    isTesting: !!e.target.checked
                 });
             };
         } else {
@@ -82,7 +82,7 @@ class CreatePost extends Component {
             likes: this.state.likes,
             comments: this.state.comments,
             shares: this.state.shares,
-            isListed: this.state.isListed
+            isTesting: this.state.isTesting
         };
 
         axios.post('/posts.json', post)
@@ -176,16 +176,16 @@ class CreatePost extends Component {
                     <div css={tw`leading-8 mb-3`}>
                         <div
                             css={tw`font-bold`}
-                        >ADD TO LISTED? (USED FOR TESTING PURPOSES)</div>
+                        >Testing? (USED FOR TESTING PURPOSES)</div>
                         <input
                             type="checkbox"
-                            id="isListed"
-                            name="isListed"
+                            id="isTesting"
+                            name="isTesting"
                             onChange={this.handleChange}
                             css={tw`border-2 border-solid border-gray-400 rounded-lg`}
-                            checked={this.state.isListed ? 1 : 0}
+                            checked={this.state.isTesting ? 1 : 0}
                         />
-                        <label htmlFor="isListed"> ENABLED</label>
+                        <label htmlFor="isTesting"> ENABLED</label>
                     </div>
                     <button
                         type="button"
