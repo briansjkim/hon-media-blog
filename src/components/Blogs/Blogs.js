@@ -129,7 +129,6 @@ class Blogs extends Component {
                 selected: this.state.featureds[0]
             });
         };
-        console.log(this.state)
 
         return (
             <div
