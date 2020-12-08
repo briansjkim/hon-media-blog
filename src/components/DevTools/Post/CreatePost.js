@@ -26,7 +26,8 @@ class CreatePost extends Component {
                 numofComments: 0,
                 comments: []
             },
-            shares: 0
+            shares: 0,
+            isListed: true,
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -36,9 +37,15 @@ class CreatePost extends Component {
 
     handleChange(e) {
         if (e.target.type === 'checkbox') {
-            this.setState({
-                isFeatured: !!e.target.checked
-            });
+            if (e.target.id === 'isFeatured') {
+                this.setState({
+                    isFeatured: !!e.target.checked,
+                });
+            } else if (e.target.id === 'isListed') {
+                this.setState({
+                    isListed: !!e.target.checked
+                });
+            };
         } else {
             this.setState({
                 [e.target.id]: e.target.value
@@ -74,7 +81,8 @@ class CreatePost extends Component {
             datetime: this.state.datetime,
             likes: this.state.likes,
             comments: this.state.comments,
-            shares: this.state.shares
+            shares: this.state.shares,
+            isListed: this.state.isListed
         };
 
         axios.post('/posts.json', post)
@@ -164,6 +172,20 @@ class CreatePost extends Component {
                             checked={this.state.isFeatured ? 1 : 0}
                         />
                         <label htmlFor="isFeatured"> ENABLED</label>
+                    </div>
+                    <div css={tw`leading-8 mb-3`}>
+                        <div
+                            css={tw`font-bold`}
+                        >ADD TO LISTED? (USED FOR TESTING PURPOSES)</div>
+                        <input
+                            type="checkbox"
+                            id="isListed"
+                            name="isListed"
+                            onChange={this.handleChange}
+                            css={tw`border-2 border-solid border-gray-400 rounded-lg`}
+                            checked={this.state.isListed ? 1 : 0}
+                        />
+                        <label htmlFor="isListed"> ENABLED</label>
                     </div>
                     <button
                         type="button"

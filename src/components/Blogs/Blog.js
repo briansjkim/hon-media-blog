@@ -26,6 +26,8 @@ class Blog extends Component {
     };
     
     render() {
+        console.log(this.props);
+        // {this.props.blog.isListed && isLoggedIn() ? return ()}
         return (
             <Link
                 to={ `/blog/${this.props.blog.title}` } 
