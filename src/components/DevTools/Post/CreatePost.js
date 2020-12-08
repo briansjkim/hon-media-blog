@@ -36,7 +36,6 @@ class CreatePost extends Component {
     };
 
     handleChange(e) {
-        console.log(e.target);
         if (e.target.type === 'checkbox') {
             if (e.target.id === 'isFeatured') {
                 this.setState({
@@ -82,7 +81,8 @@ class CreatePost extends Component {
             datetime: this.state.datetime,
             likes: this.state.likes,
             comments: this.state.comments,
-            shares: this.state.shares
+            shares: this.state.shares,
+            isListed: this.state.isListed
         };
 
         axios.post('/posts.json', post)
