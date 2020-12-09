@@ -22,11 +22,14 @@ class CreatePost extends Component {
             date: `${monthNames[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`,
             datetime: today.getTime()/1000,
             likes: 0,
-            comments: {
-                numofComments: 0,
-                // firebase doesn't store empty arrays
-                // figure out how to store multiple comments for one blog
-            },
+            // comments: {
+            //     numofComments: 0,
+            //     // firebase doesn't store empty arrays
+            //     // figure out how to store multiple comments for one blog
+            //     comment: ''
+            // },
+            numOfComments: 0,
+            comment: 'hello',
             shares: 0,
             isTesting: false,
         };
@@ -81,7 +84,9 @@ class CreatePost extends Component {
             date: this.state.date,
             datetime: this.state.datetime,
             likes: this.state.likes,
-            comments: this.state.comments,
+            // comments could change
+            numOfComments: this.state.numOfComments,
+            comment: this.state.comment,
             shares: this.state.shares,
             isTesting: this.state.isTesting
         };
