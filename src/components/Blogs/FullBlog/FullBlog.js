@@ -20,7 +20,8 @@ class FullBlog extends Component {
             content: '',
             likes: null,
             showShares: false,
-            showComments: false
+            showComments: false,
+            numOfComments: 0
         }
 
         this.getBlog = this.getBlog.bind(this);
@@ -48,6 +49,7 @@ class FullBlog extends Component {
                     content: Object.values(res.data)[0].content,
                     likes: Object.values(res.data)[0].likes,
                     shares: Object.values(res.data)[0].shares,
+                    numOfComments: Object.values(res.data)[0].numOfComments
                 });
             })
             .catch((err) => console.error(err));
@@ -107,7 +109,7 @@ class FullBlog extends Component {
                             <p>{this.state.date}</p>
                         </div>
                         <div css={tw` w-1/2 flex justify-end`}>
-                            <Interactions likes={this.state.likes} handleLike={this.handleLike} handleShare={this.handleShare} toggleComments={this.toggleComments} />
+                            <Interactions likes={this.state.likes} numOfComments={this.state.numOfComments} handleLike={this.handleLike} handleShare={this.handleShare} toggleComments={this.toggleComments} />
                         </div>
                     </div>
                 </div>

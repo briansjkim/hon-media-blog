@@ -9,8 +9,10 @@ class CommentSection extends Component {
         super(props);
 
         this.state = {
+            childName: '',
+            title: '',
             comment: '',
-            comments: [],
+            comments: '',
             author: ''
         };
 
@@ -21,16 +23,22 @@ class CommentSection extends Component {
     };
 
     componentDidMount() {
-        console.log(this.props);
-        this.getComments();
+        const title = decodeURI(window.location.pathname).slice(6);
+        this.setState({
+            title: title
+        });
+        this.getComments(title);
     };
 
-    getComments() {
+    getComments(title) {
         // store data into comments array
-        axios.get(`/posts.json?orderBy="title"&startAt="${this.props.blog.title}"&print=pretty`)
-            // .then((res) => { console.log(res)})
+        axios.get(`/posts.json?orderBy="title"&equalTo="${title}"&print=pretty`)
+            // .then((res) => { console.log(Object.values(res.data)[0].comment) })
             .then((res) => {
-                
+                this.setState({
+                    childName: Object.keys(res.data)[0],
+                    comments: Object.values(res.data)[0].comment
+                })
             })
             .catch((err) => console.error(err));
     };
@@ -43,8 +51,13 @@ class CommentSection extends Component {
 
     handleSubmit() {
         // sending author and comment
-        const commentInput = { author: this.state.author, comment: this.state.comment };
-        // axios.post();
+        // const commentInput = { 
+        //     author: this.state.author, 
+        //     comment: this.state.comment
+        // };
+        // axios.post(`/posts/${this.state.childName}/.json`, {
+
+        // })
     };
 
     checkValidity() {
@@ -59,7 +72,6 @@ class CommentSection extends Component {
         };
 
         const isValid = this.checkValidity();
-        console.log(this.state);
 
         return (
             <div
@@ -126,7 +138,10 @@ class CommentSection extends Component {
                             POST
                     </button>
                 </form>
-                <Comment />
+                {/* {this.state.comments.map((comment, idx) =>
+                    <Comment comment={comment} key={idx} />
+                )} */}
+                <Comment comments={this.state.comments} />
             </div>
         );
     };
