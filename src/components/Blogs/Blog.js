@@ -26,7 +26,6 @@ class Blog extends Component {
     };
     
     render() {
-        console.log(this.props.blog)
         if (this.props.blog.isTesting && isLoggedIn()) {
             return (
                 <Link
