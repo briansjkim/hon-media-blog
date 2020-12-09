@@ -12,7 +12,7 @@ class CommentSection extends Component {
             childName: '',
             title: '',
             comment: '',
-            comments: [],
+            comments: '',
             author: ''
         };
 
@@ -33,10 +33,11 @@ class CommentSection extends Component {
     getComments(title) {
         // store data into comments array
         axios.get(`/posts.json?orderBy="title"&equalTo="${title}"&print=pretty`)
-            .then((res) => { console.log(res)})
+            // .then((res) => { console.log(Object.values(res.data)[0].comment) })
             .then((res) => {
                 this.setState({
-                    childName: Object.keys(res.data)[0]
+                    childName: Object.keys(res.data)[0],
+                    comments: Object.values(res.data)[0].comment
                 })
             })
             .catch((err) => console.error(err));
@@ -54,9 +55,9 @@ class CommentSection extends Component {
         //     author: this.state.author, 
         //     comment: this.state.comment
         // };
-        // axios.post('/posts.json', commentInput)
-        //     .then((res) => console.log(res))
-        //     .catch(error => console.log(error));
+        // axios.post(`/posts/${this.state.childName}/.json`, {
+
+        // })
     };
 
     checkValidity() {
@@ -137,9 +138,10 @@ class CommentSection extends Component {
                             POST
                     </button>
                 </form>
-                {this.state.comments.map((comment, idx) =>
+                {/* {this.state.comments.map((comment, idx) =>
                     <Comment comment={comment} key={idx} />
-                )}
+                )} */}
+                <Comment comments={this.state.comments} />
             </div>
         );
     };
