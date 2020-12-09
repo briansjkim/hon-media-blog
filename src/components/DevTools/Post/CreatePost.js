@@ -24,7 +24,8 @@ class CreatePost extends Component {
             likes: 0,
             comments: {
                 numofComments: 0,
-                comments: []
+                // firebase doesn't store empty arrays
+                // figure out how to store multiple comments for one blog
             },
             shares: 0,
             isTesting: false,
