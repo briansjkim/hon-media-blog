@@ -5,7 +5,7 @@ import "firebase/analytics";
 
 firebase.initializeApp({
     apiKey: "AIzaSyAI6ggWUoXrN9vrFfR8sdaVqfJEMZn8SNM",
-    authDomain: "blog.hon-media.com/",
+    authDomain: "blog.hon-media.com",
     databaseURL: "https://blog-hon-media.firebaseio.com",
     projectId: "blog-hon-media",
     storageBucket: "blog-hon-media.appspot.com",

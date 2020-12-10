@@ -3,6 +3,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://blog.hon-media.com/`,
+  },
   plugins: [
     {
         resolve: `gatsby-plugin-postcss`,
@@ -32,6 +35,9 @@ module.exports = {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/blog/*`] },
     },
+    `gatsby-plugin-zopfli`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-fontawesome-css`,
     {
