@@ -62,8 +62,8 @@ class SelectedBlog extends Component {
                     >
                       <div css={tw`flex flex-row justify-between px-4`}>
                         <h1 css={tw`hover:text-buttonHover`}>{this.props.blog.title}</h1>
-                        <div>
-                          <FontAwesomeIcon icon={faHeart} css={tw`text-red-500`}/>{this.props.blog.likes}
+                        <div css={tw`inline-flex`}>
+                          <FontAwesomeIcon icon={faHeart} css={tw`text-red-500 pr-1 pt-1`}/>{this.props.blog.likes}
                         </div>
                       </div>
                       <div css={tw`flex flex-row justify-between px-8 pb-4`}>
