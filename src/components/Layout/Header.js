@@ -44,6 +44,13 @@ const Header = () => (
                     css={tw`px-6 ml-12 lg:mr-12 lg:ml-4 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
                     rel="noreferrer noopener"
                 >
+                    LOG IN
+                </Link>
+                <Link
+                    to='/userSignUp'
+                    css={tw`px-6 ml-12 lg:mr-12 lg:ml-4 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}
+                    rel="noreferrer noopener"
+                >
                     SIGN UP
                 </Link> */}
                 { isLoggedIn() && <DevTools /> }
