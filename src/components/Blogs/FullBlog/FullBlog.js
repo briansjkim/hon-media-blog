@@ -61,7 +61,7 @@ class FullBlog extends Component {
         axios.patch(`/posts/${this.state.childName}/.json`, {
             likes: newLikes,
         })
-            .then(() => this.getBlog())
+            .then(() => this.getBlog(this.state.title))
             .catch((err) => console.error(err));
     };
 

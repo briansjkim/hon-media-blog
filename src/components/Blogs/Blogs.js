@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
+import { isLoggedIn } from '../Auth/Auth.js';
 
 import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
 import SelectedBlog from './FeaturedBlogs/SelectedBlog';
@@ -39,10 +40,18 @@ class Blogs extends Component {
             .then((res) => {
                 const childNamesArray = Object.keys(res.data);
                 const blogsArray = Object.values(res.data);
+
                 for(let i = 0; i < blogsArray.length; i++) {
+                    // adds childname to blogs for API requests
                     blogsArray[i].childName = childNamesArray[i];
+
+                    // filters out test posts if not logged in
+                    if (!isLoggedIn() && blogsArray[i].isTesting) {
+                        blogsArray.splice(i, 1);
+                    }
                 }
 
+                // for featured posts
                 const featured = [];
                 for(let i = 0; i < blogsArray.length; i++) {
                     if (blogsArray[i].isFeatured) {
@@ -59,6 +68,7 @@ class Blogs extends Component {
             .catch(error => console.log(error));
     }
 
+    // switches the featured blog card based on which featured post is clicked
     handleChoose(title) {
         for(let i = 0; i < this.state.featureds.length; i++) {
             if (this.state.featureds[i].title === title) {
@@ -69,6 +79,7 @@ class Blogs extends Component {
         }
     };
 
+    // if logged in, will show modal for editing blog
     editBlog(blog) {
         this.setState({
             editedBlog: blog
@@ -76,6 +87,7 @@ class Blogs extends Component {
         this.showModal();
     }
 
+    // either adds or removes blog from featured slot
     changeFeatured(featured, childName) {
         axios.patch(`/posts/${childName}/.json`, {
             isFeatured: featured,
@@ -84,18 +96,21 @@ class Blogs extends Component {
             .catch((err) => console.error(err));
     }
 
+    // deletes blog
     deleteBlog(childName) {
         axios.delete(`/posts/${childName}/.json`)
             .then(() => window.location.reload())
             .catch((err) => console.error(err));
     }
 
+    // helper function to show modals
     showModal() {
         this.setState({
             showModal: !this.state.showModal
         })
     };
 
+    // function to calculate "XX time ago"
     timeSince(date) {
         const seconds = Math.floor(((new Date().getTime()/1000) - date));
       
@@ -134,7 +149,7 @@ class Blogs extends Component {
             <div
                 // Christie code below
                 // style={{ marginLeft: '10%', width: '100%'}}
-                style={{ width: '100% '}}
+                style={{ width: '90% '}}
             >
                 <EditModal onClose={this.showModal} changeFeatured={this.changeFeatured} deleteBlog={this.deleteBlog} show={this.state.showModal} blog={this.state.editedBlog} />
                 {this.state.loading ? 

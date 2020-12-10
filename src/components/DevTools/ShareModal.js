@@ -61,7 +61,7 @@ class ShareModal extends Component {
                     <h2
                         css={tw`text-left ml-4 pt-4`}
                     >Share via</h2>
-                    <div css={tw`flex flex-row justify-between items-center mx-4 mb-4`}>
+                    <div css={tw`flex flex-row justify-center items-center mx-4 mb-4`}>
                         {/* <a 
                             css={tw`border-none bg-white cursor-pointer`}
                         >
@@ -72,7 +72,7 @@ class ShareModal extends Component {
                         </a> */}
                         <a
                             href={linkedInUrl}
-                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 mr-4 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faLinkedinIn}
@@ -81,7 +81,7 @@ class ShareModal extends Component {
                         </a>
                         <a 
                             href={facebookUrl}
-                            css={tw`flex justify-center items-center text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}
+                            css={tw`flex justify-center items-center text-black w-16 h-16 mr-4 rounded-full bg-gray-300 cursor-pointer`}
                         >
                             <FontAwesomeIcon 
                                 icon={faFacebookF}
@@ -117,7 +117,7 @@ class ShareModal extends Component {
                             value={window.location.href}
                             css={tw`mb-4 border-gray-300 border-solid rounded-full`}
                             onClick={this.copy}
-                            readonly
+                            readOnly
                         />
                         <button 
                             css={tw`ml-4 mb-4 flex justify-center items-center border-none text-black w-16 h-16 rounded-full bg-gray-300 cursor-pointer`}

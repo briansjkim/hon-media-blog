@@ -16,7 +16,7 @@ export default () => (
         </Helmet>
         <section 
             className="container"
-            css={tw`sm:m-auto sm:mt-16 sm:text-center`}
+            css={tw`sm:m-auto sm:mt-16 sm:text-center sm:ml-32 md:ml-auto`}
             // Christie code
             // style={{ overflow: 'hidden', width: '100%'}}
         >
