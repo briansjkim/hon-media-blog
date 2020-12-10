@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import tw from "tailwind.macro";
 import axios from '../../axios-instance';
+import { isLoggedIn } from '../Auth/Auth.js';
 
 import FeaturedBlog from './FeaturedBlogs/FeaturedBlog';
 import SelectedBlog from './FeaturedBlogs/SelectedBlog';
@@ -41,6 +42,9 @@ class Blogs extends Component {
                 const blogsArray = Object.values(res.data);
                 for(let i = 0; i < blogsArray.length; i++) {
                     blogsArray[i].childName = childNamesArray[i];
+                    if (!isLoggedIn() && blogsArray[i].isTesting) {
+                        blogsArray.splice(i, 1);
+                    }
                 }
 
                 const featured = [];
