@@ -25,12 +25,6 @@ const Header = () => (
             <div
                 css={tw`sm:flex sm:flex-col sm:flex-row justify-end items-center py-4`}
                 >
-                {/* <Link 
-                    to='/'
-                    css={tw`px-6 hidden sm:inline lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
-                >
-                    HOME
-                </Link> */}
                 <Link
                     to='/stories'
                     css={tw`px-6 mr-8 ml-12 lg:mr-8 lg:px-4 no-underline text-lg text-black hover:text-buttonHover hover:text-opacity-75`}

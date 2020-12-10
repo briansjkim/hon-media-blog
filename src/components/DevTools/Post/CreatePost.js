@@ -29,7 +29,7 @@ class CreatePost extends Component {
             //     comment: ''
             // },
             numOfComments: 0,
-            comment: 'hello',
+            comment: 'test',
             shares: 0,
             isTesting: false,
         };
