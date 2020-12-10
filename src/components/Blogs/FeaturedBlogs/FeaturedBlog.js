@@ -32,14 +32,14 @@ class FeaturedBlog extends Component {
                 onClick={this.handleClick}
             >
                 <div
-                    css={tw`bg-white rounded-lg border-solid border-0 pr-12 mr-12 sm:mx-10 mb-4 mt-2`}
+                    css={tw`bg-white rounded-lg border-solid border-0 pr-4 mr-12 sm:mx-10 mb-4 mt-2`}
                     style={{ boxShadow: "3px 4px 10px rgba(0, 0, 0, 0.25)", width: '350px', overflow: 'hidden' }}
                 >
                     <div css={tw`relative`}>
                         {isLoggedIn() &&
                         <FontAwesomeIcon 
                             onClick={this.handleEdit}
-                            css={tw`absolute top-0 right-0 mr-3`}
+                            css={tw`absolute top-0 right-0 mr-0`}
                             icon={faCog} 
                         />
                         }
