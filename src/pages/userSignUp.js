@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
 import Header from '../components/Layout/Header';
-import Login from '../components/Auth/DevAcc/DevLogin';
+import UserSignUp from '../components/Auth/UserAcc/UserSignUp';
 
-export default function login() {
+export default function userLogin() {
     return (
         <Fragment>
             <Header />
-            <Login />
+            <UserSignUp />
         </Fragment>
     );
 };
