@@ -7,8 +7,8 @@ import Card from './Card';
 const StoryCards = ({ customers }) => {
     return (
         <div
-            css={tw`w-full text-center flex flex-col flex-wrap justify-center md:flex-row mt-12`}
-            style={{ marginLeft: '1%' }}
+            css={tw`w-full text-center flex flex-col flex-wrap md:flex-row mt-12`}
+            // style={{ marginLeft: '10%' }}
         >
             {customers.map((customer, idx) =>
                 <Card 
@@ -18,7 +18,7 @@ const StoryCards = ({ customers }) => {
                         <Link
                             to={customer.customerSite}
                             target='_blank'
-                            css={tw`px-2 lg:px-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
+                            css={tw`pr-2 lg:pr-4 no-underline text-black hover:text-buttonHover hover:text-opacity-75`}
                         >
                             {customer.title}
                         </Link>
@@ -28,7 +28,7 @@ const StoryCards = ({ customers }) => {
                     {customer.customerTitle2 ? <p css={tw`text-gray-600`}>{ customer.customerTitle2} </p> : null }
                     <div css={tw`text-center mt-8`}>
                         <img
-                            css={tw`w-56 h-56 mt-10 rounded-full`}
+                            css={tw`w-full max-w-xs h-auto mt-10`}
                             src={customer.customerImage}
                             alt={customer.customerName}
                         />
